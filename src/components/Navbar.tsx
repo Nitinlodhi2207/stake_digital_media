@@ -32,9 +32,9 @@ export default function Navbar() {
             <Image 
               src="/logo.svg" 
               alt="Stake Digital Media" 
-              width={200} 
-              height={50}
-              className="h-10 lg:h-12 w-auto"
+              width={240} 
+              height={60}
+              className="h-12 lg:h-14 w-auto"
               priority
             />
           </Link>

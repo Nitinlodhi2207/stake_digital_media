@@ -39,9 +39,9 @@ export default function HomePage() {
   const isSectionVisible = (id: string) => visibleSections.has(id);
 
   return (
-    <main className="overflow-x-hidden bg-white pt-14 lg:pt-16">
-      {/* Hero Section - 80vh with Video Background */}
-      <section className="relative h-[80vh] min-h-[600px] max-h-[900px] flex items-end justify-center overflow-hidden">
+    <main className="overflow-x-hidden bg-white">
+      {/* Hero Section - 70vh with Video Background */}
+      <section className="relative h-[90vh] min-h-[600px] flex items-end justify-center overflow-hidden mt-16 lg:mt-20">
         {/* Video Background - Full Coverage */}
         <div className="absolute inset-0 z-0">
           <video
@@ -55,12 +55,12 @@ export default function HomePage() {
             <source src="/Herosection_video_sample1.mp4" type="video/mp4" />
           </video>
           
-          {/* Enhanced Gradient Overlay - Better text visibility */}
-          <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-secondary-dark/95 via-secondary-dark/70 to-transparent"></div>
+          {/* Enhanced Gradient Overlay - Better visibility */}
+          <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-secondary-dark/95 via-secondary-dark/70 to-transparent"></div>
         </div>
 
-        {/* Hero Content - Bottom Section */}
-        <div className="relative z-10 w-full pb-12 sm:pb-16 lg:pb-20">
+        {/* Hero Content - Positioned just above bottom */}
+        <div className="relative z-10 w-full pb-6 sm:pb-8 lg:pb-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Main Heading - Compact */}
             <h1 className={`font-display font-bold text-4xl sm:text-5xl lg:text-7xl text-white text-center mb-4 sm:mb-6 leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -113,8 +113,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        {/* Scroll Indicator - Hidden to avoid overlap */}
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-20 hidden lg:block">
           <div className="w-5 h-8 border-2 border-white/40 rounded-full flex items-start justify-center p-1.5">
             <div className="w-1 h-2 bg-white/80 rounded-full animate-pulse"></div>
           </div>
@@ -155,7 +155,7 @@ export default function HomePage() {
                   {/* Image with Overlay */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/Images_gallery/white-billboard.webp"
+                      src="/Images_gallery/_DSC5169.jpg"
                       alt="Digital Screens"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -202,7 +202,7 @@ export default function HomePage() {
                   {/* Image with Overlay */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
+                      src="/Images_gallery/_DSC5197.jpg"
                       alt="Billboards"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -388,7 +388,7 @@ export default function HomePage() {
             <div className={`relative transition-all duration-1000 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
+                  src="/Images_gallery/_DSC5229.jpg"
                   alt="Our Network"
                   fill
                   className="object-cover"

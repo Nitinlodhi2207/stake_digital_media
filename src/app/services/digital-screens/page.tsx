@@ -32,14 +32,14 @@ export default function DigitalScreensPage() {
             Where Visibility Meets Opportunity
           </h2>
           <p className="font-sans text-lg text-gray-700 mb-8 leading-relaxed">
-            Our digital network includes Supabets betting screens and mall displays in some of South Africa's most frequented locations. These screens deliver dynamic content to captive audiences, creating memorable brand moments in real-world settings. Whether it's a shopper taking a break in a mall or a sports enthusiast at a Supabets venue, your brand connects with consumers when they're most receptive.
+            Our digital network includes Supabets betting screens and mall displays in some of South Africa&apos;s most frequented locations. These screens deliver dynamic content to captive audiences, creating memorable brand moments in real-world settings. Whether it&apos;s a shopper taking a break in a mall or a sports enthusiast at a Supabets venue, your brand connects with consumers when they&apos;re most receptive.
           </p>
 
           <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6 mt-16 text-secondary-dark">
             Nationwide Presence, Local Relevance
           </h2>
           <p className="font-sans text-lg text-gray-700 mb-6 leading-relaxed">
-            Stake Digital Media's screens are located in urban centres and commuter hubs across South Africa, giving brands the ability to engage diverse audiences in culturally rich, high-traffic locations.
+            Stake Digital Media&apos;s screens are located in urban centres and commuter hubs across South Africa, giving brands the ability to engage diverse audiences in culturally rich, high-traffic locations.
           </p>
 
           <ul className="font-sans text-lg text-gray-700 space-y-3 ml-6 list-disc">
@@ -186,7 +186,7 @@ export default function DigitalScreensPage() {
             <span className="text-primary-sky">Maximum Impact.</span>
           </h2>
           <p className="font-sans text-lg sm:text-xl mb-10 text-gray-200 leading-relaxed max-w-2xl mx-auto">
-            Whether you're launching a new product, promoting an event, or building long-term brand awareness, Stake Digital Media's digital screens deliver results where it matters most—in the real world.
+            Whether you&apos;re launching a new product, promoting an event, or building long-term brand awareness, Stake Digital Media&apos;s digital screens deliver results where it matters most—in the real world.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

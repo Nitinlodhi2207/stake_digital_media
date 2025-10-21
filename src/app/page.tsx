@@ -3,23 +3,16 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, TrendingUp, MapPin, Users, Zap, BarChart3, Target, Eye, Play, CheckCircle2, Sparkles, Globe, Award, Clock, Wifi, Shield } from 'lucide-react';
+import { ArrowRight, TrendingUp, MapPin, Users, Zap, BarChart3, Target, Eye, Sparkles, Globe, Award, Clock } from 'lucide-react';
 import OurWork from '@/components/OurWork';
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
 
     // Intersection Observer for scroll animations
     observerRef.current = new IntersectionObserver(
@@ -39,7 +32,6 @@ export default function HomePage() {
     });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       observerRef.current?.disconnect();
     };
   }, []);
@@ -273,7 +265,7 @@ export default function HomePage() {
           <div className={`text-center mb-12 transition-all duration-1000 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 mb-4">
               <Award className="w-4 h-4 text-primary-sky" />
-              <span className="text-white font-display font-semibold text-xs">Why We're Different</span>
+              <span className="text-white font-display font-semibold text-xs">Why We&apos;re Different</span>
             </div>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-3">
               Why Brands Choose{' '}
@@ -387,7 +379,7 @@ export default function HomePage() {
             </h2>
             
             <p className="font-sans text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our network spans South Africa's most dynamic markets—from <span className="text-primary-sky font-semibold">Soweto to Cape Town</span>, <span className="text-primary-bright-green font-semibold">Durban to Pretoria</span>. We position your brand where it matters most.
+              Our network spans South Africa&apos;s most dynamic markets—from <span className="text-primary-sky font-semibold">Soweto to Cape Town</span>, <span className="text-primary-bright-green font-semibold">Durban to Pretoria</span>. We position your brand where it matters most.
             </p>
           </div>
 
@@ -524,7 +516,7 @@ export default function HomePage() {
 
             {/* Subheading */}
             <p className="font-sans text-base sm:text-lg text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Join South Africa's leading brands in leveraging the power of out-of-home advertising. Let's create campaigns that drive <span className="font-bold">real-world results</span>.
+              Join South Africa&apos;s leading brands in leveraging the power of out-of-home advertising. Let&apos;s create campaigns that drive <span className="font-bold">real-world results</span>.
             </p>
             
             {/* CTA Buttons */}

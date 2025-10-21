@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stakee-digital-media.vercel.app/sitemap.xml

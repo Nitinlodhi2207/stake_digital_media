@@ -1,0 +1,17 @@
+{
+  "name": "Stake Digital Media",
+  "short_name": "Stake Digital",
+  "description": "Premium Out-of-Home Advertising in South Africa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0BB4E4",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

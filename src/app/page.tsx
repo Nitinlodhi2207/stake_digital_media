@@ -9,29 +9,75 @@ import OurWork from '@/components/OurWork';
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const [scrollY, setScrollY] = useState(0);
+  const [cardRotation, setCardRotation] = useState({ left: 0, right: 0 });
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
 
-    // Intersection Observer for scroll animations
+    // Smooth scroll progress tracking with card rotation
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+
+      // Calculate rotation for service cards based on scroll
+      if (servicesRef.current) {
+        const servicesRect = servicesRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const servicesTop = servicesRect.top;
+        const servicesHeight = servicesRect.height;
+        
+        // Calculate scroll progress (0 to 1)
+        // Start rotating when section enters viewport, stop when fully visible
+        const scrollStart = windowHeight;
+        const scrollEnd = windowHeight / 2;
+        
+        if (servicesTop < scrollStart && servicesTop > -servicesHeight) {
+          // Map scroll position to rotation (0 to 360 degrees)
+          const progress = Math.max(0, Math.min(1, (scrollStart - servicesTop) / (scrollStart - scrollEnd)));
+          const rotationLeft = -180 + (progress * 180); // Rotate from -180 to 0
+          const rotationRight = 180 - (progress * 180); // Rotate from 180 to 0
+          
+          setCardRotation({
+            left: rotationLeft,
+            right: rotationRight
+          });
+        } else if (servicesTop <= scrollEnd) {
+          // Reset to 0 when fully in view
+          setCardRotation({ left: 0, right: 0 });
+        } else {
+          // Initial state
+          setCardRotation({ left: -180, right: 180 });
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    // Enhanced Intersection Observer for scroll animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+            // Add animation class to element
+            entry.target.classList.add('animate-in');
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15, rootMargin: '-50px' }
     );
 
-    // Observe all sections
-    document.querySelectorAll('section[id]').forEach((section) => {
-      observerRef.current?.observe(section);
+    // Observe all sections and animated elements
+    document.querySelectorAll('section[id], [data-animate]').forEach((element) => {
+      observerRef.current?.observe(element);
     });
 
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       observerRef.current?.disconnect();
     };
   }, []);
@@ -40,27 +86,29 @@ export default function HomePage() {
 
   return (
     <main className="overflow-x-hidden bg-white">
-      {/* Hero Section - 70vh with Video Background */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-end justify-center overflow-hidden mt-16 lg:mt-20">
-        {/* Video Background - Full Coverage */}
+      {/* Hero Section - Full Screen with Video Background */}
+      <section className="relative h-screen flex items-end justify-center overflow-hidden">
+        {/* Video Background - Starts below navbar */}
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/Images_gallery/white-billboard.webp"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/Herosection_video_sample1.mp4" type="video/mp4" />
-          </video>
+          <div className="absolute inset-0" style={{ marginTop: '-56px' }}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/Images_gallery/white-billboard.webp"
+              className="w-full h-screen object-cover"
+            >
+              <source src="https://res.cloudinary.com/diwa9giv2/video/upload/v1761071001/Herosection_video_sample1_ovg3m1.mp4" type="video/mp4" />
+            </video>
+          </div>
           
-          {/* Enhanced Gradient Overlay - Better visibility */}
-          <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-secondary-dark/95 via-secondary-dark/70 to-transparent"></div>
+          {/* Enhanced Gradient Overlay - Better visibility at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-secondary-dark/95 via-secondary-dark/70 to-transparent"></div>
         </div>
 
         {/* Hero Content - Positioned just above bottom */}
-        <div className="relative z-10 w-full pb-6 sm:pb-8 lg:pb-10">
+        <div className="relative z-10 w-full pb-4 sm:pb-6 lg:pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Main Heading - Compact */}
             <h1 className={`font-display font-bold text-4xl sm:text-5xl lg:text-7xl text-white text-center mb-4 sm:mb-6 leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -112,17 +160,10 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        {/* Scroll Indicator - Hidden to avoid overlap */}
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-20 hidden lg:block">
-          <div className="w-5 h-8 border-2 border-white/40 rounded-full flex items-start justify-center p-1.5">
-            <div className="w-1 h-2 bg-white/80 rounded-full animate-pulse"></div>
-          </div>
-        </div>
       </section>
 
       {/* Services Section - Clean & Premium with Scroll Animations */}
-      <section id="services" className="py-24 bg-white relative overflow-hidden">
+      <section id="services" ref={servicesRef} className="py-24 bg-white relative overflow-hidden">
         {/* Animated Background Decorative Elements */}
         <div className={`absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-primary-sky/10 to-transparent rounded-full blur-3xl transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}></div>
         <div className={`absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-primary-bright-green/10 to-transparent rounded-full blur-3xl transition-all duration-1000 delay-200 ${isSectionVisible('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}></div>
@@ -146,16 +187,24 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Service Cards Grid - Clean & Minimal */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          {/* Service Cards Grid - Clean & Minimal with Enhanced Animations */}
+          <div className="grid lg:grid-cols-2 gap-8 perspective-1000">
             {/* Digital Screens Card */}
-            <div className={`transition-all duration-1000 delay-100 ${isSectionVisible('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div 
+              data-animate
+              className={`transition-all duration-700 delay-100 ${isSectionVisible('services') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}
+              style={{ 
+                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: `perspective(1000px) rotateY(${cardRotation.left}deg)`,
+                transformStyle: 'preserve-3d'
+              }}
+            >
               <Link href="/services/digital-screens" className="group block">
-                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2" style={{ backfaceVisibility: 'hidden' }}>
                   {/* Image with Overlay */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/Images_gallery/_DSC5169.jpg"
+                      src="/Images_gallery/white-billboard.webp"
                       alt="Digital Screens"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -196,13 +245,21 @@ export default function HomePage() {
             </div>
 
             {/* Billboards Card */}
-            <div className={`transition-all duration-1000 delay-200 ${isSectionVisible('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div 
+              data-animate
+              className={`transition-all duration-700 delay-300 ${isSectionVisible('services') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}
+              style={{ 
+                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: `perspective(1000px) rotateY(${cardRotation.right}deg)`,
+                transformStyle: 'preserve-3d'
+              }}
+            >
               <Link href="/services/billboards" className="group block">
-                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2" style={{ backfaceVisibility: 'hidden' }}>
                   {/* Image with Overlay */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/Images_gallery/_DSC5197.jpg"
+                      src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
                       alt="Billboards"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -280,8 +337,12 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Feature 1 */}
-            <div className={`group relative transition-all duration-1000 delay-100 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-sky/20 h-full">
+            <div 
+              data-animate
+              className={`group relative transition-all duration-1000 delay-100 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+            >
+              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-sky/20 h-full">
                 <div className="relative z-10 flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-sky/40">
                     <MapPin className="w-6 h-6 text-white" />
@@ -297,8 +358,12 @@ export default function HomePage() {
             </div>
 
             {/* Feature 2 */}
-            <div className={`group relative transition-all duration-1000 delay-200 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-bright-green/20 h-full">
+            <div 
+              data-animate
+              className={`group relative transition-all duration-1000 delay-200 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+            >
+              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-bright-green/20 h-full">
                 <div className="relative z-10 flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-bright-green/40">
                     <BarChart3 className="w-6 h-6 text-white" />
@@ -314,8 +379,12 @@ export default function HomePage() {
             </div>
 
             {/* Feature 3 */}
-            <div className={`group relative transition-all duration-1000 delay-300 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-sky/20 h-full">
+            <div 
+              data-animate
+              className={`group relative transition-all duration-1000 delay-300 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+            >
+              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-sky/20 h-full">
                 <div className="relative z-10 flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-sky/40">
                     <Users className="w-6 h-6 text-white" />
@@ -331,8 +400,12 @@ export default function HomePage() {
             </div>
 
             {/* Feature 4 */}
-            <div className={`group relative transition-all duration-1000 delay-[400ms] ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-bright-green/20 h-full">
+            <div 
+              data-animate
+              className={`group relative transition-all duration-1000 delay-[400ms] ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+            >
+              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-bright-green/20 h-full">
                 <div className="relative z-10 flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-bright-green/40">
                     <Clock className="w-6 h-6 text-white" />
@@ -385,10 +458,14 @@ export default function HomePage() {
 
           <div className="grid lg:grid-cols-2 gap-8 items-start">
             {/* Image Column with Stats */}
-            <div className={`relative transition-all duration-1000 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+            <div 
+              data-animate
+              className={`relative transition-all duration-1000 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+            >
+              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
                 <Image
-                  src="/Images_gallery/_DSC5229.jpg"
+                  src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
                   alt="Our Network"
                   fill
                   className="object-cover"
@@ -428,10 +505,18 @@ export default function HomePage() {
             </div>
 
             {/* Content Column */}
-            <div className={`transition-all duration-1000 delay-200 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+            <div 
+              data-animate
+              className={`transition-all duration-1000 delay-200 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-16 scale-95'}`}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+            >
               <div className="space-y-4">
                 {/* Feature 1 */}
-                <div className="group flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:border-primary-sky/30 hover:shadow-md transition-all duration-300">
+                <div 
+                  data-animate
+                  className={`group flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:border-primary-sky/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+                  style={{ transitionDelay: '300ms', transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+                >
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
@@ -442,7 +527,11 @@ export default function HomePage() {
                 </div>
 
                 {/* Feature 2 */}
-                <div className="group flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:border-primary-bright-green/30 hover:shadow-md transition-all duration-300">
+                <div 
+                  data-animate
+                  className={`group flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:border-primary-bright-green/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+                  style={{ transitionDelay: '400ms', transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+                >
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
@@ -453,7 +542,11 @@ export default function HomePage() {
                 </div>
 
                 {/* Feature 3 */}
-                <div className="group flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:border-primary-sky/30 hover:shadow-md transition-all duration-300">
+                <div 
+                  data-animate
+                  className={`group flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100 hover:border-primary-sky/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+                  style={{ transitionDelay: '500ms', transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+                >
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
                     <Eye className="w-6 h-6 text-white" />
                   </div>

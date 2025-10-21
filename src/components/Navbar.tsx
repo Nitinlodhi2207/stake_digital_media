@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
@@ -21,14 +22,21 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 lg:h-16">
           {/* Logo */}
           <Link 
             href="/" 
-            className="font-display font-bold text-xl lg:text-2xl text-secondary-dark hover:text-primary-sky transition-colors"
+            className="flex items-center hover:opacity-80 transition-opacity"
             onClick={closeMobileMenu}
           >
-            STAKE Digital Media
+            <Image 
+              src="/logo.svg" 
+              alt="Stake Digital Media" 
+              width={200} 
+              height={50}
+              className="h-10 lg:h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation - Hidden on mobile */}
@@ -119,7 +127,7 @@ export default function Navbar() {
 
       {/* Mobile Full-Screen Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-16 bg-white z-40 lg:hidden overflow-y-auto">
+        <div className="fixed inset-0 top-14 bg-white z-40 lg:hidden overflow-y-auto">
           <div className="flex flex-col items-center justify-center min-h-full px-4 py-8 space-y-6">
             <Link 
               href="/" 

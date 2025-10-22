@@ -162,141 +162,304 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section - Clean & Premium with Scroll Animations */}
-      <section id="services" ref={servicesRef} className="py-24 bg-white relative overflow-hidden">
-        {/* Animated Background Decorative Elements */}
-        <div className={`absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-primary-sky/10 to-transparent rounded-full blur-3xl transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}></div>
-        <div className={`absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-primary-bright-green/10 to-transparent rounded-full blur-3xl transition-all duration-1000 delay-200 ${isSectionVisible('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}></div>
+      {/* Services Section - Advanced Modern Showcase */}
+      <section id="services" ref={servicesRef} className="relative bg-black text-white overflow-hidden">
+        {/* Animated Background Gradient Mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-black to-emerald-950/30 animate-gradient-shift"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-sky/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-bright-green/10 via-transparent to-transparent"></div>
         
-        {/* Animated Floating Circles */}
-        <div className={`absolute top-20 right-20 w-32 h-32 border-4 border-primary-sky/20 rounded-full transition-all duration-1000 delay-300 ${isSectionVisible('services') ? 'opacity-100 rotate-0' : 'opacity-0 rotate-45'}`}></div>
-        <div className={`absolute bottom-32 left-32 w-24 h-24 border-4 border-primary-bright-green/20 rounded-full transition-all duration-1000 delay-500 ${isSectionVisible('services') ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-45'}`}></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header with Animation */}
-          <div className={`text-center mb-16 transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full mb-4 shadow-sm">
-              <Sparkles className="w-4 h-4 text-primary-sky" />
-              <span className="text-secondary-dark font-display font-semibold text-sm">Our Solutions</span>
-            </div>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl text-secondary-dark mb-4">
-              Powerful <span className="gradient-text">Advertising Solutions</span>
-            </h2>
-            <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
-              Strategic placements that drive results
-            </p>
+        {/* Intro Panel - Full Screen */}
+        <div className="relative h-screen flex items-center justify-center overflow-hidden snap-start">
+          {/* Floating Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-sky/10 rounded-full blur-3xl animate-float-slow"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary-bright-green/10 rounded-full blur-3xl animate-float-slower"></div>
+            <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary-deep-blue/10 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '5s'}}></div>
           </div>
+          
+          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div className={`transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+              {/* Premium Badge */}
+              <div className="inline-block mb-8 px-6 py-3 bg-gradient-to-r from-primary-sky/20 to-primary-bright-green/20 backdrop-blur-xl rounded-full border border-white/10 shadow-lg shadow-primary-sky/10">
+                <span className="text-sm sm:text-base font-bold tracking-wider bg-gradient-to-r from-primary-sky via-white to-primary-bright-green bg-clip-text text-transparent">
+                  ✦ NEXT-GEN ADVERTISING SOLUTIONS ✦
+                </span>
+              </div>
+              
+              <h2 className="font-display font-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white mb-10 leading-[0.95] tracking-tight">
+                <span className="inline-block">Advertising.</span><br />
+                <span className="inline-block bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-[length:200%_auto] animate-gradient-text bg-clip-text text-transparent">
+                  Everywhere.
+                </span>
+              </h2>
+              
+              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto font-light mb-12">
+                Transform your brand&apos;s presence with cutting-edge digital displays
+                and strategic billboard placements that captivate audiences 24/7.
+              </p>
 
-          {/* Service Cards Grid - Clean & Minimal with Enhanced Animations */}
-          <div className="grid lg:grid-cols-2 gap-8 perspective-1000">
-            {/* Digital Screens Card */}
-            <div 
-              data-animate
-              className={`transition-all duration-700 delay-100 ${isSectionVisible('services') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}
-              style={{ 
-                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-                transform: `perspective(1000px) rotateY(${cardRotation.left}deg)`,
-                transformStyle: 'preserve-3d'
-              }}
-            >
-              <Link href="/services/digital-screens" className="group block">
-                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2" style={{ backfaceVisibility: 'hidden' }}>
-                  {/* Image with Overlay */}
-                  <div className="absolute inset-0">
+              {/* Feature Pills */}
+              <div className="flex flex-wrap gap-4 justify-center items-center mb-16 sm:mb-20">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/10 hover:border-primary-sky/30 transition-all duration-300 group">
+                  <Zap className="w-5 h-5 text-primary-sky group-hover:scale-110 transition-transform" />
+                  <span className="text-sm sm:text-base font-medium">Real-time Updates</span>
+                </div>
+                <div className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/10 hover:border-primary-bright-green/30 transition-all duration-300 group">
+                  <Globe className="w-5 h-5 text-primary-bright-green group-hover:scale-110 transition-transform" />
+                  <span className="text-sm sm:text-base font-medium">Global Reach</span>
+                </div>
+                <div className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/10 hover:border-primary-sky/30 transition-all duration-300 group">
+                  <Award className="w-5 h-5 text-primary-sky group-hover:scale-110 transition-transform" />
+                  <span className="text-sm sm:text-base font-medium">Premium Quality</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Digital Screens Panel - Advanced Modern Design */}
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start py-8 md:py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+              {/* Content */}
+              <div 
+                data-animate
+                className={`order-2 lg:order-1 space-y-3 md:space-y-5 transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+              >
+                {/* Premium Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-primary-sky/20 to-primary-sky/5 backdrop-blur-xl rounded-full border border-primary-sky/30 shadow-lg shadow-primary-sky/20">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary-sky rounded-full animate-pulse"></div>
+                  <span className="text-[10px] md:text-xs font-bold tracking-wider text-primary-sky">DIGITAL SCREENS</span>
+                </div>
+                
+                {/* Large Headline */}
+                <h3 className="font-display font-bold text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-white leading-[0.95] tracking-tight">
+                  <span className="inline-block hover:scale-105 transition-transform duration-300">Dynamic.</span><br />
+                  <span className="inline-block hover:scale-105 transition-transform duration-300 delay-75">Digital.</span><br />
+                  <span className="inline-block bg-gradient-to-r from-primary-sky to-blue-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 delay-150">Dazzling.</span>
+                </h3>
+                
+                {/* Description */}
+                <p className="font-sans text-xs sm:text-base lg:text-xl text-gray-300 leading-relaxed font-light">
+                  High-definition displays that bring your content to life with vibrant colors,
+                  stunning clarity, and real-time updates that keep your message fresh and engaging.
+                </p>
+                
+                {/* Feature Cards Grid - 2x2 for Mobile */}
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Eye className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">4K Ultra HD</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Crystal-clear visuals</p>
+                  </div>
+                  
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Clock className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Real-time</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Live content updates</p>
+                  </div>
+                  
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Interactive</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Touch-enabled</p>
+                  </div>
+                  
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">30+ Min Dwell</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Extended engagement</p>
+                  </div>
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-2 md:gap-3 pt-2 md:pt-3">
+                  <Link
+                    href="/services/digital-screens"
+                    className="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-bold text-xs md:text-base rounded-full shadow-lg shadow-primary-sky/30 hover:shadow-primary-sky/50 hover:scale-105 transition-all duration-300"
+                  >
+                    <span>Explore Digital Screens</span>
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <button className="px-4 py-2 md:px-6 md:py-3 bg-white/5 backdrop-blur-sm text-white rounded-full font-semibold text-xs md:text-base border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                    Watch Demo
+                  </button>
+                </div>
+              </div>
+              
+              {/* Image with Advanced Effects */}
+              <div 
+                data-animate
+                className={`order-1 lg:order-2 relative transition-all duration-1000 delay-200 ${isSectionVisible('services') ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-12 scale-95'}`}
+                style={{ 
+                  transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                  transform: `perspective(1000px) rotateY(${cardRotation.left}deg)`,
+                  transformStyle: 'preserve-3d'
+                }}
+              >
+                {/* Glow Effect */}
+                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary-sky/20 to-blue-500/20 rounded-2xl md:rounded-3xl blur-2xl md:blur-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                
+                <div className="relative group">
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-sky/20 via-transparent to-blue-500/20 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-primary-sky/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
                       src="/Images_gallery/white-billboard.webp"
                       alt="Digital Screens"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover"
                     />
-                    {/* Clean Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary-dark/90 via-secondary-dark/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   </div>
                   
-                  {/* Hover Border Effect */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary-sky/60 rounded-2xl transition-all duration-500"></div>
-                  
-                  {/* Minimal Content - Bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500 group-hover:translate-y-0">
-                    {/* Small Badge */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-sky/90 backdrop-blur-sm rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <Zap className="w-4 h-4 text-white" />
-                      <span className="text-white text-xs font-display font-semibold">Digital Innovation</span>
-                    </div>
-                    
-                    {/* Title */}
-                    <h3 className="font-display font-bold text-3xl sm:text-4xl text-white mb-3">
-                      Digital Screens
-                    </h3>
-                    
-                    {/* Minimal Description - Shows on Hover */}
-                    <p className="font-sans text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 max-h-0 group-hover:max-h-20 overflow-hidden">
-                      High-traffic venues with 30-minute dwell times. Supabets locations, malls, and commuter hubs.
-                    </p>
-                    
-                    {/* CTA Arrow */}
-                    <div className="flex items-center gap-2 text-primary-sky font-display font-bold text-base">
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Explore</span>
-                      <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-all duration-500" />
+                  {/* Floating Stats Badge */}
+                  <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 px-3 py-2 md:px-5 md:py-3 bg-black/90 backdrop-blur-xl rounded-lg md:rounded-xl border border-primary-sky/30 shadow-2xl">
+                    <div className="flex items-center gap-2 md:gap-2.5">
+                      <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-primary-sky rounded-full animate-pulse"></div>
+                      <div>
+                        <p className="text-base md:text-xl font-bold text-primary-sky">10K+</p>
+                        <p className="text-[8px] md:text-[10px] text-gray-400">Active Displays</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             </div>
+          </div>
+        </div>
 
-            {/* Billboards Card */}
-            <div 
-              data-animate
-              className={`transition-all duration-700 delay-300 ${isSectionVisible('services') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}
-              style={{ 
-                transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-                transform: `perspective(1000px) rotateY(${cardRotation.right}deg)`,
-                transformStyle: 'preserve-3d'
-              }}
-            >
-              <Link href="/services/billboards" className="group block">
-                <div className="relative h-[500px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2" style={{ backfaceVisibility: 'hidden' }}>
-                  {/* Image with Overlay */}
-                  <div className="absolute inset-0">
+        {/* Billboards Panel - Advanced Modern Design */}
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start py-8 md:py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+              {/* Image with Advanced Effects */}
+              <div 
+                data-animate
+                className={`relative transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-12 scale-95'}`}
+                style={{ 
+                  transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                  transform: `perspective(1000px) rotateY(${cardRotation.right}deg)`,
+                  transformStyle: 'preserve-3d'
+                }}
+              >
+                {/* Glow Effect */}
+                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary-bright-green/20 to-emerald-500/20 rounded-2xl md:rounded-3xl blur-2xl md:blur-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                
+                <div className="relative group">
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-tl from-primary-bright-green/20 via-transparent to-emerald-500/20 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-primary-bright-green/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
                       src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
                       alt="Billboards"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover"
                     />
-                    {/* Clean Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary-dark/90 via-secondary-dark/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   </div>
                   
-                  {/* Hover Border Effect */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary-bright-green/60 rounded-2xl transition-all duration-500"></div>
-                  
-                  {/* Minimal Content - Bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500 group-hover:translate-y-0">
-                    {/* Small Badge */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-bright-green/90 backdrop-blur-sm rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <Target className="w-4 h-4 text-white" />
-                      <span className="text-white text-xs font-display font-semibold">Maximum Impact</span>
-                    </div>
-                    
-                    {/* Title */}
-                    <h3 className="font-display font-bold text-3xl sm:text-4xl text-white mb-3">
-                      Billboards
-                    </h3>
-                    
-                    {/* Minimal Description - Shows on Hover */}
-                    <p className="font-sans text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 max-h-0 group-hover:max-h-20 overflow-hidden">
-                      Soweto and major metros. Transform city arteries into brand landmarks. 1.5M+ monthly impressions.
-                    </p>
-                    
-                    {/* CTA Arrow */}
-                    <div className="flex items-center gap-2 text-primary-bright-green font-display font-bold text-base">
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Explore</span>
-                      <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-all duration-500" />
+                  {/* Floating Stats Badge */}
+                  <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 px-3 py-2 md:px-5 md:py-3 bg-black/90 backdrop-blur-xl rounded-lg md:rounded-xl border border-primary-bright-green/30 shadow-2xl">
+                    <div className="flex items-center gap-2 md:gap-2.5">
+                      <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-primary-bright-green rounded-full animate-pulse"></div>
+                      <div>
+                        <p className="text-base md:text-xl font-bold text-primary-bright-green">50M+</p>
+                        <p className="text-[8px] md:text-[10px] text-gray-400">Daily Views</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
+              
+              {/* Content */}
+              <div 
+                data-animate
+                className={`space-y-3 md:space-y-5 transition-all duration-1000 delay-200 ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+                style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+              >
+                {/* Premium Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-primary-bright-green/20 to-primary-bright-green/5 backdrop-blur-xl rounded-full border border-primary-bright-green/30 shadow-lg shadow-primary-bright-green/20">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary-bright-green rounded-full animate-pulse"></div>
+                  <span className="text-[10px] md:text-xs font-bold tracking-wider text-primary-bright-green">BILLBOARDS</span>
+                </div>
+                
+                {/* Large Headline */}
+                <h3 className="font-display font-bold text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-white leading-[0.95] tracking-tight">
+                  <span className="inline-block hover:scale-105 transition-transform duration-300">Bold.</span><br />
+                  <span className="inline-block hover:scale-105 transition-transform duration-300 delay-75">Brilliant.</span><br />
+                  <span className="inline-block bg-gradient-to-r from-primary-bright-green to-emerald-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 delay-150">Unmissable.</span>
+                </h3>
+                
+                {/* Description */}
+                <p className="font-sans text-xs sm:text-base lg:text-xl text-gray-300 leading-relaxed font-light">
+                  Strategic placements that command attention and dominate the landscape,
+                  ensuring your brand message reaches thousands daily with maximum impact.
+                </p>
+                
+                {/* Feature Cards Grid - 2x2 for Mobile */}
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Prime Locations</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Maximum visibility</p>
+                  </div>
+                  
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">LED Illumination</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">24/7 impactful</p>
+                  </div>
+                  
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <BarChart3 className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">1.5M+ Monthly</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Massive impressions</p>
+                  </div>
+                  
+                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Strategic Sites</h4>
+                    <p className="text-[10px] md:text-xs text-gray-400">Soweto & metros</p>
+                  </div>
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-2 md:gap-3 pt-2 md:pt-3">
+                  <Link
+                    href="/services/billboards"
+                    className="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-primary-bright-green to-emerald-500 text-white font-bold text-xs md:text-base rounded-full shadow-lg shadow-primary-bright-green/30 hover:shadow-primary-bright-green/50 hover:scale-105 transition-all duration-300"
+                  >
+                    <span>Discover Billboards</span>
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <button className="px-4 py-2 md:px-6 md:py-3 bg-white/5 backdrop-blur-sm text-white rounded-full font-semibold text-xs md:text-base border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                    View Locations
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -426,7 +589,7 @@ export default function HomePage() {
       <OurWork />
 
       {/* Stats/Network Section - Compact Design */}
-      <section id="network-preview" className="py-16 bg-white relative overflow-hidden">
+      <section id="network-preview" className="py-8 md:py-16 bg-white relative overflow-hidden">
         {/* Decorative Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{
@@ -441,29 +604,29 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
-          <div className={`text-center mb-12 transition-all duration-1000 ${isSectionVisible('network-preview') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-full border border-primary-sky/20 mb-4">
-              <Globe className="w-4 h-4 text-primary-sky" />
-              <span className="text-secondary-dark font-display font-semibold text-xs">Our Network</span>
+          <div className={`text-center mb-6 md:mb-12 transition-all duration-1000 ${isSectionVisible('network-preview') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-full border border-primary-sky/20 mb-3 md:mb-4">
+              <Globe className="w-3 h-3 md:w-4 md:h-4 text-primary-sky" />
+              <span className="text-secondary-dark font-display font-semibold text-[10px] md:text-xs">Our Network</span>
             </div>
 
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4 leading-tight">
+            <h2 className="font-display font-bold text-xl sm:text-3xl lg:text-5xl text-secondary-dark mb-2 md:mb-4 leading-tight">
               Nationwide Reach, <span className="gradient-text">Local Impact</span>
             </h2>
             
-            <p className="font-sans text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-sans text-xs sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Our network spans South Africa&apos;s most dynamic markets—from <span className="text-primary-sky font-semibold">Soweto to Cape Town</span>, <span className="text-primary-bright-green font-semibold">Durban to Pretoria</span>. We position your brand where it matters most.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-start">
             {/* Image Column with Stats */}
             <div 
               data-animate
               className={`relative transition-all duration-1000 ${isSectionVisible('network-preview') ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`}
               style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
             >
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
+              <div className="relative h-[250px] md:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
                 <Image
                   src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
                   alt="Our Network"
@@ -474,28 +637,28 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary-deep-blue/85 via-primary-sky/50 to-transparent"></div>
                 
                 {/* Floating Stats Cards */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <div className="space-y-3">
-                    <div className="inline-block p-4 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MapPin className="w-6 h-6 text-white" />
+                <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-end">
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="inline-block p-2.5 md:p-4 bg-white/95 backdrop-blur-xl rounded-lg md:rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+                      <div className="flex items-center gap-2 md:gap-3">
+                        <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-md md:rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-4 h-4 md:w-6 md:h-6 text-white" />
                         </div>
                         <div>
-                          <div className="font-display font-bold text-2xl text-secondary-dark">Soweto</div>
-                          <div className="font-sans text-xs text-gray-600">Premium Locations</div>
+                          <div className="font-display font-bold text-base md:text-2xl text-secondary-dark">Soweto</div>
+                          <div className="font-sans text-[10px] md:text-xs text-gray-600">Premium Locations</div>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="inline-block p-4 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 ml-6">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0">
-                          <TrendingUp className="w-6 h-6 text-white" />
+                    <div className="inline-block p-2.5 md:p-4 bg-white/95 backdrop-blur-xl rounded-lg md:rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 ml-3 md:ml-6">
+                      <div className="flex items-center gap-2 md:gap-3">
+                        <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-md md:rounded-lg flex items-center justify-center flex-shrink-0">
+                          <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-white" />
                         </div>
                         <div>
-                          <div className="font-display font-bold text-2xl text-secondary-dark">2.5M+</div>
-                          <div className="font-sans text-xs text-gray-600">Monthly Reach</div>
+                          <div className="font-display font-bold text-base md:text-2xl text-secondary-dark">2.5M+</div>
+                          <div className="font-sans text-[10px] md:text-xs text-gray-600">Monthly Reach</div>
                         </div>
                       </div>
                     </div>
@@ -593,64 +756,64 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className={`text-center transition-all duration-1000 ${isSectionVisible('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-xl rounded-full border border-white/30 mb-6">
-              <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-white font-display font-semibold text-xs tracking-wide">Start Your Journey</span>
+            <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-white/20 backdrop-blur-xl rounded-full border border-white/30 mb-4 md:mb-6">
+              <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-white" />
+              <span className="text-white font-display font-semibold text-[10px] md:text-xs tracking-wide">Start Your Journey</span>
             </div>
 
             {/* Main Heading */}
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4 leading-tight max-w-4xl mx-auto">
+            <h2 className="font-display font-bold text-xl sm:text-3xl lg:text-5xl text-white mb-3 md:mb-4 leading-tight max-w-4xl mx-auto">
               Ready to Make Your Brand{' '}
               <span className="relative inline-block">
                 <span className="relative z-10">Unmissable?</span>
-                <span className="absolute bottom-1 left-0 w-full h-3 bg-white/30 blur-sm"></span>
+                <span className="absolute bottom-1 left-0 w-full h-2 md:h-3 bg-white/30 blur-sm"></span>
               </span>
             </h2>
 
             {/* Subheading */}
-            <p className="font-sans text-base sm:text-lg text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-sans text-xs sm:text-base lg:text-lg text-white/95 mb-4 md:mb-8 max-w-3xl mx-auto leading-relaxed">
               Join South Africa&apos;s leading brands in leveraging the power of out-of-home advertising. Let&apos;s create campaigns that drive <span className="font-bold">real-world results</span>.
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-10">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-deep-blue font-display font-bold text-base sm:text-lg rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-white/50"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-white text-primary-deep-blue font-display font-bold text-sm md:text-lg rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-white/50"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Start Your Campaign
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               
               <Link
                 href="/about"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white font-display font-bold text-base sm:text-lg rounded-xl hover:bg-white/20 hover:border-white transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/50 text-white font-display font-bold text-sm md:text-lg rounded-xl hover:bg-white/20 hover:border-white transition-all duration-300"
               >
                 <span>Learn About Us</span>
-                <Eye className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                <Eye className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform duration-300" />
               </Link>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/20">
+            {/* Trust Indicators - 4 in one row on mobile */}
+            <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-3xl mx-auto pt-4 md:pt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="font-display font-bold text-2xl sm:text-3xl text-white mb-1">50+</div>
-                <div className="font-sans text-xs sm:text-sm text-white/80">Active Locations</div>
+                <div className="font-display font-bold text-base sm:text-2xl lg:text-3xl text-white mb-0.5 md:mb-1">50+</div>
+                <div className="font-sans text-[9px] sm:text-xs lg:text-sm text-white/80">Active Locations</div>
               </div>
               <div className="text-center">
-                <div className="font-display font-bold text-2xl sm:text-3xl text-white mb-1">2.5M+</div>
-                <div className="font-sans text-xs sm:text-sm text-white/80">Monthly Views</div>
+                <div className="font-display font-bold text-base sm:text-2xl lg:text-3xl text-white mb-0.5 md:mb-1">2.5M+</div>
+                <div className="font-sans text-[9px] sm:text-xs lg:text-sm text-white/80">Monthly Views</div>
               </div>
               <div className="text-center">
-                <div className="font-display font-bold text-2xl sm:text-3xl text-white mb-1">100%</div>
-                <div className="font-sans text-xs sm:text-sm text-white/80">Brand Safe</div>
+                <div className="font-display font-bold text-base sm:text-2xl lg:text-3xl text-white mb-0.5 md:mb-1">100%</div>
+                <div className="font-sans text-[9px] sm:text-xs lg:text-sm text-white/80">Brand Safe</div>
               </div>
               <div className="text-center">
-                <div className="font-display font-bold text-2xl sm:text-3xl text-white mb-1">24/7</div>
-                <div className="font-sans text-xs sm:text-sm text-white/80">Support</div>
+                <div className="font-display font-bold text-base sm:text-2xl lg:text-3xl text-white mb-0.5 md:mb-1">24/7</div>
+                <div className="font-sans text-[9px] sm:text-xs lg:text-sm text-white/80">Support</div>
               </div>
             </div>
           </div>

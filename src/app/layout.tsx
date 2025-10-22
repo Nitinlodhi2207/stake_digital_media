@@ -3,6 +3,7 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 const montserrat = Montserrat({
   variable: "--font-display",
@@ -79,6 +80,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <MobileBottomNav />
       </body>
     </html>
   );

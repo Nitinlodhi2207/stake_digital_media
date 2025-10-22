@@ -1,210 +1,734 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { Monitor, MapPin, TrendingUp, Zap } from 'lucide-react';
+'use client';
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Digital Screen Advertising (OOH) | Stake Digital Media',
-    description: 'High-impact digital screen solutions in malls, Supabets venues, and commuter hubs. Drive real-world engagement with Stake Digital Media.',
-  };
-}
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  Monitor,
+  Users,
+  Clock,
+  Zap,
+  Eye,
+  Sparkles,
+  BarChart3,
+  MapPin,
+  CheckCircle,
+  ArrowRight,
+  Play,
+  Target,
+  Globe,
+  Smartphone,
+} from 'lucide-react';
+import FeatureGrid from '@/components/FeatureGrid';
+import FAQSection from '@/components/FAQSection';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function DigitalScreensPage() {
+  const [processRef, processInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [locationsRef, locationsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [specsRef, specsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [resultsRef, resultsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  const features = [
+    {
+      icon: Monitor,
+      title: '4K Ultra HD Quality',
+      description:
+        'Crystal-clear 4K displays deliver your content with stunning clarity and vibrant colors that capture attention instantly.',
+    },
+    {
+      icon: Clock,
+      title: '30+ Minute Dwell Time',
+      description:
+        'Venues like Supabets locations provide extended customer engagement with average dwell times exceeding 30 minutes.',
+    },
+    {
+      icon: Zap,
+      title: 'Real-Time Updates',
+      description:
+        'Update your campaigns instantly with our cloud-based content management system. No delays, no hassle.',
+    },
+    {
+      icon: Eye,
+      title: 'High Visibility',
+      description:
+        'Strategically positioned at eye level in high-traffic areas where your audience naturally looks.',
+    },
+    {
+      icon: Users,
+      title: 'Diverse Audiences',
+      description:
+        'Reach LSM 4-8 demographics across urban centers, township hubs, and entertainment venues.',
+    },
+    {
+      icon: BarChart3,
+      title: 'Measurable Results',
+      description:
+        'Track impressions, engagement metrics, and campaign performance with detailed analytics reports.',
+    },
+  ];
+
+  const processSteps = [
+    {
+      number: '01',
+      title: 'Consultation',
+      description: 'We discuss your brand goals, target audience, and campaign objectives.',
+    },
+    {
+      number: '02',
+      title: 'Strategy',
+      description: 'Our team creates a tailored digital screen strategy with optimal placements.',
+    },
+    {
+      number: '03',
+      title: 'Creative Design',
+      description: 'Design stunning 4K content or we can help you create engaging visuals.',
+    },
+    {
+      number: '04',
+      title: 'Launch',
+      description: 'Your campaign goes live across our premium digital screen network.',
+    },
+    {
+      number: '05',
+      title: 'Optimize',
+      description: 'Monitor performance and make real-time adjustments for maximum impact.',
+    },
+  ];
+
+  const locations = [
+    {
+      title: 'Supabets Venues',
+      description: 'Licensed sports betting and entertainment environments with engaged audiences.',
+      icon: Target,
+      stats: '30+ min dwell time',
+    },
+    {
+      title: 'Shopping Malls',
+      description: 'High-traffic retail environments across major South African metros.',
+      icon: MapPin,
+      stats: 'Premium visibility',
+    },
+    {
+      title: 'Commuter Hubs',
+      description: 'Taxi ranks and transport centers in Durban, Joburg, Pretoria, and Cape Town.',
+      icon: Globe,
+      stats: 'Mass daily reach',
+    },
+    {
+      title: 'Township Centers',
+      description: 'Community gathering points where commerce and culture converge.',
+      icon: Users,
+      stats: 'Authentic connections',
+    },
+  ];
+
+  const faqs = [
+    {
+      question: 'What ad formats do you support?',
+      answer:
+        'We support 15-second and 30-second video ads in 4K resolution (3840x2160). We recommend MP4 format with H.264 codec for optimal playback quality.',
+    },
+    {
+      question: 'How long does it take to launch a campaign?',
+      answer:
+        'Once your creative is approved, campaigns can be live within 24-48 hours. Rush launches are available for urgent campaigns.',
+    },
+    {
+      question: 'Can I update my ads in real-time?',
+      answer:
+        'Yes! Our cloud-based content management system allows you to update your campaigns instantly from anywhere, anytime.',
+    },
+    {
+      question: 'What are the minimum campaign requirements?',
+      answer:
+        'We offer flexible campaigns starting from 2 weeks. Packages include multiple daily rotations across selected venues for maximum exposure.',
+    },
+    {
+      question: 'Do you provide creative services?',
+      answer:
+        'Yes! Our in-house creative team can design and produce engaging 4K content optimized for digital screens at competitive rates.',
+    },
+    {
+      question: 'How do I track campaign performance?',
+      answer:
+        'You receive detailed analytics including impressions, play counts, venue performance, and audience reach via our online dashboard.',
+    },
+    {
+      question: 'What locations are available?',
+      answer:
+        'Our network spans Supabets venues, malls, commuter hubs across Durban, Johannesburg, Pretoria, Cape Town, and key township centers.',
+    },
+    {
+      question: 'Can I target specific venues or times?',
+      answer:
+        'Absolutely! Choose specific venues, regions, or dayparts (morning, afternoon, evening) to reach your ideal audience at the right time.',
+    },
+  ];
+
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="bg-secondary-dark text-white py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
-            Digital Screens That Drive{' '}
-            <span className="text-primary-sky">Real-World Engagement</span>
-          </h1>
-          <p className="font-sans text-lg sm:text-xl lg:text-2xl max-w-4xl mx-auto text-gray-200 leading-relaxed">
-            Stake Digital Media is a fast-growing OOH advertising company specializing in digital screen solutions. Our focus is on creating high-impact, high-visibility campaigns that immerse consumers in your message. We strategically place digital screens in high-dwell environments—from shopping malls to entertainment venues—ensuring your brand reaches engaged audiences where they naturally spend time.
-          </p>
+    <main className="overflow-x-hidden">
+      {/* CTA Section - Get Started */}
+      <ServiceCTA
+        title="Ready to Launch Your Digital Campaign?"
+        subtitle="Join leading brands in reaching South African audiences where they live, play, and engage. Let's make your brand unmissable."
+        ctaText="Book Your Campaign"
+        ctaLink="/contact"
+        gradientFrom="from-primary-sky"
+        gradientTo="to-primary-deep-blue"
+        stats={[
+          { value: '24/7', label: 'Support' },
+          { value: '48 Hrs', label: 'Launch Time' },
+          { value: '100%', label: 'Brand Safe' },
+          { value: 'Real-time', label: 'Updates' },
+        ]}
+      />
+
+      {/* Features Grid */}
+      <FeatureGrid
+        features={features}
+        accentColor="from-primary-sky to-primary-deep-blue"
+        title="Why Digital Screens"
+        subtitle="Work Better"
+      />
+
+      {/* Value Proposition with Images */}
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-secondary-dark via-[#1a1a2e] to-secondary-dark relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 opacity-10">
+          <motion.div
+            className="absolute top-20 right-20 w-96 h-96 bg-primary-sky rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
         </div>
-      </section>
 
-      {/* Main Content Section */}
-      <section className="bg-white py-24">
-        <div className="max-w-prose mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6 text-secondary-dark">
-            Where Visibility Meets Opportunity
-          </h2>
-          <p className="font-sans text-lg text-gray-700 mb-8 leading-relaxed">
-            Our digital network includes Supabets betting screens and mall displays in some of South Africa&apos;s most frequented locations. These screens deliver dynamic content to captive audiences, creating memorable brand moments in real-world settings. Whether it&apos;s a shopper taking a break in a mall or a sports enthusiast at a Supabets venue, your brand connects with consumers when they&apos;re most receptive.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
+            >
+              Where Your Brand{' '}
+              <span className="bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
+                Comes Alive
+              </span>
+            </motion.h2>
+          </div>
 
-          <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6 mt-16 text-secondary-dark">
-            Nationwide Presence, Local Relevance
-          </h2>
-          <p className="font-sans text-lg text-gray-700 mb-6 leading-relaxed">
-            Stake Digital Media&apos;s screens are located in urban centres and commuter hubs across South Africa, giving brands the ability to engage diverse audiences in culturally rich, high-traffic locations.
-          </p>
-
-          <ul className="font-sans text-lg text-gray-700 space-y-3 ml-6 list-disc">
-            <li>Durban CBD</li>
-            <li>Johannesburg Taxi Ranks</li>
-            <li>Soweto Community Hubs</li>
-            <li>Shopping Malls Nationwide</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Campaign Capabilities Section */}
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-center mb-16 text-secondary-dark">
-            Campaign Capabilities
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Drive Awareness & Engagement */}
-            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-primary-sky/10 rounded-full">
-                  <Zap className="w-10 h-10 text-primary-sky" />
+          <div className="space-y-24">
+            {/* Supabets Venues */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-sky/20 rounded-full border border-primary-sky/30 mb-4">
+                  <Target className="w-4 h-4 text-primary-sky" />
+                  <span className="text-xs font-bold text-primary-sky">SUPABETS VENUES</span>
                 </div>
-              </div>
-              <h3 className="font-display font-bold text-xl sm:text-2xl mb-4 text-center text-secondary-dark">
-                Drive Awareness & Engagement
-              </h3>
-              <p className="font-sans text-gray-600 leading-relaxed text-center">
-                Perfect for product launches and seasonal campaigns. Our screens turn foot traffic into brand conversations.
-              </p>
+                <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-4">
+                  Engaged Audiences, Extended Exposure
+                </h3>
+                <p className="font-sans text-base lg:text-lg text-gray-300 mb-6 leading-relaxed">
+                  Supabets locations are licensed sports betting and entertainment environments
+                  that attract diverse, engaged audiences. With customers spending{' '}
+                  <span className="text-primary-sky font-semibold">
+                    an average of 30 minutes per visit
+                  </span>
+                  , your message gains multiple exposures within a single experience—building
+                  familiarity, trust, and top-of-mind recall.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary-bright-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">
+                      High-dwell time environments for maximum message retention
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary-bright-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">
+                      Multiple daily exposures to the same audience
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary-bright-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">
+                      Entertainment-focused, receptive mindset
+                    </span>
+                  </li>
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary-sky/20 to-primary-deep-blue/20 rounded-3xl blur-2xl"></div>
+                <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                  <Image
+                    src="/Images_gallery/white-billboard.webp"
+                    alt="Supabets Digital Screens"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Floating Stats Badge */}
+                <div className="absolute -bottom-6 -left-6 px-6 py-4 bg-black/90 backdrop-blur-xl rounded-xl border border-primary-sky/30 shadow-2xl">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-8 h-8 text-primary-sky" />
+                    <div>
+                      <p className="text-2xl font-bold text-white">30+ Min</p>
+                      <p className="text-xs text-gray-400">Average Dwell Time</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
-            {/* Build Community Connection */}
-            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-primary-bright-green/10 rounded-full">
-                  <Monitor className="w-10 h-10 text-primary-bright-green" />
+            {/* Technical Specs */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative order-2 lg:order-1"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/20 to-primary-deep-green/20 rounded-3xl blur-2xl"></div>
+                <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                  <Image
+                    src="/Images_gallery/white-billboard.webp"
+                    alt="4K Digital Display"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              </div>
-              <h3 className="font-display font-bold text-xl sm:text-2xl mb-4 text-center text-secondary-dark">
-                Build Community Connection
-              </h3>
-              <p className="font-sans text-gray-600 leading-relaxed text-center">
-                Our screens are embedded in the daily lives of South African communities—connecting brands to real people in real moments.
-              </p>
-            </div>
+                {/* Floating Stats Badge */}
+                <div className="absolute -bottom-6 -right-6 px-6 py-4 bg-black/90 backdrop-blur-xl rounded-xl border border-primary-bright-green/30 shadow-2xl">
+                  <div className="flex items-center gap-3">
+                    <Monitor className="w-8 h-8 text-primary-bright-green" />
+                    <div>
+                      <p className="text-2xl font-bold text-white">4K UHD</p>
+                      <p className="text-xs text-gray-400">Crystal Clear</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
-            {/* Reinforce Brand Leadership */}
-            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-primary-deep-blue/10 rounded-full">
-                  <TrendingUp className="w-10 h-10 text-primary-deep-blue" />
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="order-1 lg:order-2"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-bright-green/20 rounded-full border border-primary-bright-green/30 mb-4">
+                  <Sparkles className="w-4 h-4 text-primary-bright-green" />
+                  <span className="text-xs font-bold text-primary-bright-green">
+                    PREMIUM QUALITY
+                  </span>
                 </div>
-              </div>
-              <h3 className="font-display font-bold text-xl sm:text-2xl mb-4 text-center text-secondary-dark">
-                Reinforce Brand Leadership
-              </h3>
-              <p className="font-sans text-gray-600 leading-relaxed text-center">
-                Consistent visibility in high-traffic, high-dwell spaces reinforces market positioning and keeps your brand top-of-mind.
-              </p>
+                <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-4">
+                  Stunning Visual Impact
+                </h3>
+                <p className="font-sans text-base lg:text-lg text-gray-300 mb-6 leading-relaxed">
+                  Our 4K Ultra HD displays deliver your content with breathtaking clarity. Every
+                  color pops, every detail shines, and every message captivates your audience with
+                  professional-grade visual quality.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">
+                      4K resolution (3840×2160) for razor-sharp imagery
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">High brightness for visibility in any light</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Wide color gamut for vibrant, true-to-life colors</span>
+                  </li>
+                </ul>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Us Section */}
-      <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-center mb-16 text-secondary-dark">
-            Why Brands Choose Stake Digital Media
-          </h2>
+      {/* How It Works - Process */}
+      <section
+        ref={processRef}
+        className="py-16 lg:py-24 bg-white relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={processInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4">
+              How It{' '}
+              <span className="bg-gradient-to-r from-primary-sky to-primary-deep-blue bg-clip-text text-transparent">
+                Works
+              </span>
+            </h2>
+            <p className="font-sans text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+              From concept to campaign launch, we make the process seamless and efficient.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Strategic Placements */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-primary-sky/10 rounded-full">
-                  <MapPin className="w-10 h-10 text-primary-sky" />
-                </div>
-              </div>
-              <h3 className="font-display font-semibold text-lg sm:text-xl mb-3 text-secondary-dark">
-                Strategic Placements
-              </h3>
-              <p className="font-sans text-gray-600 text-sm leading-relaxed">
-                High-dwell locations in malls, Supabets venues, and commuter hubs ensure maximum exposure.
-              </p>
-            </div>
+          {/* Desktop: Horizontal Timeline */}
+          <div className="hidden lg:block relative">
+            {/* Connection Line */}
+            <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-deep-blue"></div>
 
-            {/* Nationwide Network */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-primary-deep-blue/10 rounded-full">
-                  <Monitor className="w-10 h-10 text-primary-deep-blue" />
-                </div>
-              </div>
-              <h3 className="font-display font-semibold text-lg sm:text-xl mb-3 text-secondary-dark">
-                Nationwide Network
-              </h3>
-              <p className="font-sans text-gray-600 text-sm leading-relaxed">
-                From Durban to Johannesburg and Soweto, reach diverse audiences across South Africa.
-              </p>
-            </div>
+            <div className="grid grid-cols-5 gap-4">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={processInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative"
+                >
+                  {/* Number Circle */}
+                  <div className="relative z-10 w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-full flex items-center justify-center shadow-xl">
+                    <span className="font-display font-bold text-2xl text-white">
+                      {step.number}
+                    </span>
+                  </div>
 
-            {/* Measurable Impressions */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-primary-bright-green/10 rounded-full">
-                  <TrendingUp className="w-10 h-10 text-primary-bright-green" />
-                </div>
-              </div>
-              <h3 className="font-display font-semibold text-lg sm:text-xl mb-3 text-secondary-dark">
-                Measurable Impressions
-              </h3>
-              <p className="font-sans text-gray-600 text-sm leading-relaxed">
-                Data-driven insights help you track campaign performance and optimize ROI.
-              </p>
+                  {/* Content */}
+                  <div className="text-center">
+                    <h3 className="font-display font-bold text-xl text-secondary-dark mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="font-sans text-sm text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
+          </div>
 
-            {/* Seamless Creative Formatting */}
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-primary-deep-green/10 rounded-full">
-                  <Zap className="w-10 h-10 text-primary-deep-green" />
+          {/* Mobile: Vertical Timeline */}
+          <div className="lg:hidden space-y-8">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                animate={processInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex gap-6"
+              >
+                {/* Number Circle */}
+                <div className="relative flex-shrink-0">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-full flex items-center justify-center shadow-lg">
+                    <span className="font-display font-bold text-xl text-white">
+                      {step.number}
+                    </span>
+                  </div>
+                  {index < processSteps.length - 1 && (
+                    <div className="absolute top-16 left-1/2 -translate-x-1/2 w-1 h-12 bg-gradient-to-b from-primary-sky to-primary-bright-green"></div>
+                  )}
                 </div>
-              </div>
-              <h3 className="font-display font-semibold text-lg sm:text-xl mb-3 text-secondary-dark">
-                Seamless Creative Formatting
-              </h3>
-              <p className="font-sans text-gray-600 text-sm leading-relaxed">
-                Our team ensures your content looks stunning on every screen, every time.
-              </p>
-            </div>
+
+                {/* Content */}
+                <div className="flex-1 pt-2">
+                  <h3 className="font-display font-bold text-xl text-secondary-dark mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="font-sans text-sm text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="bg-secondary-dark text-white py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-6 leading-tight">
-            Your Brand. Our Screens.{' '}
-            <span className="text-primary-sky">Maximum Impact.</span>
-          </h2>
-          <p className="font-sans text-lg sm:text-xl mb-10 text-gray-200 leading-relaxed max-w-2xl mx-auto">
-            Whether you&apos;re launching a new product, promoting an event, or building long-term brand awareness, Stake Digital Media&apos;s digital screens deliver results where it matters most—in the real world.
-          </p>
+      {/* Locations Network */}
+      <section
+        ref={locationsRef}
+        className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={locationsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4">
+              Our{' '}
+              <span className="bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
+                Digital Network
+              </span>
+            </h2>
+            <p className="font-sans text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+              Strategic placements across South Africa&apos;s most dynamic consumer environments.
+            </p>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {locations.map((location, index) => {
+              const Icon = location.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={locationsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="h-full p-6 bg-white rounded-2xl border-2 border-gray-100 hover:border-primary-sky/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="font-display font-bold text-xl text-secondary-dark mb-2">
+                      {location.title}
+                    </h3>
+                    <p className="font-sans text-sm text-gray-600 mb-4 leading-relaxed">
+                      {location.description}
+                    </p>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-sky/10 rounded-full">
+                      <div className="w-1.5 h-1.5 bg-primary-sky rounded-full"></div>
+                      <span className="text-xs font-semibold text-primary-sky">
+                        {location.stats}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={locationsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="/network"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-sky to-primary-deep-blue text-white font-bold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <span>Explore Full Network</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
+      <section
+        ref={specsRef}
+        className="py-16 lg:py-24 bg-secondary-dark text-white relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={specsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+              Technical{' '}
+              <span className="bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
+                Specifications
+              </span>
+            </h2>
+            <p className="font-sans text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
+              Optimized formats and requirements for the best visual experience.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Video Specs */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={specsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-sky/30 transition-colors duration-300"
+            >
+              <Play className="w-10 h-10 text-primary-sky mb-4" />
+              <h3 className="font-display font-bold text-xl mb-4">Video Format</h3>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li className="flex justify-between">
+                  <span>Resolution:</span>
+                  <span className="font-semibold text-white">3840 × 2160 (4K)</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Format:</span>
+                  <span className="font-semibold text-white">MP4, MOV</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Codec:</span>
+                  <span className="font-semibold text-white">H.264, H.265</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Frame Rate:</span>
+                  <span className="font-semibold text-white">30 fps</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Duration Specs */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={specsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-bright-green/30 transition-colors duration-300"
+            >
+              <Clock className="w-10 h-10 text-primary-bright-green mb-4" />
+              <h3 className="font-display font-bold text-xl mb-4">Ad Duration</h3>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li className="flex justify-between">
+                  <span>Standard:</span>
+                  <span className="font-semibold text-white">15 seconds</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Extended:</span>
+                  <span className="font-semibold text-white">30 seconds</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Loop:</span>
+                  <span className="font-semibold text-white">Continuous</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Rotation:</span>
+                  <span className="font-semibold text-white">Hourly slots</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* File Specs */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={specsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-sky/30 transition-colors duration-300"
+            >
+              <Smartphone className="w-10 h-10 text-primary-sky mb-4" />
+              <h3 className="font-display font-bold text-xl mb-4">File Requirements</h3>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li className="flex justify-between">
+                  <span>Max Size:</span>
+                  <span className="font-semibold text-white">500 MB</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Aspect Ratio:</span>
+                  <span className="font-semibold text-white">16:9</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Audio:</span>
+                  <span className="font-semibold text-white">AAC, 48kHz</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Bitrate:</span>
+                  <span className="font-semibold text-white">10-20 Mbps</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={specsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 p-8 bg-gradient-to-r from-primary-sky/20 to-primary-deep-blue/20 backdrop-blur-sm rounded-2xl border border-white/20 text-center"
+          >
+            <p className="font-sans text-gray-300 mb-4">
+              Need help with creative? Our design team can create stunning 4K content for you.
+            </p>
             <Link
               href="/contact"
-              className="w-full sm:w-auto px-10 py-4 bg-primary-sky text-white font-display font-bold text-lg rounded-md hover:bg-primary-deep-blue hover:shadow-lg hover:shadow-primary-sky/50 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-deep-blue font-bold rounded-full hover:shadow-xl transition-all duration-300"
             >
-              Book a Campaign
+              Request Creative Services
             </Link>
-            <Link
-              href="/media-kit.pdf"
-              className="w-full sm:w-auto px-10 py-4 border-2 border-white text-white font-display font-semibold text-lg rounded-md hover:bg-white hover:text-secondary-dark transition-all duration-300"
-            >
-              Download Media Kit
-            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Results/Stats Section */}
+      <section
+        ref={resultsRef}
+        className="py-8 md:py-16 lg:py-24 bg-white relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={resultsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-6 md:mb-12 lg:mb-16"
+          >
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-secondary-dark mb-2 md:mb-4">
+              Real Impact,{' '}
+              <span className="bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
+                Real Results
+              </span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-4 gap-2 md:gap-4 lg:gap-8">
+            {[
+              { value: '10K+', label: 'Active Screens', icon: Monitor },
+              { value: '2.5M+', label: 'Monthly Impressions', icon: Eye },
+              { value: '50+', label: 'Prime Locations', icon: MapPin },
+              { value: '30+ Min', label: 'Average Dwell Time', icon: Clock },
+            ].map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={resultsInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto mb-2 md:mb-4 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg md:rounded-2xl flex items-center justify-center shadow-lg md:shadow-xl">
+                    <Icon className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
+                  </div>
+                  <div className="font-display font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-primary-sky to-primary-deep-blue bg-clip-text text-transparent mb-1 md:mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="font-sans text-[10px] sm:text-xs md:text-sm text-gray-600">{stat.label}</div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection
+        faqs={faqs}
+        accentColor="from-primary-sky/20 to-primary-deep-blue/20"
+      />
     </main>
   );
 }

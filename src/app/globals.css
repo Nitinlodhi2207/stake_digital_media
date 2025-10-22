@@ -50,6 +50,19 @@
     to { opacity: 1; transform: scale(1); }
   }
   
+  @keyframes fadeIn {
+    from { 
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  --animate-fadeIn: fadeIn 0.3s ease-out forwards;
+  
   @keyframes glow {
     0%, 100% { box-shadow: 0 0 20px rgba(11, 180, 228, 0.5); }
     50% { box-shadow: 0 0 40px rgba(11, 180, 228, 0.8); }
@@ -249,6 +262,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Snap scrolling for Apple-like experience */
+@supports (scroll-snap-type: y mandatory) {
+  .snap-container {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
+  }
+  
+  .snap-start {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
 /* Custom easing for buttery smooth animations */
 .ease-bounce {
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -256,6 +282,18 @@ html {
 
 .ease-smooth {
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Apple-like fade in on scroll */
+@keyframes appleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 3D perspective for card rotations */
@@ -270,3 +308,91 @@ html {
   will-change: transform;
 }
 
+/* Advanced Modern Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+@keyframes float-slower {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+/* Animation Utility Classes */
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animate-gradient-text {
+  animation: gradient-text 8s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 25s ease-in-out infinite;
+}
+
+/* Mobile Bottom Navigation Styles */
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.h-safe-area-inset-bottom {
+  height: env(safe-area-inset-bottom);
+}
+
+/* Add padding to main content for bottom nav on mobile */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Tap highlight removal for better mobile experience */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth transitions for active states */
+.mobile-nav-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -41,4 +41,3 @@ yarn-error.log*
 next-env.d.ts
 
 # large video files
-/public/Herosection_video_sample1.mp4

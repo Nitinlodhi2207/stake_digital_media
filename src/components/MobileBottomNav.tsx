@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Network, Briefcase, Phone, Monitor, Megaphone } from 'lucide-react';
+import { Home, Info, Briefcase, Phone, Monitor, Megaphone } from 'lucide-react';
 
 export default function MobileBottomNav() {
   const [isVisible, setIsVisible] = useState(true);
@@ -31,7 +31,7 @@ export default function MobileBottomNav() {
 
   const navItems = [
     { href: '/', icon: Home, label: 'Home', type: 'link' as const },
-    { href: '/network', icon: Network, label: 'Network', type: 'link' as const },
+    { href: '/about', icon: Info, label: 'About', type: 'link' as const },
     { href: '/services', icon: Briefcase, label: 'Services', type: 'button' as const },
     { href: '/contact', icon: Phone, label: 'Contact', type: 'link' as const },
   ];

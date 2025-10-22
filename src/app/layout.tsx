@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
+import LeadCaptureModal from "@/components/LeadCaptureModal";
 
 const montserrat = Montserrat({
   variable: "--font-display",
@@ -81,6 +82,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <MobileBottomNav />
+        <LeadCaptureModal showAfterScroll={50} intervalSeconds={30} maxShows={3} />
       </body>
     </html>
   );

@@ -9,7 +9,6 @@ import OurWork from '@/components/OurWork';
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
-  const [scrollY, setScrollY] = useState(0);
   const [cardRotation, setCardRotation] = useState({ left: 0, right: 0 });
   const observerRef = useRef<IntersectionObserver | null>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -19,9 +18,6 @@ export default function HomePage() {
 
     // Smooth scroll progress tracking with card rotation
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-
       // Calculate rotation for service cards based on scroll
       if (servicesRef.current) {
         const servicesRect = servicesRef.current.getBoundingClientRect();

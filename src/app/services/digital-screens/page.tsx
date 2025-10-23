@@ -194,22 +194,7 @@ export default function DigitalScreensPage() {
       />
 
       {/* Value Proposition with Images */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-secondary-dark via-[#1a1a2e] to-secondary-dark relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 opacity-10">
-          <motion.div
-            className="absolute top-20 right-20 w-96 h-96 bg-primary-sky rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        </div>
+      <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -217,7 +202,7 @@ export default function DigitalScreensPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4"
+              className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4"
             >
               Where Your Brand{' '}
               <span className="bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
@@ -235,14 +220,14 @@ export default function DigitalScreensPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-sky/20 rounded-full border border-primary-sky/30 mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-sky/10 rounded-full border border-primary-sky/30 mb-4">
                   <Target className="w-4 h-4 text-primary-sky" />
                   <span className="text-xs font-bold text-primary-sky">SUPABETS VENUES</span>
                 </div>
-                <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-4">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-secondary-dark mb-4">
                   Engaged Audiences, Extended Exposure
                 </h3>
-                <p className="font-sans text-base lg:text-lg text-gray-300 mb-6 leading-relaxed">
+                <p className="font-sans text-base lg:text-lg text-gray-700 mb-6 leading-relaxed">
                   Supabets locations are licensed sports betting and entertainment environments
                   that attract diverse, engaged audiences. With customers spending{' '}
                   <span className="text-primary-sky font-semibold">
@@ -254,19 +239,19 @@ export default function DigitalScreensPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-bright-green mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">
+                    <span className="text-gray-700">
                       High-dwell time environments for maximum message retention
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-bright-green mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">
+                    <span className="text-gray-700">
                       Multiple daily exposures to the same audience
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-bright-green mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">
+                    <span className="text-gray-700">
                       Entertainment-focused, receptive mindset
                     </span>
                   </li>
@@ -280,22 +265,22 @@ export default function DigitalScreensPage() {
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary-sky/20 to-primary-deep-blue/20 rounded-3xl blur-2xl"></div>
-                <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary-sky/10 to-primary-deep-blue/10 rounded-3xl blur-2xl"></div>
+                <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
-                    src="/Images_gallery/white-billboard.webp"
+                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
                     alt="Supabets Digital Screens"
                     fill
                     className="object-cover"
                   />
                 </div>
                 {/* Floating Stats Badge */}
-                <div className="absolute -bottom-6 -left-6 px-6 py-4 bg-black/90 backdrop-blur-xl rounded-xl border border-primary-sky/30 shadow-2xl">
+                <div className="absolute -bottom-6 -left-6 px-6 py-4 bg-white backdrop-blur-xl rounded-xl border-2 border-primary-sky/30 shadow-2xl">
                   <div className="flex items-center gap-3">
                     <Clock className="w-8 h-8 text-primary-sky" />
                     <div>
-                      <p className="text-2xl font-bold text-white">30+ Min</p>
-                      <p className="text-xs text-gray-400">Average Dwell Time</p>
+                      <p className="text-2xl font-bold text-secondary-dark">30+ Min</p>
+                      <p className="text-xs text-gray-600">Average Dwell Time</p>
                     </div>
                   </div>
                 </div>
@@ -311,22 +296,22 @@ export default function DigitalScreensPage() {
                 transition={{ duration: 0.8 }}
                 className="relative order-2 lg:order-1"
               >
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/20 to-primary-deep-green/20 rounded-3xl blur-2xl"></div>
-                <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/10 to-primary-deep-green/10 rounded-3xl blur-2xl"></div>
+                <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
-                    src="/Images_gallery/white-billboard.webp"
+                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
                     alt="4K Digital Display"
                     fill
                     className="object-cover"
                   />
                 </div>
                 {/* Floating Stats Badge */}
-                <div className="absolute -bottom-6 -right-6 px-6 py-4 bg-black/90 backdrop-blur-xl rounded-xl border border-primary-bright-green/30 shadow-2xl">
+                <div className="absolute -bottom-6 -right-6 px-6 py-4 bg-white backdrop-blur-xl rounded-xl border-2 border-primary-bright-green/30 shadow-2xl">
                   <div className="flex items-center gap-3">
                     <Monitor className="w-8 h-8 text-primary-bright-green" />
                     <div>
-                      <p className="text-2xl font-bold text-white">4K UHD</p>
-                      <p className="text-xs text-gray-400">Crystal Clear</p>
+                      <p className="text-2xl font-bold text-secondary-dark">4K UHD</p>
+                      <p className="text-xs text-gray-600">Crystal Clear</p>
                     </div>
                   </div>
                 </div>
@@ -339,16 +324,16 @@ export default function DigitalScreensPage() {
                 transition={{ duration: 0.8 }}
                 className="order-1 lg:order-2"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-bright-green/20 rounded-full border border-primary-bright-green/30 mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-bright-green/10 rounded-full border border-primary-bright-green/30 mb-4">
                   <Sparkles className="w-4 h-4 text-primary-bright-green" />
                   <span className="text-xs font-bold text-primary-bright-green">
                     PREMIUM QUALITY
                   </span>
                 </div>
-                <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-4">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-secondary-dark mb-4">
                   Stunning Visual Impact
                 </h3>
-                <p className="font-sans text-base lg:text-lg text-gray-300 mb-6 leading-relaxed">
+                <p className="font-sans text-base lg:text-lg text-gray-700 mb-6 leading-relaxed">
                   Our 4K Ultra HD displays deliver your content with breathtaking clarity. Every
                   color pops, every detail shines, and every message captivates your audience with
                   professional-grade visual quality.
@@ -356,17 +341,17 @@ export default function DigitalScreensPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">
+                    <span className="text-gray-700">
                       4K resolution (3840×2160) for razor-sharp imagery
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">High brightness for visibility in any light</span>
+                    <span className="text-gray-700">High brightness for visibility in any light</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">Wide color gamut for vibrant, true-to-life colors</span>
+                    <span className="text-gray-700">Wide color gamut for vibrant, true-to-life colors</span>
                   </li>
                 </ul>
               </motion.div>
@@ -546,7 +531,7 @@ export default function DigitalScreensPage() {
       {/* Technical Specifications */}
       <section
         ref={specsRef}
-        className="py-16 lg:py-24 bg-secondary-dark text-white relative overflow-hidden"
+        className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -555,13 +540,13 @@ export default function DigitalScreensPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4">
               Technical{' '}
               <span className="bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
                 Specifications
               </span>
             </h2>
-            <p className="font-sans text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="font-sans text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
               Optimized formats and requirements for the best visual experience.
             </p>
           </motion.div>
@@ -572,26 +557,26 @@ export default function DigitalScreensPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-sky/30 transition-colors duration-300"
+              className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-sky/50 hover:shadow-xl transition-all duration-300"
             >
               <Play className="w-10 h-10 text-primary-sky mb-4" />
-              <h3 className="font-display font-bold text-xl mb-4">Video Format</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Video Format</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>Resolution:</span>
-                  <span className="font-semibold text-white">3840 × 2160 (4K)</span>
+                  <span className="font-semibold text-secondary-dark">3840 × 2160 (4K)</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Format:</span>
-                  <span className="font-semibold text-white">MP4, MOV</span>
+                  <span className="font-semibold text-secondary-dark">MP4, MOV</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Codec:</span>
-                  <span className="font-semibold text-white">H.264, H.265</span>
+                  <span className="font-semibold text-secondary-dark">H.264, H.265</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Frame Rate:</span>
-                  <span className="font-semibold text-white">30 fps</span>
+                  <span className="font-semibold text-secondary-dark">30 fps</span>
                 </li>
               </ul>
             </motion.div>
@@ -601,26 +586,26 @@ export default function DigitalScreensPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-bright-green/30 transition-colors duration-300"
+              className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-bright-green/50 hover:shadow-xl transition-all duration-300"
             >
               <Clock className="w-10 h-10 text-primary-bright-green mb-4" />
-              <h3 className="font-display font-bold text-xl mb-4">Ad Duration</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Ad Duration</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>Standard:</span>
-                  <span className="font-semibold text-white">15 seconds</span>
+                  <span className="font-semibold text-secondary-dark">15 seconds</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Extended:</span>
-                  <span className="font-semibold text-white">30 seconds</span>
+                  <span className="font-semibold text-secondary-dark">30 seconds</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Loop:</span>
-                  <span className="font-semibold text-white">Continuous</span>
+                  <span className="font-semibold text-secondary-dark">Continuous</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Rotation:</span>
-                  <span className="font-semibold text-white">Hourly slots</span>
+                  <span className="font-semibold text-secondary-dark">Hourly slots</span>
                 </li>
               </ul>
             </motion.div>
@@ -630,26 +615,26 @@ export default function DigitalScreensPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-sky/30 transition-colors duration-300"
+              className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-sky/50 hover:shadow-xl transition-all duration-300"
             >
               <Smartphone className="w-10 h-10 text-primary-sky mb-4" />
-              <h3 className="font-display font-bold text-xl mb-4">File Requirements</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">File Requirements</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>Max Size:</span>
-                  <span className="font-semibold text-white">500 MB</span>
+                  <span className="font-semibold text-secondary-dark">500 MB</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Aspect Ratio:</span>
-                  <span className="font-semibold text-white">16:9</span>
+                  <span className="font-semibold text-secondary-dark">16:9</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Audio:</span>
-                  <span className="font-semibold text-white">AAC, 48kHz</span>
+                  <span className="font-semibold text-secondary-dark">AAC, 48kHz</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Bitrate:</span>
-                  <span className="font-semibold text-white">10-20 Mbps</span>
+                  <span className="font-semibold text-secondary-dark">10-20 Mbps</span>
                 </li>
               </ul>
             </motion.div>
@@ -659,14 +644,14 @@ export default function DigitalScreensPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={specsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 p-8 bg-gradient-to-r from-primary-sky/20 to-primary-deep-blue/20 backdrop-blur-sm rounded-2xl border border-white/20 text-center"
+            className="mt-12 p-8 bg-gradient-to-r from-primary-sky/10 to-primary-deep-blue/10 rounded-2xl border-2 border-primary-sky/30 text-center"
           >
-            <p className="font-sans text-gray-300 mb-4">
+            <p className="font-sans text-gray-700 mb-4">
               Need help with creative? Our design team can create stunning 4K content for you.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-deep-blue font-bold rounded-full hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-sky to-primary-deep-blue text-white font-bold rounded-full hover:shadow-xl transition-all duration-300"
             >
               Request Creative Services
             </Link>

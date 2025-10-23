@@ -92,7 +92,7 @@ export default function HomePage() {
               loop
               muted
               playsInline
-              poster="/Images_gallery/white-billboard.webp"
+              poster="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
               className="w-full h-screen object-cover"
             >
               <source src="https://res.cloudinary.com/diwa9giv2/video/upload/v1761071001/Herosection_video_sample1_ovg3m1.mp4" type="video/mp4" />
@@ -159,55 +159,48 @@ export default function HomePage() {
       </section>
 
       {/* Services Section - Advanced Modern Showcase */}
-      <section id="services" ref={servicesRef} className="relative bg-black text-white overflow-hidden">
+      <section id="services" ref={servicesRef} className="relative bg-white text-secondary-dark overflow-hidden">
         {/* Animated Background Gradient Mesh */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-black to-emerald-950/30 animate-gradient-shift"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-sky/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-bright-green/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/80 animate-gradient-shift"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-sky/5 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-bright-green/5 via-transparent to-transparent"></div>
         
         {/* Intro Panel - Full Screen */}
         <div className="relative h-screen flex items-center justify-center overflow-hidden snap-start">
           {/* Floating Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-sky/10 rounded-full blur-3xl animate-float-slow"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary-bright-green/10 rounded-full blur-3xl animate-float-slower"></div>
-            <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary-deep-blue/10 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '5s'}}></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-sky/15 rounded-full blur-3xl animate-float-slow"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-primary-bright-green/15 rounded-full blur-3xl animate-float-slower"></div>
+            <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary-deep-blue/15 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '5s'}}></div>
           </div>
           
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             <div className={`transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              {/* Premium Badge */}
-              <div className="inline-block mb-8 px-6 py-3 bg-gradient-to-r from-primary-sky/20 to-primary-bright-green/20 backdrop-blur-xl rounded-full border border-white/10 shadow-lg shadow-primary-sky/10">
-                <span className="text-sm sm:text-base font-bold tracking-wider bg-gradient-to-r from-primary-sky via-white to-primary-bright-green bg-clip-text text-transparent">
-                  ✦ NEXT-GEN ADVERTISING SOLUTIONS ✦
-                </span>
-              </div>
-              
-              <h2 className="font-display font-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white mb-10 leading-[0.95] tracking-tight">
+              <h2 className="font-display font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-secondary-dark mb-6 sm:mb-8 lg:mb-10 leading-[0.95] tracking-tight">
                 <span className="inline-block">Advertising.</span><br />
                 <span className="inline-block bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-[length:200%_auto] animate-gradient-text bg-clip-text text-transparent">
                   Everywhere.
                 </span>
               </h2>
               
-              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto font-light mb-12">
+              <p className="font-sans text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-light mb-8 sm:mb-10 lg:mb-12">
                 Transform your brand&apos;s presence with cutting-edge digital displays
                 and strategic billboard placements that captivate audiences 24/7.
               </p>
 
               {/* Feature Pills */}
-              <div className="flex flex-wrap gap-4 justify-center items-center mb-16 sm:mb-20">
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/10 hover:border-primary-sky/30 transition-all duration-300 group">
-                  <Zap className="w-5 h-5 text-primary-sky group-hover:scale-110 transition-transform" />
-                  <span className="text-sm sm:text-base font-medium">Real-time Updates</span>
+              <div className="flex flex-wrap gap-3 sm:gap-4 justify-center items-center mb-10 sm:mb-16 lg:mb-20">
+                <div className="flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-5 sm:py-3 bg-gradient-to-r from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-full border border-primary-sky/20 hover:bg-primary-sky/15 hover:border-primary-sky/40 hover:shadow-lg hover:shadow-primary-sky/20 transition-all duration-300 group">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-primary-sky group-hover:scale-110 transition-transform" />
+                  <span className="text-xs sm:text-sm md:text-base font-medium text-secondary-dark">Real-time Updates</span>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/10 hover:border-primary-bright-green/30 transition-all duration-300 group">
-                  <Globe className="w-5 h-5 text-primary-bright-green group-hover:scale-110 transition-transform" />
-                  <span className="text-sm sm:text-base font-medium">Global Reach</span>
+                <div className="flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-5 sm:py-3 bg-gradient-to-r from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-full border border-primary-bright-green/20 hover:bg-primary-bright-green/15 hover:border-primary-bright-green/40 hover:shadow-lg hover:shadow-primary-bright-green/20 transition-all duration-300 group">
+                  <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-primary-bright-green group-hover:scale-110 transition-transform" />
+                  <span className="text-xs sm:text-sm md:text-base font-medium text-secondary-dark">Global Reach</span>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:bg-white/10 hover:border-primary-sky/30 transition-all duration-300 group">
-                  <Award className="w-5 h-5 text-primary-sky group-hover:scale-110 transition-transform" />
-                  <span className="text-sm sm:text-base font-medium">Premium Quality</span>
+                <div className="flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-5 sm:py-3 bg-gradient-to-r from-primary-deep-blue/10 to-primary-deep-blue/5 backdrop-blur-sm rounded-full border border-primary-deep-blue/20 hover:bg-primary-deep-blue/15 hover:border-primary-deep-blue/40 hover:shadow-lg hover:shadow-primary-deep-blue/20 transition-all duration-300 group">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-primary-deep-blue group-hover:scale-110 transition-transform" />
+                  <span className="text-xs sm:text-sm md:text-base font-medium text-secondary-dark">Premium Quality</span>
                 </div>
               </div>
             </div>
@@ -215,79 +208,79 @@ export default function HomePage() {
         </div>
 
         {/* Digital Screens Panel - Advanced Modern Design */}
-        <div className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start py-8 md:py-12 lg:py-16">
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start py-6 sm:py-8 md:py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-stretch">
               {/* Content */}
               <div 
                 data-animate
-                className={`order-2 lg:order-1 space-y-3 md:space-y-5 transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                className={`order-2 lg:order-1 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-3 transition-all duration-1000 flex flex-col justify-center ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
               >
                 {/* Premium Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-primary-sky/20 to-primary-sky/5 backdrop-blur-xl rounded-full border border-primary-sky/30 shadow-lg shadow-primary-sky/20">
-                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary-sky rounded-full animate-pulse"></div>
-                  <span className="text-[10px] md:text-xs font-bold tracking-wider text-primary-sky">DIGITAL SCREENS</span>
+                <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-primary-sky/15 to-primary-sky/10 backdrop-blur-xl rounded-full border border-primary-sky/30 shadow-lg shadow-primary-sky/10 w-fit">
+                  <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-primary-sky rounded-full animate-pulse"></div>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-primary-sky">DIGITAL SCREENS</span>
                 </div>
                 
                 {/* Large Headline */}
-                <h3 className="font-display font-bold text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-white leading-[0.95] tracking-tight">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-secondary-dark leading-[0.95] tracking-tight">
                   <span className="inline-block hover:scale-105 transition-transform duration-300">Dynamic.</span><br />
                   <span className="inline-block hover:scale-105 transition-transform duration-300 delay-75">Digital.</span><br />
                   <span className="inline-block bg-gradient-to-r from-primary-sky to-blue-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 delay-150">Dazzling.</span>
                 </h3>
                 
                 {/* Description */}
-                <p className="font-sans text-xs sm:text-base lg:text-xl text-gray-300 leading-relaxed font-light">
+                <p className="font-sans text-xs sm:text-sm md:text-base lg:text-sm text-gray-700 leading-relaxed font-light">
                   High-definition displays that bring your content to life with vibrant colors,
                   stunning clarity, and real-time updates that keep your message fresh and engaging.
                 </p>
                 
                 {/* Feature Cards Grid - 2x2 for Mobile */}
-                <div className="grid grid-cols-2 gap-2 md:gap-3">
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Eye className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-2">
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-sky/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">4K Ultra HD</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Crystal-clear visuals</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">4K Ultra HD</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Crystal-clear visuals</p>
                   </div>
                   
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Clock className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-sky/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Real-time</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Live content updates</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">Real-time</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Live content updates</p>
                   </div>
                   
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-sky/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Interactive</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Touch-enabled</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">Interactive</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Touch-enabled</p>
                   </div>
                   
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-sky/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-sky/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">30+ Min Dwell</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Extended engagement</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">30+ Min Dwell</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Extended engagement</p>
                   </div>
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-2 md:gap-3 pt-2 md:pt-3">
+                <div className="flex flex-wrap gap-2 sm:gap-2.5 md:gap-3 lg:gap-2 pt-2 sm:pt-3 md:pt-4 lg:pt-2">
                   <Link
                     href="/services/digital-screens"
-                    className="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-bold text-xs md:text-base rounded-full shadow-lg shadow-primary-sky/30 hover:shadow-primary-sky/50 hover:scale-105 transition-all duration-300"
+                    className="group inline-flex items-center gap-1 sm:gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-bold text-xs sm:text-sm md:text-base lg:text-sm rounded-full shadow-lg shadow-primary-sky/30 hover:shadow-primary-sky/50 hover:scale-105 transition-all duration-300"
                   >
                     <span>Explore Digital Screens</span>
-                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 lg:w-3 lg:h-3 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <button className="px-4 py-2 md:px-6 md:py-3 bg-white/5 backdrop-blur-sm text-white rounded-full font-semibold text-xs md:text-base border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                  <button className="px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2 bg-gray-100 hover:bg-gray-200 text-secondary-dark rounded-full font-semibold text-xs sm:text-sm md:text-base lg:text-sm border border-gray-200 hover:border-gray-300 transition-all duration-300">
                     Watch Demo
                   </button>
                 </div>
@@ -304,16 +297,16 @@ export default function HomePage() {
                 }}
               >
                 {/* Glow Effect */}
-                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary-sky/20 to-blue-500/20 rounded-2xl md:rounded-3xl blur-2xl md:blur-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary-sky/30 to-blue-500/30 rounded-2xl md:rounded-3xl blur-2xl md:blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
                 
                 <div className="relative group">
                   {/* Gradient Overlay on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-sky/20 via-transparent to-blue-500/20 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                   
                   {/* Main Image Container */}
-                  <div className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-primary-sky/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
+                  <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group-hover:border-primary-sky/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
-                      src="/Images_gallery/white-billboard.webp"
+                      src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
                       alt="Digital Screens"
                       fill
                       className="object-cover"
@@ -322,12 +315,12 @@ export default function HomePage() {
                   </div>
                   
                   {/* Floating Stats Badge */}
-                  <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 px-3 py-2 md:px-5 md:py-3 bg-black/90 backdrop-blur-xl rounded-lg md:rounded-xl border border-primary-sky/30 shadow-2xl">
-                    <div className="flex items-center gap-2 md:gap-2.5">
-                      <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-primary-sky rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 md:-bottom-4 md:-left-4 px-2.5 py-1.5 sm:px-3 sm:py-2 md:px-5 md:py-3 bg-white/95 backdrop-blur-xl rounded-lg md:rounded-xl border border-primary-sky/30 shadow-2xl">
+                    <div className="flex items-center gap-1.5 sm:gap-2 md:gap-2.5">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-primary-sky rounded-full animate-pulse"></div>
                       <div>
-                        <p className="text-base md:text-xl font-bold text-primary-sky">10K+</p>
-                        <p className="text-[8px] md:text-[10px] text-gray-400">Active Displays</p>
+                        <p className="text-sm sm:text-base md:text-xl font-bold text-primary-sky">10K+</p>
+                        <p className="text-[8px] sm:text-[9px] md:text-[10px] text-gray-600">Active Displays</p>
                       </div>
                     </div>
                   </div>
@@ -338,9 +331,9 @@ export default function HomePage() {
         </div>
 
         {/* Billboards Panel - Advanced Modern Design */}
-        <div className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start py-8 md:py-12 lg:py-16">
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start py-6 sm:py-8 md:py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-stretch">
               {/* Image with Advanced Effects */}
               <div 
                 data-animate
@@ -352,16 +345,16 @@ export default function HomePage() {
                 }}
               >
                 {/* Glow Effect */}
-                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary-bright-green/20 to-emerald-500/20 rounded-2xl md:rounded-3xl blur-2xl md:blur-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary-bright-green/30 to-emerald-500/30 rounded-2xl md:rounded-3xl blur-2xl md:blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
                 
                 <div className="relative group">
                   {/* Gradient Overlay on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-tl from-primary-bright-green/20 via-transparent to-emerald-500/20 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                   
                   {/* Main Image Container */}
-                  <div className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-primary-bright-green/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
+                  <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group-hover:border-primary-bright-green/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
-                      src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
+                      src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/BILLBOARDS_shwwxa.png"
                       alt="Billboards"
                       fill
                       className="object-cover"
@@ -370,12 +363,12 @@ export default function HomePage() {
                   </div>
                   
                   {/* Floating Stats Badge */}
-                  <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 px-3 py-2 md:px-5 md:py-3 bg-black/90 backdrop-blur-xl rounded-lg md:rounded-xl border border-primary-bright-green/30 shadow-2xl">
-                    <div className="flex items-center gap-2 md:gap-2.5">
-                      <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-primary-bright-green rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-4 md:-right-4 px-2.5 py-1.5 sm:px-3 sm:py-2 md:px-5 md:py-3 bg-white/95 backdrop-blur-xl rounded-lg md:rounded-xl border border-primary-bright-green/30 shadow-2xl">
+                    <div className="flex items-center gap-1.5 sm:gap-2 md:gap-2.5">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-primary-bright-green rounded-full animate-pulse"></div>
                       <div>
-                        <p className="text-base md:text-xl font-bold text-primary-bright-green">50M+</p>
-                        <p className="text-[8px] md:text-[10px] text-gray-400">Daily Views</p>
+                        <p className="text-sm sm:text-base md:text-xl font-bold text-primary-bright-green">50M+</p>
+                        <p className="text-[8px] sm:text-[9px] md:text-[10px] text-gray-600">Daily Views</p>
                       </div>
                     </div>
                   </div>
@@ -385,73 +378,73 @@ export default function HomePage() {
               {/* Content */}
               <div 
                 data-animate
-                className={`space-y-3 md:space-y-5 transition-all duration-1000 delay-200 ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+                className={`space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-3 transition-all duration-1000 delay-200 flex flex-col justify-center ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
               >
                 {/* Premium Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-primary-bright-green/20 to-primary-bright-green/5 backdrop-blur-xl rounded-full border border-primary-bright-green/30 shadow-lg shadow-primary-bright-green/20">
-                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary-bright-green rounded-full animate-pulse"></div>
-                  <span className="text-[10px] md:text-xs font-bold tracking-wider text-primary-bright-green">BILLBOARDS</span>
+                <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-primary-bright-green/15 to-primary-bright-green/10 backdrop-blur-xl rounded-full border border-primary-bright-green/30 shadow-lg shadow-primary-bright-green/10 w-fit">
+                  <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-primary-bright-green rounded-full animate-pulse"></div>
+                  <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-primary-bright-green">BILLBOARDS</span>
                 </div>
                 
                 {/* Large Headline */}
-                <h3 className="font-display font-bold text-2xl sm:text-4xl lg:text-6xl xl:text-7xl text-white leading-[0.95] tracking-tight">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-secondary-dark leading-[0.95] tracking-tight">
                   <span className="inline-block hover:scale-105 transition-transform duration-300">Bold.</span><br />
                   <span className="inline-block hover:scale-105 transition-transform duration-300 delay-75">Brilliant.</span><br />
                   <span className="inline-block bg-gradient-to-r from-primary-bright-green to-emerald-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 delay-150">Unmissable.</span>
                 </h3>
                 
                 {/* Description */}
-                <p className="font-sans text-xs sm:text-base lg:text-xl text-gray-300 leading-relaxed font-light">
+                <p className="font-sans text-xs sm:text-sm md:text-base lg:text-sm text-gray-700 leading-relaxed font-light">
                   Strategic placements that command attention and dominate the landscape,
                   ensuring your brand message reaches thousands daily with maximum impact.
                 </p>
                 
                 {/* Feature Cards Grid - 2x2 for Mobile */}
-                <div className="grid grid-cols-2 gap-2 md:gap-3">
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <MapPin className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-2">
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-bright-green/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Prime Locations</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Maximum visibility</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">Prime Locations</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Maximum visibility</p>
                   </div>
                   
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-bright-green/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">LED Illumination</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">24/7 impactful</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">LED Illumination</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">24/7 impactful</p>
                   </div>
                   
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <BarChart3 className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-bright-green/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <BarChart3 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">1.5M+ Monthly</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Massive impressions</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">1.5M+ Monthly</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Massive impressions</p>
                   </div>
                   
-                  <div className="group p-2.5 md:p-4 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm rounded-lg md:rounded-xl border border-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-bright-green/20 hover:scale-105">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md md:rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Target className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2.5 sm:p-3 md:p-4 lg:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-bright-green/10">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-8 lg:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-4 lg:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-base mb-1 md:mb-1.5">Strategic Sites</h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">Soweto & metros</p>
+                    <h4 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-xs mb-0.5 text-secondary-dark">Strategic Sites</h4>
+                    <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-[10px] text-gray-600">Soweto & metros</p>
                   </div>
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-2 md:gap-3 pt-2 md:pt-3">
+                <div className="flex flex-wrap gap-2 sm:gap-2.5 md:gap-3 lg:gap-2 pt-2 sm:pt-3 md:pt-4 lg:pt-2">
                   <Link
                     href="/services/billboards"
-                    className="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-primary-bright-green to-emerald-500 text-white font-bold text-xs md:text-base rounded-full shadow-lg shadow-primary-bright-green/30 hover:shadow-primary-bright-green/50 hover:scale-105 transition-all duration-300"
+                    className="group inline-flex items-center gap-1 sm:gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2 bg-gradient-to-r from-primary-bright-green to-emerald-500 text-white font-bold text-xs sm:text-sm md:text-base lg:text-sm rounded-full shadow-lg shadow-primary-bright-green/30 hover:shadow-primary-bright-green/50 hover:scale-105 transition-all duration-300"
                   >
                     <span>Discover Billboards</span>
-                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 lg:w-3 lg:h-3 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <button className="px-4 py-2 md:px-6 md:py-3 bg-white/5 backdrop-blur-sm text-white rounded-full font-semibold text-xs md:text-base border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                  <button className="px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2 bg-gray-100 hover:bg-gray-200 text-secondary-dark rounded-full font-semibold text-xs sm:text-sm md:text-base lg:text-sm border border-gray-200 hover:border-gray-300 transition-all duration-300">
                     View Locations
                   </button>
                 </div>
@@ -462,9 +455,9 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section - Compact Redesign */}
-      <section id="why-choose-us" className="py-16 bg-gradient-to-br from-secondary-dark via-[#1a1a2e] to-secondary-dark relative overflow-hidden">
+      <section id="why-choose-us" className="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
         {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(11, 180, 228, 0.3) 1px, transparent 0)`,
             backgroundSize: '40px 40px',
@@ -473,23 +466,23 @@ export default function HomePage() {
         </div>
 
         {/* Glowing Orbs */}
-        <div className="absolute top-10 right-5 w-60 h-60 bg-primary-sky/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-10 left-5 w-72 h-72 bg-primary-bright-green/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-10 right-5 w-60 h-60 bg-primary-sky/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-10 left-5 w-72 h-72 bg-primary-bright-green/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className={`text-center mb-12 transition-all duration-1000 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 backdrop-blur-xl rounded-full border border-primary-sky/20 mb-4">
               <Award className="w-4 h-4 text-primary-sky" />
-              <span className="text-white font-display font-semibold text-xs">Why We&apos;re Different</span>
+              <span className="text-secondary-dark font-display font-semibold text-xs">Why We&apos;re Different</span>
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-3">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary-dark mb-3">
               Why Brands Choose{' '}
               <span className="bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent">
                 Stake Digital
               </span>
             </h2>
-            <p className="font-sans text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="font-sans text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
               Real spaces. Real people. Real impact. We create experiences that resonate.
             </p>
           </div>
@@ -501,14 +494,14 @@ export default function HomePage() {
               className={`group relative transition-all duration-1000 delay-100 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
               style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
             >
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-sky/20 h-full">
+              <div className="relative p-6 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl hover:bg-white hover:border-primary-sky/50 hover:shadow-xl hover:shadow-primary-sky/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full">
                 <div className="relative z-10 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-sky/40">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-sky/20">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-lg text-white mb-1 group-hover:text-primary-sky transition-colors duration-300">Strategic Locations</h3>
-                    <p className="font-sans text-sm text-gray-400 leading-snug">
+                    <h3 className="font-display font-bold text-lg text-secondary-dark mb-1 group-hover:text-primary-sky transition-colors duration-300">Strategic Locations</h3>
+                    <p className="font-sans text-sm text-gray-700 leading-snug">
                       Premium placements in high-traffic, high-dwell environments.
                     </p>
                   </div>
@@ -522,14 +515,14 @@ export default function HomePage() {
               className={`group relative transition-all duration-1000 delay-200 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
               style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
             >
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-bright-green/20 h-full">
+              <div className="relative p-6 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl hover:bg-white hover:border-primary-bright-green/50 hover:shadow-xl hover:shadow-primary-bright-green/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full">
                 <div className="relative z-10 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-bright-green/40">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-bright-green/20">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-lg text-white mb-1 group-hover:text-primary-bright-green transition-colors duration-300">Measurable Results</h3>
-                    <p className="font-sans text-sm text-gray-400 leading-snug">
+                    <h3 className="font-display font-bold text-lg text-secondary-dark mb-1 group-hover:text-primary-bright-green transition-colors duration-300">Measurable Results</h3>
+                    <p className="font-sans text-sm text-gray-700 leading-snug">
                       Data-driven insights and performance analytics for every campaign.
                     </p>
                   </div>
@@ -543,14 +536,14 @@ export default function HomePage() {
               className={`group relative transition-all duration-1000 delay-300 ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
               style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
             >
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-sky/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-sky/20 h-full">
+              <div className="relative p-6 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl hover:bg-white hover:border-primary-sky/50 hover:shadow-xl hover:shadow-primary-sky/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full">
                 <div className="relative z-10 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-sky/40">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-sky/20">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-lg text-white mb-1 group-hover:text-primary-sky transition-colors duration-300">Community Connection</h3>
-                    <p className="font-sans text-sm text-gray-400 leading-snug">
+                    <h3 className="font-display font-bold text-lg text-secondary-dark mb-1 group-hover:text-primary-sky transition-colors duration-300">Community Connection</h3>
+                    <p className="font-sans text-sm text-gray-700 leading-snug">
                       Authentic engagement in township hubs and urban centers.
                     </p>
                   </div>
@@ -564,14 +557,14 @@ export default function HomePage() {
               className={`group relative transition-all duration-1000 delay-[400ms] ${isSectionVisible('why-choose-us') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
               style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
             >
-              <div className="relative p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-primary-bright-green/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-bright-green/20 h-full">
+              <div className="relative p-6 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl hover:bg-white hover:border-primary-bright-green/50 hover:shadow-xl hover:shadow-primary-bright-green/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 h-full">
                 <div className="relative z-10 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-bright-green/40">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary-bright-green/20">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-lg text-white mb-1 group-hover:text-primary-bright-green transition-colors duration-300">24/7 Visibility</h3>
-                    <p className="font-sans text-sm text-gray-400 leading-snug">
+                    <h3 className="font-display font-bold text-lg text-secondary-dark mb-1 group-hover:text-primary-bright-green transition-colors duration-300">24/7 Visibility</h3>
+                    <p className="font-sans text-sm text-gray-700 leading-snug">
                       Continuous brand exposure with illuminated and digital displays.
                     </p>
                   </div>
@@ -624,7 +617,7 @@ export default function HomePage() {
             >
               <div className="relative h-[250px] md:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
                 <Image
-                  src="/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp"
+                  src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154509/Our_Network_image_srbumq.png"
                   alt="Our Network"
                   fill
                   className="object-cover"

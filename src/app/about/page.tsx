@@ -105,6 +105,12 @@ export default function AboutPage() {
       title: 'Excellence',
       description: 'Every campaign is delivered with precision and passion.',
       gradient: 'from-primary-sky to-primary-bright-green'
+    },
+    {
+      icon: '🚀',
+      title: 'Growth Partnership',
+      description: 'Your success is our success—we grow together through measurable results.',
+      gradient: 'from-primary-bright-green to-primary-deep-blue'
     }
   ];
 
@@ -118,7 +124,7 @@ export default function AboutPage() {
   return (
     <main className="bg-white overflow-hidden">
       {/* Hero Section with Parallax */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary-dark via-primary-deep-blue to-secondary-dark">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary-dark via-primary-deep-blue to-secondary-dark pt-24 md:pt-32 pb-16 md:pb-20">
         <FloatingOrbs />
         
         {/* Grid pattern overlay */}
@@ -126,15 +132,15 @@ export default function AboutPage() {
 
         <motion.div 
           style={{ opacity, scale }}
-          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
+            className="mb-4 md:mb-6"
           >
-            <span className="inline-block px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-semibold tracking-wider">
+            <span className="inline-block px-4 py-2 md:px-6 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-xs md:text-sm font-semibold tracking-wider">
               ABOUT STAKE DIGITAL MEDIA
             </span>
           </motion.div>
@@ -143,10 +149,10 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight px-2"
           >
             Redefining
-            <span className="block mt-2 bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent animate-gradient-text bg-[length:200%_auto]">
+            <span className="block mt-1 md:mt-2 bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent animate-gradient-text bg-[length:200%_auto]">
               Outdoor Media
             </span>
           </motion.h1>
@@ -155,7 +161,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4"
           >
             Where technology meets creativity, and national visibility blends with local authenticity
           </motion.p>
@@ -164,26 +170,26 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-10"
+            className="mt-6 md:mt-10 mb-16 md:mb-0"
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-sky to-primary-deep-blue text-white font-semibold rounded-full hover:shadow-[0_0_40px_rgba(11,180,228,0.6)] transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-primary-sky to-primary-deep-blue text-white text-sm md:text-base font-semibold rounded-full hover:shadow-[0_0_40px_rgba(11,180,228,0.6)] transition-all duration-300 hover:scale-105"
             >
               Get Started
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Hidden on mobile, shown on desktop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="hidden md:block absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
             <motion.div
@@ -196,20 +202,20 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are Section */}
-      <AnimatedSection className="relative py-24 sm:py-32 bg-white">
+      <AnimatedSection className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
             <div>
-              <div className="inline-block mb-4 px-4 py-2 bg-primary-sky/10 rounded-full">
-                <span className="text-primary-deep-blue font-semibold text-sm tracking-wider">WHO WE ARE</span>
+              <div className="inline-block mb-3 md:mb-4 px-3 py-1.5 md:px-4 md:py-2 bg-primary-sky/10 rounded-full">
+                <span className="text-primary-deep-blue font-semibold text-xs md:text-sm tracking-wider">WHO WE ARE</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-secondary-dark mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-dark mb-4 md:mb-6 leading-tight">
                 Built for Brands That
                 <span className="block bg-gradient-to-r from-primary-sky to-primary-deep-blue bg-clip-text text-transparent">
                   Stand Out
                 </span>
               </h2>
-              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              <div className="space-y-3 md:space-y-4 text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
                 <p>
                   Stake Digital Media is a South African Out-of-Home (OOH) advertising company built for brands that want to stand out where people live, move, and connect.
                 </p>
@@ -222,14 +228,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative mt-8 lg:mt-0 px-4 sm:px-8 md:px-12 lg:px-0">
+              <div className="relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-sky/20 to-primary-deep-blue/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl mb-6">🎯</div>
-                    <h3 className="text-3xl font-bold text-secondary-dark mb-4">Our Mission</h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                  <div className="text-center p-4 sm:p-6 md:p-8">
+                    <div className="text-4xl sm:text-5xl md:text-6xl mb-3 md:mb-6">🎯</div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary-dark mb-2 md:mb-4">Our Mission</h3>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed px-2">
                       To redefine outdoor media by bridging technology, creativity, and community—giving brands the power to engage South Africans where they truly are.
                     </p>
                   </div>
@@ -237,17 +243,17 @@ export default function AboutPage() {
               </div>
 
               {/* Floating accent cards */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-2xl shadow-xl flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 md:-top-6 md:-right-6 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-xl md:rounded-2xl shadow-xl flex items-center justify-center transform hover:rotate-6 transition-transform duration-300">
                 <div className="text-center text-white">
-                  <div className="text-3xl font-bold">9</div>
-                  <div className="text-xs">Provinces</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold">9</div>
+                  <div className="text-[10px] sm:text-xs">Provinces</div>
                 </div>
               </div>
 
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-2xl shadow-xl flex items-center justify-center transform hover:-rotate-6 transition-transform duration-300">
+              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 md:-bottom-6 md:-left-6 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-xl md:rounded-2xl shadow-xl flex items-center justify-center transform hover:-rotate-6 transition-transform duration-300">
                 <div className="text-center text-white">
-                  <div className="text-3xl font-bold">24/7</div>
-                  <div className="text-xs">Coverage</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold">24/7</div>
+                  <div className="text-[10px] sm:text-xs">Coverage</div>
                 </div>
               </div>
             </div>
@@ -256,9 +262,9 @@ export default function AboutPage() {
       </AnimatedSection>
 
       {/* Stats Section */}
-      <AnimatedSection className="relative py-20 bg-gradient-to-br from-secondary-dark via-primary-deep-blue/10 to-secondary-dark">
+      <AnimatedSection className="relative py-10 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-secondary-dark via-primary-deep-blue/10 to-secondary-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -266,12 +272,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-white/50 backdrop-blur-sm border border-gray-200 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="text-center p-4 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-white/50 backdrop-blur-sm border border-gray-200 hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-sky to-primary-deep-blue bg-clip-text text-transparent mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary-sky to-primary-deep-blue bg-clip-text text-transparent mb-1 md:mb-2">
                   <StatsCounter end={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-gray-600 font-semibold">{stat.label}</div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-gray-600 font-semibold leading-tight">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -279,13 +285,13 @@ export default function AboutPage() {
       </AnimatedSection>
 
       {/* What We Do Section */}
-      <AnimatedSection className="relative py-24 sm:py-32 bg-white">
+      <AnimatedSection className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-primary-bright-green/10 rounded-full">
-              <span className="text-primary-deep-green font-semibold text-sm tracking-wider">WHAT WE DO</span>
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
+            <div className="inline-block mb-3 md:mb-4 px-3 py-1.5 md:px-4 md:py-2 bg-primary-bright-green/10 rounded-full">
+              <span className="text-primary-deep-green font-semibold text-xs md:text-sm tracking-wider">WHAT WE DO</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-secondary-dark mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-dark mb-3 md:mb-6 px-4">
               Advertising Ecosystems That
               <span className="block bg-gradient-to-r from-primary-bright-green to-primary-deep-green bg-clip-text text-transparent">
                 Keep Brands Top-of-Mind
@@ -293,49 +299,49 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {/* Digital Screen Network */}
             <motion.div
               whileHover={{ y: -10 }}
-              className="group relative p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-primary-sky/5 to-primary-deep-blue/5 border-2 border-primary-sky/20 hover:border-primary-sky hover:shadow-[0_0_40px_rgba(11,180,228,0.3)] transition-all duration-500"
+              className="group relative p-5 sm:p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl bg-gradient-to-br from-primary-sky/5 to-primary-deep-blue/5 border-2 border-primary-sky/20 hover:border-primary-sky hover:shadow-[0_0_40px_rgba(11,180,228,0.3)] transition-all duration-500"
             >
-              <div className="absolute top-8 right-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
+              <div className="hidden md:block absolute top-6 md:top-8 right-6 md:right-8 text-4xl md:text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
                 📺
               </div>
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-2xl flex items-center justify-center mb-6 text-3xl">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary-sky to-primary-deep-blue rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 text-2xl sm:text-2xl md:text-3xl">
                   📺
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-dark mb-4">Digital Screen Network</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-secondary-dark mb-3 md:mb-4">Digital Screen Network</h3>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 md:mb-6">
                   Our digital division includes Supabets in-venue screens and mall displays—strategically placed in high-dwell, high-traffic environments where audiences spend meaningful time engaging.
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-sky flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <div className="space-y-2 md:space-y-3">
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-sky flex-shrink-0 mt-0.5 md:mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Data-driven exposure with measurable results</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700">Data-driven exposure with measurable results</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-sky flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-sky flex-shrink-0 mt-0.5 md:mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">High-dwell, high-traffic locations</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700">High-dwell, high-traffic locations</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-sky flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-sky flex-shrink-0 mt-0.5 md:mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Audience insights and analytics</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700">Audience insights and analytics</span>
                   </div>
                 </div>
                 <Link
                   href="/services/digital-screens"
-                  className="inline-flex items-center gap-2 mt-6 text-primary-deep-blue font-semibold hover:gap-4 transition-all duration-300"
+                  className="inline-flex items-center gap-2 mt-4 md:mt-6 text-sm md:text-base text-primary-deep-blue font-semibold hover:gap-4 transition-all duration-300"
                 >
                   Explore Digital Screens
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
@@ -345,45 +351,45 @@ export default function AboutPage() {
             {/* Billboard Division */}
             <motion.div
               whileHover={{ y: -10 }}
-              className="group relative p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-primary-bright-green/5 to-primary-deep-green/5 border-2 border-primary-bright-green/20 hover:border-primary-bright-green hover:shadow-[0_0_40px_rgba(109,206,46,0.3)] transition-all duration-500"
+              className="group relative p-5 sm:p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-3xl bg-gradient-to-br from-primary-bright-green/5 to-primary-deep-green/5 border-2 border-primary-bright-green/20 hover:border-primary-bright-green hover:shadow-[0_0_40px_rgba(109,206,46,0.3)] transition-all duration-500"
             >
-              <div className="absolute top-8 right-8 text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
+              <div className="hidden md:block absolute top-6 md:top-8 right-6 md:right-8 text-4xl md:text-6xl opacity-10 group-hover:opacity-20 transition-opacity">
                 🗺️
               </div>
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-2xl flex items-center justify-center mb-6 text-3xl">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary-bright-green to-primary-deep-green rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 text-2xl sm:text-2xl md:text-3xl">
                   🗺️
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-dark mb-4">Billboard Division</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-secondary-dark mb-3 md:mb-4">Billboard Division</h3>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 md:mb-6">
                   Our billboard network spans digital and static formats, including iconic placements across Soweto and surrounding metros—dominating major commuter routes with unmatched reach.
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-bright-green flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <div className="space-y-2 md:space-y-3">
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-bright-green flex-shrink-0 mt-0.5 md:mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Premium cultural touchpoints</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700">Premium cultural touchpoints</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-bright-green flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-bright-green flex-shrink-0 mt-0.5 md:mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Strategic high-traffic locations</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700">Strategic high-traffic locations</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-primary-bright-green flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-start gap-2 md:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-bright-green flex-shrink-0 mt-0.5 md:mt-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">Monthly traffic reporting</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700">Monthly traffic reporting</span>
                   </div>
                 </div>
                 <Link
                   href="/services/billboards"
-                  className="inline-flex items-center gap-2 mt-6 text-primary-deep-green font-semibold hover:gap-4 transition-all duration-300"
+                  className="inline-flex items-center gap-2 mt-4 md:mt-6 text-sm md:text-base text-primary-deep-green font-semibold hover:gap-4 transition-all duration-300"
                 >
                   Explore Billboards
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
@@ -394,15 +400,14 @@ export default function AboutPage() {
       </AnimatedSection>
 
       {/* Our Values Section */}
-      <AnimatedSection className="relative py-24 sm:py-32 bg-gradient-to-br from-secondary-dark to-primary-deep-blue overflow-hidden">
-        <FloatingOrbs />
+      <AnimatedSection className="relative py-10 sm:py-12 md:py-20 lg:py-24 bg-white overflow-hidden">
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
-              <span className="text-white font-semibold text-sm tracking-wider">OUR VALUES</span>
+          <div className="text-center mb-6 md:mb-10 lg:mb-12">
+            <div className="inline-block mb-3 md:mb-4 px-3 py-1.5 md:px-4 md:py-2 bg-primary-deep-blue/10 backdrop-blur-md border border-primary-deep-blue/20 rounded-full">
+              <span className="text-primary-deep-blue font-semibold text-xs md:text-sm tracking-wider">OUR VALUES</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-dark mb-4 md:mb-6 px-4">
               Principles That
               <span className="block bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent animate-gradient-text bg-[length:200%_auto]">
                 Drive Everything We Do
@@ -410,7 +415,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -419,16 +424,16 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="group relative p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="group relative p-5 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 hover:border-primary-sky hover:shadow-xl transition-all duration-300"
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl sm:text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                 </div>
-                <h3 className={`text-xl font-bold mb-3 bg-gradient-to-r ${value.gradient} bg-clip-text text-transparent`}>
+                <h3 className={`text-base sm:text-lg md:text-xl font-bold mb-2 md:mb-3 bg-gradient-to-r ${value.gradient} bg-clip-text text-transparent`}>
                   {value.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -438,29 +443,29 @@ export default function AboutPage() {
       </AnimatedSection>
 
       {/* Vision Section */}
-      <AnimatedSection className="relative py-24 sm:py-32 bg-white">
+      <AnimatedSection className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8 text-6xl">🚀</div>
-          <div className="inline-block mb-4 px-4 py-2 bg-primary-deep-blue/10 rounded-full">
-            <span className="text-primary-deep-blue font-semibold text-sm tracking-wider">OUR VISION</span>
+          <div className="mb-4 md:mb-8 text-4xl sm:text-5xl md:text-6xl">🚀</div>
+          <div className="inline-block mb-3 md:mb-4 px-3 py-1.5 md:px-4 md:py-2 bg-primary-deep-blue/10 rounded-full">
+            <span className="text-primary-deep-blue font-semibold text-xs md:text-sm tracking-wider">OUR VISION</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-secondary-dark mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-dark mb-4 md:mb-8 leading-tight px-4">
             To Become Africa&apos;s Most
             <span className="block bg-gradient-to-r from-primary-sky to-primary-deep-blue bg-clip-text text-transparent">
               Trusted & Measurable OOH Network
             </span>
           </h2>
-          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto px-4">
             Known for our ability to blend brand storytelling with audience data, and national visibility with local authenticity. We&apos;re building the future of outdoor advertising in Africa.
           </p>
         </div>
       </AnimatedSection>
 
       {/* Why Choose Us Section */}
-      <AnimatedSection className="relative py-24 sm:py-32 bg-gradient-to-br from-gray-50 to-white">
+      <AnimatedSection className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-secondary-dark mb-6">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-dark mb-4 md:mb-6 px-4">
               Why Brands Choose
               <span className="block bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
                 Stake Digital Media
@@ -468,7 +473,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               {
                 icon: '🎯',
@@ -508,11 +513,11 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-primary-sky hover:shadow-xl transition-all duration-300"
+                className="p-4 sm:p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border-2 border-gray-200 hover:border-primary-sky hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-secondary-dark mb-2">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                <div className="text-3xl sm:text-3xl md:text-4xl mb-3 md:mb-4">{item.icon}</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-secondary-dark mb-1 md:mb-2">{item.title}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -520,7 +525,7 @@ export default function AboutPage() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="relative py-20 bg-gradient-to-br from-primary-sky via-primary-deep-blue to-primary-bright-green overflow-hidden">
+      <AnimatedSection className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-sky via-primary-deep-blue to-primary-bright-green overflow-hidden">
         <FloatingOrbs />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -530,26 +535,26 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 px-2">
               Ready to Make Your Brand
               <span className="block">Part of South Africa&apos;s Daily Landscape?</span>
             </h2>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-10 leading-relaxed px-4">
               Whether you&apos;re launching a new product or expanding your footprint, we provide the platform, data, and visibility to make your brand unforgettable.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-deep-blue font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-white text-primary-deep-blue text-sm md:text-base font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 Book a Campaign
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
               <Link
                 href="/services/digital-screens"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white text-sm md:text-base font-semibold rounded-full hover:bg-white/20 transition-all duration-300"
               >
                 View Our Network
               </Link>

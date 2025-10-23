@@ -88,7 +88,7 @@ export default function BillboardsPage() {
         'Vibrant commercial and cultural corridor',
         'High pedestrian and vehicle traffic',
       ],
-      image: '/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp',
+      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/BILLBOARDS_shwwxa.png',
     },
     {
       name: 'Koma Road, Senaone',
@@ -105,7 +105,7 @@ export default function BillboardsPage() {
         'Major commuter route with constant flow',
         'Ideal for high-frequency brand recall',
       ],
-      image: '/Images_gallery/blank-advertising-billboards-illuminated-highway-night (1).webp',
+      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/BILLBOARDS_shwwxa.png',
     },
   ];
 
@@ -236,23 +236,8 @@ export default function BillboardsPage() {
       {/* Featured Sites Showcase */}
       <section
         ref={sitesRef}
-        className="py-16 lg:py-24 bg-gradient-to-br from-secondary-dark via-[#1a1a2e] to-secondary-dark relative overflow-hidden"
+        className="py-16 lg:py-24 bg-white relative overflow-hidden"
       >
-        {/* Background Effects */}
-        <div className="absolute inset-0 opacity-10">
-          <motion.div
-            className="absolute top-20 left-20 w-96 h-96 bg-primary-bright-green rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -261,19 +246,19 @@ export default function BillboardsPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-bright-green/20 rounded-full border border-primary-bright-green/30 backdrop-blur-xl mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-bright-green/10 rounded-full border border-primary-bright-green/30 backdrop-blur-xl mb-4">
               <Award className="w-4 h-4 text-primary-bright-green" />
               <span className="text-xs md:text-sm font-bold tracking-wider text-primary-bright-green">
                 FEATURED SITES
               </span>
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4">
               Premium{' '}
               <span className="bg-gradient-to-r from-primary-bright-green to-emerald-400 bg-clip-text text-transparent">
                 Billboard Locations
               </span>
             </h2>
-            <p className="font-sans text-base lg:text-lg text-gray-400 max-w-3xl mx-auto">
+            <p className="font-sans text-base lg:text-lg text-gray-600 max-w-3xl mx-auto">
               Strategic placements where your brand becomes part of South Africa&apos;s daily landscape.
             </p>
           </motion.div>
@@ -291,8 +276,8 @@ export default function BillboardsPage() {
                 <div
                   className={`relative ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}
                 >
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/20 to-primary-deep-green/20 rounded-3xl blur-2xl"></div>
-                  <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/10 to-primary-deep-green/10 rounded-3xl blur-2xl"></div>
+                  <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group">
                     <Image
                       src={site.image}
                       alt={site.name}
@@ -304,18 +289,18 @@ export default function BillboardsPage() {
                     {/* Floating Badge */}
                     <div className="absolute bottom-4 left-4 right-4 flex gap-2">
                       {site.wifi && (
-                        <div className="px-3 py-1.5 bg-black/80 backdrop-blur-sm rounded-lg border border-primary-bright-green/30">
+                        <div className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-lg border border-primary-bright-green/30 shadow-lg">
                           <div className="flex items-center gap-1.5">
                             <Wifi className="w-3 h-3 text-primary-bright-green" />
-                            <span className="text-xs font-semibold text-white">Wi-Fi Enabled</span>
+                            <span className="text-xs font-semibold text-secondary-dark">Wi-Fi Enabled</span>
                           </div>
                         </div>
                       )}
                       {site.illumination && (
-                        <div className="px-3 py-1.5 bg-black/80 backdrop-blur-sm rounded-lg border border-yellow-400/30">
+                        <div className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-lg border border-yellow-400/30 shadow-lg">
                           <div className="flex items-center gap-1.5">
-                            <Sun className="w-3 h-3 text-yellow-400" />
-                            <span className="text-xs font-semibold text-white">Illuminated</span>
+                            <Sun className="w-3 h-3 text-yellow-500" />
+                            <span className="text-xs font-semibold text-secondary-dark">Illuminated</span>
                           </div>
                         </div>
                       )}
@@ -325,34 +310,34 @@ export default function BillboardsPage() {
 
                 {/* Content - Alternating sides */}
                 <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-bright-green/20 rounded-full border border-primary-bright-green/30 mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-bright-green/10 rounded-full border border-primary-bright-green/30 mb-4">
                     <MapPin className="w-3 h-3 text-primary-bright-green" />
                     <span className="text-xs font-bold text-primary-bright-green">
                       SITE {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-2">
+                  <h3 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-secondary-dark mb-2">
                     {site.name}
                   </h3>
-                  <p className="font-sans text-base text-gray-400 mb-6">{site.location}</p>
+                  <p className="font-sans text-base text-gray-600 mb-6">{site.location}</p>
 
                   {/* Specs Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border-2 border-gray-200">
                     <div>
                       <p className="text-xs text-gray-500 mb-1">Format</p>
-                      <p className="text-sm font-semibold text-white">{site.format}</p>
+                      <p className="text-sm font-semibold text-secondary-dark">{site.format}</p>
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 mb-1">Target Market</p>
-                      <p className="text-sm font-semibold text-white">{site.target}</p>
+                      <p className="text-sm font-semibold text-secondary-dark">{site.target}</p>
                     </div>
                     <div className="col-span-2">
                       <p className="text-xs text-gray-500 mb-1">Traffic Volume</p>
                       <p className="text-xl font-bold text-primary-bright-green">
                         {site.traffic}
                       </p>
-                      <p className="text-xs text-gray-400">{site.period}</p>
+                      <p className="text-xs text-gray-600">{site.period}</p>
                     </div>
                   </div>
 
@@ -361,7 +346,7 @@ export default function BillboardsPage() {
                     {site.highlights.map((highlight, hIndex) => (
                       <li key={hIndex} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-primary-bright-green mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-300">{highlight}</span>
+                        <span className="text-sm text-gray-700">{highlight}</span>
                       </li>
                     ))}
                   </ul>
@@ -548,7 +533,7 @@ export default function BillboardsPage() {
       {/* Technical Specifications */}
       <section
         ref={specsRef}
-        className="py-16 lg:py-24 bg-secondary-dark text-white relative overflow-hidden"
+        className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -557,13 +542,13 @@ export default function BillboardsPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-secondary-dark mb-4">
               Design{' '}
               <span className="bg-gradient-to-r from-primary-bright-green to-emerald-400 bg-clip-text text-transparent">
                 Specifications
               </span>
             </h2>
-            <p className="font-sans text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="font-sans text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
               Technical requirements for creating billboard-ready artwork.
             </p>
           </motion.div>
@@ -574,26 +559,26 @@ export default function BillboardsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-bright-green/30 transition-colors duration-300"
+              className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-bright-green/50 hover:shadow-xl transition-all duration-300"
             >
               <Sparkles className="w-10 h-10 text-primary-bright-green mb-4" />
-              <h3 className="font-display font-bold text-xl mb-4">Artwork Format</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Artwork Format</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>File Types:</span>
-                  <span className="font-semibold text-white">PDF, AI, PSD</span>
+                  <span className="font-semibold text-secondary-dark">PDF, AI, PSD</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Resolution:</span>
-                  <span className="font-semibold text-white">300 DPI min</span>
+                  <span className="font-semibold text-secondary-dark">300 DPI min</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Color Mode:</span>
-                  <span className="font-semibold text-white">CMYK</span>
+                  <span className="font-semibold text-secondary-dark">CMYK</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Bleed:</span>
-                  <span className="font-semibold text-white">100mm all sides</span>
+                  <span className="font-semibold text-secondary-dark">100mm all sides</span>
                 </li>
               </ul>
             </motion.div>
@@ -603,26 +588,26 @@ export default function BillboardsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-bright-green/30 transition-colors duration-300"
+              className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-bright-green/50 hover:shadow-xl transition-all duration-300"
             >
               <Target className="w-10 h-10 text-primary-bright-green mb-4" />
-              <h3 className="font-display font-bold text-xl mb-4">Common Sizes</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Common Sizes</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>V-Shaped:</span>
-                  <span className="font-semibold text-white">3m × 12m</span>
+                  <span className="font-semibold text-secondary-dark">3m × 12m</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Wrap Medium:</span>
-                  <span className="font-semibold text-white">Custom sizes</span>
+                  <span className="font-semibold text-secondary-dark">Custom sizes</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Standard:</span>
-                  <span className="font-semibold text-white">6m × 3m</span>
+                  <span className="font-semibold text-secondary-dark">6m × 3m</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Large Format:</span>
-                  <span className="font-semibold text-white">12m × 6m</span>
+                  <span className="font-semibold text-secondary-dark">12m × 6m</span>
                 </li>
               </ul>
             </motion.div>
@@ -632,26 +617,26 @@ export default function BillboardsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-primary-bright-green/30 transition-colors duration-300"
+              className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-bright-green/50 hover:shadow-xl transition-all duration-300"
             >
               <Zap className="w-10 h-10 text-primary-bright-green mb-4" />
-              <h3 className="font-display font-bold text-xl mb-4">Production Details</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Production Details</h3>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
                   <span>Material:</span>
-                  <span className="font-semibold text-white">Vinyl flex</span>
+                  <span className="font-semibold text-secondary-dark">Vinyl flex</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Durability:</span>
-                  <span className="font-semibold text-white">Weather-proof</span>
+                  <span className="font-semibold text-secondary-dark">Weather-proof</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Lead Time:</span>
-                  <span className="font-semibold text-white">2-3 weeks</span>
+                  <span className="font-semibold text-secondary-dark">2-3 weeks</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Installation:</span>
-                  <span className="font-semibold text-white">Included</span>
+                  <span className="font-semibold text-secondary-dark">Included</span>
                 </li>
               </ul>
             </motion.div>
@@ -661,14 +646,14 @@ export default function BillboardsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={specsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 p-8 bg-gradient-to-r from-primary-bright-green/20 to-primary-deep-green/20 backdrop-blur-sm rounded-2xl border border-white/20 text-center"
+            className="mt-12 p-8 bg-gradient-to-r from-primary-bright-green/10 to-primary-deep-green/10 rounded-2xl border-2 border-primary-bright-green/30 text-center"
           >
-            <p className="font-sans text-gray-300 mb-4">
+            <p className="font-sans text-gray-700 mb-4">
               Need help with billboard design? Our creative team produces stunning outdoor artwork.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-deep-green font-bold rounded-full hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-bright-green to-emerald-500 text-white font-bold rounded-full hover:shadow-xl transition-all duration-300"
             >
               Request Design Services
             </Link>

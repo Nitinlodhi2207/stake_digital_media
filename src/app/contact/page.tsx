@@ -144,21 +144,21 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white overflow-hidden">
-      {/* Hero Section - Compact Mobile */}
-      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary-dark via-primary-deep-blue to-secondary-dark">
+      {/* Hero Section - Full Screen */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary-dark via-primary-deep-blue to-secondary-dark py-24 sm:py-32 md:py-20 lg:py-0">
         <FloatingOrbs />
         
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 md:py-0">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-4 md:mb-6"
           >
-            <span className="inline-block px-4 py-1.5 md:px-6 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-xs md:text-sm font-semibold tracking-wider">
+            <span className="inline-block px-4 py-2 md:px-6 md:py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-xs md:text-sm font-semibold tracking-wider">
               LET&apos;S WORK TOGETHER
             </span>
           </motion.div>
@@ -167,10 +167,10 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-6 leading-tight px-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight px-2"
           >
             Let&apos;s Create
-            <span className="block mt-1 md:mt-2 bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent animate-gradient-text bg-[length:200%_auto]">
+            <span className="block mt-2 bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent animate-gradient-text bg-[length:200%_auto]">
               Something Amazing
             </span>
           </motion.h1>
@@ -179,10 +179,12 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 mb-8 sm:mb-12 md:mb-8"
           >
             Ready to amplify your brand? Get in touch with our team and start your journey to maximum visibility.
           </motion.p>
+
+          {/* Scroll indicator - visible on desktop only - REMOVED */}
         </div>
       </section>
 
@@ -550,30 +552,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Map Section - Compact mobile height */}
-      <AnimatedSection>
-        <section className="relative h-64 md:h-96 bg-gray-200 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-sky/20 to-primary-deep-blue/20">
-            <div className="text-center p-4">
-              <MapPin className="w-12 h-12 md:w-16 md:h-16 text-primary-deep-blue mx-auto mb-3 md:mb-4" />
-              <h3 className="text-lg md:text-2xl font-bold text-secondary-dark mb-2">Find Us</h3>
-              <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">Johannesburg, South Africa</p>
-              <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-white text-primary-deep-blue font-semibold text-sm md:text-base rounded-lg hover:shadow-lg transition-all duration-300"
-              >
-                Open in Maps
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
 
       {/* FAQ Section - Compact mobile */}
       <AnimatedSection>

@@ -46,9 +46,9 @@ export default function Navbar() {
             <Image 
               src="/logo.svg" 
               alt="Stake Digital Media" 
-              width={400} 
-              height={100}
-              className="h-16 lg:h-16 w-auto relative z-10 transform group-hover:scale-105 transition-transform duration-500"
+              width={20} 
+              height={20}
+              className="h-8 lg:h-8 w-auto relative z-10 transform group-hover:scale-105 transition-transform duration-500"
               priority
             />
           </Link>
@@ -97,14 +97,6 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-
-            <Link 
-              href="/network" 
-              className="relative px-4 py-2 font-display text-sm font-semibold text-secondary-dark hover:text-primary-sky transition-colors group"
-            >
-              <span className="relative z-10">Our Network</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </Link>
 
             <Link 
               href="/about" 
@@ -201,15 +193,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
-            <Link 
-              href="/network" 
-              className="group relative px-6 py-3 font-display text-xl font-semibold text-secondary-dark hover:text-primary-sky transition-colors"
-              onClick={closeMobileMenu}
-            >
-              <span className="relative z-10">Our Network</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-            </Link>
 
             <Link 
               href="/about" 

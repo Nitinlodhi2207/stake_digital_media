@@ -268,7 +268,7 @@ export default function DigitalScreensPage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-sky/10 to-primary-deep-blue/10 rounded-3xl blur-2xl"></div>
                 <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
-                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
+                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761208781/DIGITAL_SCREENS_btw38m.png"
                     alt="Supabets Digital Screens"
                     fill
                     className="object-cover"
@@ -299,7 +299,7 @@ export default function DigitalScreensPage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/10 to-primary-deep-green/10 rounded-3xl blur-2xl"></div>
                 <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
-                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
+                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761208736/DIGITAL_SCREENS_zyfazv.png"
                     alt="4K Digital Display"
                     fill
                     className="object-cover"

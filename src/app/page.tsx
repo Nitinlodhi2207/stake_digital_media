@@ -92,10 +92,10 @@ export default function HomePage() {
               loop
               muted
               playsInline
-              poster="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
+              poster="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1920/v1761208133/Our_Network_image_zqkfph.png"
               className="w-full h-screen object-cover"
             >
-              <source src="https://res.cloudinary.com/diwa9giv2/video/upload/v1761071001/Herosection_video_sample1_ovg3m1.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/diwa9giv2/video/upload/v1761208126/4805615-hd_1920_1080_30fps_l2ueby.mp4" type="video/mp4" />
             </video>
           </div>
           
@@ -306,10 +306,11 @@ export default function HomePage() {
                   {/* Main Image Container */}
                   <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group-hover:border-primary-sky/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
-                      src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/DIGITAL_SCREENS_lguqge.png"
+                      src="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1200/v1761208531/DIGITAL_SCREENS_hmuc6h.png"
                       alt="Digital Screens"
                       fill
                       className="object-cover"
+                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   </div>
@@ -354,10 +355,11 @@ export default function HomePage() {
                   {/* Main Image Container */}
                   <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group-hover:border-primary-bright-green/30 transition-all duration-500 group-hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
-                      src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/BILLBOARDS_shwwxa.png"
+                      src="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1200/v1761208565/BILLBOARDS_r9btux.png"
                       alt="Billboards"
                       fill
                       className="object-cover"
+                      priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   </div>
@@ -617,10 +619,11 @@ export default function HomePage() {
             >
               <div className="relative h-[250px] md:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
                 <Image
-                  src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761154509/Our_Network_image_srbumq.png"
+                  src="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1200/v1761208647/Our_Network_image_ol9enz.png"
                   alt="Our Network"
                   fill
                   className="object-cover"
+                  loading="lazy"
                 />
                 {/* Overlay with Stats */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary-deep-blue/85 via-primary-sky/50 to-transparent"></div>

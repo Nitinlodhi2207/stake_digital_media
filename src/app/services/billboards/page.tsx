@@ -88,7 +88,7 @@ export default function BillboardsPage() {
         'Vibrant commercial and cultural corridor',
         'High pedestrian and vehicle traffic',
       ],
-      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/BILLBOARDS_shwwxa.png',
+      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761208866/BILLBOARDS_sshtgh.png',
     },
     {
       name: 'Koma Road, Senaone',
@@ -105,7 +105,7 @@ export default function BillboardsPage() {
         'Major commuter route with constant flow',
         'Ideal for high-frequency brand recall',
       ],
-      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761154129/BILLBOARDS_shwwxa.png',
+      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761208887/BILLBOARDS_ovhnfx.png',
     },
   ];
 

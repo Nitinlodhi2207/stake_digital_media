@@ -208,7 +208,7 @@ const TermsOfServicePage = () => {
             className="mb-12 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10"
           >
             <p className="text-gray-300 leading-relaxed">
-              These Terms of Service ("Terms") govern your access to and use of the Stake Digital Media website and services, including our digital screen network, billboard division, and campaign planning services. Stake Digital Media is a division of Keys Communication, operating in Johannesburg, South Africa.
+              These Terms of Service (&quot;Terms&quot;) govern your access to and use of the Stake Digital Media website and services, including our digital screen network, billboard division, and campaign planning services. Stake Digital Media is a division of Keys Communication, operating in Johannesburg, South Africa.
             </p>
           </motion.div>
 

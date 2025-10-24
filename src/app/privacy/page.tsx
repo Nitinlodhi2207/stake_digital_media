@@ -194,7 +194,7 @@ const PrivacyPolicyPage = () => {
             className="mb-12 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10"
           >
             <p className="text-gray-300 leading-relaxed">
-              This Privacy Policy describes how Stake Digital Media, a division of Keys Communication ("we," "us," or "our"), collects, uses, and shares your personal information when you visit our website or use our advertising services, including our digital screen network and billboard division.
+              This Privacy Policy describes how Stake Digital Media, a division of Keys Communication (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), collects, uses, and shares your personal information when you visit our website or use our advertising services, including our digital screen network and billboard division.
             </p>
           </motion.div>
 
@@ -264,7 +264,7 @@ const PrivacyPolicyPage = () => {
           >
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
               <AlertCircle className="w-6 h-6 text-[#0BB4E4]" />
-              Children's Privacy
+              Children&apos;s Privacy
             </h2>
             <p className="text-gray-400 leading-relaxed">
               Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.
@@ -278,7 +278,7 @@ const PrivacyPolicyPage = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Changes to This Privacy Policy</h2>
             <p className="text-gray-400 leading-relaxed">
-              We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the updated policy on our website with a new "Last Updated" date.
+              We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the updated policy on our website with a new &quot;Last Updated&quot; date.
             </p>
           </motion.div>
 

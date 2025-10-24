@@ -15,7 +15,6 @@ import {
   MapPin,
   CheckCircle,
   ArrowRight,
-  Play,
   Target,
   Globe,
   Smartphone,

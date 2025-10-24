@@ -76,10 +76,18 @@ export default function ContactPage() {
     e.preventDefault();
     setFormStatus('sending');
 
-    // Simulate form submission
     try {
-      // Here you would implement actual form submission logic
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
       
       setFormStatus('success');
       setFormData({
@@ -95,7 +103,8 @@ export default function ContactPage() {
       setTimeout(() => {
         setFormStatus('idle');
       }, 5000);
-    } catch {
+    } catch (error) {
+      console.error('Error sending contact form:', error);
       setFormStatus('error');
       setErrorMessage('Something went wrong. Please try again.');
       
@@ -109,15 +118,15 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@stakedigital.co.za',
-      href: 'mailto:hello@stakedigital.co.za',
+      value: 'info@stakedigital.co.za',
+      href: 'mailto:info@stakedigital.co.za',
       gradient: 'from-primary-sky to-primary-deep-blue'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+27 11 123 4567',
-      href: 'tel:+27111234567',
+      value: '+27 76 640 0024',
+      href: 'tel:+27766400024',
       gradient: 'from-primary-deep-blue to-primary-bright-green'
     },
     {
@@ -388,7 +397,7 @@ export default function ContactPage() {
                               value={formData.phone}
                               onChange={handleInputChange}
                               className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3 text-sm md:text-base border-2 border-gray-200 rounded-xl focus:border-primary-sky focus:ring-4 focus:ring-primary-sky/10 transition-all outline-none"
-                              placeholder="+27 11 123 4567"
+                              placeholder="+27 76 640 0024"
                             />
                           </div>
                         </div>

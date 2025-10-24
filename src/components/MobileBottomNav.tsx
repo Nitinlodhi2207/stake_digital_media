@@ -41,7 +41,7 @@ export default function MobileBottomNav() {
       href: '/services/digital-screens',
       icon: Monitor,
       label: 'Digital Screens',
-      description: '4K displays in high-traffic venues',
+      description: 'HD displays in high-traffic venues',
     },
     {
       href: '/services/billboards',

@@ -33,9 +33,9 @@ export default function DigitalScreensPage() {
   const features = [
     {
       icon: Monitor,
-      title: '4K Ultra HD Quality',
+      title: 'Ultra HD Quality',
       description:
-        'Crystal-clear 4K displays deliver your content with stunning clarity and vibrant colors that capture attention instantly.',
+        'Crystal-clear HD displays deliver your content with stunning clarity and vibrant colors that capture attention instantly.',
     },
     {
       icon: Clock,
@@ -83,7 +83,7 @@ export default function DigitalScreensPage() {
     {
       number: '03',
       title: 'Creative Design',
-      description: 'Design stunning 4K content or we can help you create engaging visuals.',
+      description: 'Design stunning content or we can help you create engaging visuals.',
     },
     {
       number: '04',
@@ -128,7 +128,7 @@ export default function DigitalScreensPage() {
     {
       question: 'What ad formats do you support?',
       answer:
-        'We support 15-second and 30-second video ads in 4K resolution (3840x2160). We recommend MP4 format with H.264 codec for optimal playback quality.',
+        'We support MP4 video and JPEG/PNG image formats with a screen size of 1920mm x 1080mm. Creative duration should be between 10-35 seconds, with a maximum file size of 20MB for optimal playback quality.',
     },
     {
       question: 'How long does it take to launch a campaign?',
@@ -148,7 +148,7 @@ export default function DigitalScreensPage() {
     {
       question: 'Do you provide creative services?',
       answer:
-        'Yes! Our in-house creative team can design and produce engaging 4K content optimized for digital screens at competitive rates.',
+        'Yes! Our in-house creative team can design and produce engaging content optimized for digital screens at competitive rates.',
     },
     {
       question: 'How do I track campaign performance?',
@@ -300,7 +300,7 @@ export default function DigitalScreensPage() {
                 <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
                     src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761208736/DIGITAL_SCREENS_zyfazv.png"
-                    alt="4K Digital Display"
+                    alt="Ultra HD Digital Display"
                     fill
                     className="object-cover"
                   />
@@ -310,7 +310,7 @@ export default function DigitalScreensPage() {
                   <div className="flex items-center gap-3">
                     <Monitor className="w-8 h-8 text-primary-bright-green" />
                     <div>
-                      <p className="text-2xl font-bold text-secondary-dark">4K UHD</p>
+                      <p className="text-2xl font-bold text-secondary-dark">Ultra HD</p>
                       <p className="text-xs text-gray-600">Crystal Clear</p>
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export default function DigitalScreensPage() {
                   Stunning Visual Impact
                 </h3>
                 <p className="font-sans text-base lg:text-lg text-gray-700 mb-6 leading-relaxed">
-                  Our 4K Ultra HD displays deliver your content with breathtaking clarity. Every
+                  Our Ultra HD displays deliver your content with breathtaking clarity. Every
                   color pops, every detail shines, and every message captivates your audience with
                   professional-grade visual quality.
                 </p>
@@ -342,7 +342,7 @@ export default function DigitalScreensPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary-sky mt-1 flex-shrink-0" />
                     <span className="text-gray-700">
-                      4K resolution (3840×2160) for razor-sharp imagery
+                      1920mm × 1080mm screen size for optimal viewing
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -552,31 +552,31 @@ export default function DigitalScreensPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Video Specs */}
+            {/* Screen Specs */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={specsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-sky/50 hover:shadow-xl transition-all duration-300"
             >
-              <Play className="w-10 h-10 text-primary-sky mb-4" />
-              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Video Format</h3>
+              <Monitor className="w-10 h-10 text-primary-sky mb-4" />
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Screen Specifications</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
-                  <span>Resolution:</span>
-                  <span className="font-semibold text-secondary-dark">3840 × 2160 (4K)</span>
+                  <span>Screen Size:</span>
+                  <span className="font-semibold text-secondary-dark">1920mm × 1080mm</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Format:</span>
-                  <span className="font-semibold text-secondary-dark">MP4, MOV</span>
+                  <span className="font-semibold text-secondary-dark">MP4/JPEG/PNG</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Codec:</span>
-                  <span className="font-semibold text-secondary-dark">H.264, H.265</span>
+                  <span>Max Size:</span>
+                  <span className="font-semibold text-secondary-dark">20 MB</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Frame Rate:</span>
-                  <span className="font-semibold text-secondary-dark">30 fps</span>
+                  <span>Aspect Ratio:</span>
+                  <span className="font-semibold text-secondary-dark">16:9</span>
                 </li>
               </ul>
             </motion.div>
@@ -589,23 +589,23 @@ export default function DigitalScreensPage() {
               className="p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-primary-bright-green/50 hover:shadow-xl transition-all duration-300"
             >
               <Clock className="w-10 h-10 text-primary-bright-green mb-4" />
-              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Ad Duration</h3>
+              <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">Creative Duration</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
-                  <span>Standard:</span>
-                  <span className="font-semibold text-secondary-dark">15 seconds</span>
+                  <span>Total Duration:</span>
+                  <span className="font-semibold text-secondary-dark">10–35s</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Extended:</span>
-                  <span className="font-semibold text-secondary-dark">30 seconds</span>
+                  <span>Minimum:</span>
+                  <span className="font-semibold text-secondary-dark">10 seconds</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Maximum:</span>
+                  <span className="font-semibold text-secondary-dark">35 seconds</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Loop:</span>
                   <span className="font-semibold text-secondary-dark">Continuous</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Rotation:</span>
-                  <span className="font-semibold text-secondary-dark">Hourly slots</span>
                 </li>
               </ul>
             </motion.div>
@@ -621,20 +621,20 @@ export default function DigitalScreensPage() {
               <h3 className="font-display font-bold text-xl text-secondary-dark mb-4">File Requirements</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
-                  <span>Max Size:</span>
-                  <span className="font-semibold text-secondary-dark">500 MB</span>
+                  <span>Max File Size:</span>
+                  <span className="font-semibold text-secondary-dark">20 MB</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Aspect Ratio:</span>
-                  <span className="font-semibold text-secondary-dark">16:9</span>
+                  <span>Video Format:</span>
+                  <span className="font-semibold text-secondary-dark">MP4</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Audio:</span>
-                  <span className="font-semibold text-secondary-dark">AAC, 48kHz</span>
+                  <span>Image Format:</span>
+                  <span className="font-semibold text-secondary-dark">JPEG, PNG</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Bitrate:</span>
-                  <span className="font-semibold text-secondary-dark">10-20 Mbps</span>
+                  <span>Dimensions:</span>
+                  <span className="font-semibold text-secondary-dark">1920 × 1080</span>
                 </li>
               </ul>
             </motion.div>
@@ -647,7 +647,7 @@ export default function DigitalScreensPage() {
             className="mt-12 p-8 bg-gradient-to-r from-primary-sky/10 to-primary-deep-blue/10 rounded-2xl border-2 border-primary-sky/30 text-center"
           >
             <p className="font-sans text-gray-700 mb-4">
-              Need help with creative? Our design team can create stunning 4K content for you.
+              Need help with creative? Our design team can create stunning content optimized for our 1920mm × 1080mm digital screens (MP4/JPEG/PNG, max 20MB, 10-35s duration).
             </p>
             <Link
               href="/contact"

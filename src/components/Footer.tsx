@@ -1,208 +1,452 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { Mail, ArrowRight, Sparkles, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { motion, useAnimation, useInView, Variants } from 'framer-motion';
+import { useRef } from 'react';
+import { 
+  ChevronUp,
+  Mail,
+  Phone,
+  MapPin,
+  ExternalLink,
+  ArrowRight,
+  Sparkles,
+  Zap,
+  Target
+} from 'lucide-react';
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaInstagram, 
+  FaLinkedinIn, 
+  FaYoutube,
+  FaWhatsapp
+} from 'react-icons/fa';
 
-export default function Footer() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+const Footer: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const footerRef = useRef<HTMLElement>(null);
+  const isInView = useInView(footerRef, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const footer = document.getElementById('footer-section');
-      if (footer) {
-        const rect = footer.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        });
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
+  // Scroll to top functionality
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Track scroll for back to top button
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
       }
     };
 
-    const footer = document.getElementById('footer-section');
-    footer?.addEventListener('mousemove', handleMouseMove);
-    return () => footer?.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        duration: 0.8
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
+  const socialLinks = [
+    { icon: FaFacebookF, href: "#", label: "Facebook", color: "#1877F2" },
+    { icon: FaTwitter, href: "#", label: "Twitter", color: "#1DA1F2" },
+    { icon: FaInstagram, href: "#", label: "Instagram", color: "#E4405F" },
+    { icon: FaLinkedinIn, href: "#", label: "LinkedIn", color: "#0077B5" },
+    { icon: FaYoutube, href: "#", label: "YouTube", color: "#FF0000" },
+    { icon: FaWhatsapp, href: "#", label: "WhatsApp", color: "#25D366" }
+  ];
+
+  const quickLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/services/digital-screens", label: "Digital Screens" },
+    { href: "/services/billboards", label: "Billboards" },
+    { href: "/contact", label: "Contact" }
+  ];
+
+  const services = [
+    { href: "/services/digital-screens", label: "Digital Screen Network", icon: Zap },
+    { href: "/services/billboards", label: "Billboard Division", icon: Target },
+    { href: "/contact", label: "Campaign Planning", icon: Sparkles }
+  ];
+
   return (
-    <footer 
-      id="footer-section"
-      className="relative bg-gradient-to-br from-gray-900 via-secondary-dark to-black text-white overflow-hidden"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
-      {/* Animated Cursor Glow Effect */}
-      {isHovering && (
-        <div 
-          className="pointer-events-none absolute z-10 rounded-full bg-gradient-to-r from-primary-sky/30 to-primary-bright-green/30 blur-3xl transition-opacity duration-300"
-          style={{
-            left: `${mousePosition.x}px`,
-            top: `${mousePosition.y}px`,
-            width: '300px',
-            height: '300px',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      )}
-
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(11, 180, 228, 0.4) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
-
-      {/* Main Footer Content - Compact (Max 40vh) */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
-        {/* Mobile: Single column, Desktop: Multi-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-          
-          {/* Section 1: Logo & About - Compact */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Image 
-                src="/logo.svg" 
-                alt="Stake Digital Media Logo" 
-                width={40} 
-                height={40}
-                className="w-10 h-10"
-              />
-              <h2 className="font-display font-bold text-lg bg-gradient-to-r from-primary-sky to-primary-bright-green bg-clip-text text-transparent">
-                STAKE Digital
-              </h2>
-            </div>
-            <p className="font-sans text-gray-400 text-xs leading-relaxed">
-              Premium out-of-home advertising solutions. Your brand, everywhere.
-            </p>
-            
-            {/* Social Icons */}
-            <div className="flex items-center gap-2 pt-1">
-              <a href="#" className="w-7 h-7 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-sky hover:to-blue-500 hover:border-transparent transition-all duration-300 group">
-                <Facebook className="w-3.5 h-3.5 text-gray-400 group-hover:text-white transition-colors" />
-              </a>
-              <a href="#" className="w-7 h-7 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-sky hover:to-blue-500 hover:border-transparent transition-all duration-300 group">
-                <Instagram className="w-3.5 h-3.5 text-gray-400 group-hover:text-white transition-colors" />
-              </a>
-              <a href="#" className="w-7 h-7 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-sky hover:to-blue-500 hover:border-transparent transition-all duration-300 group">
-                <Linkedin className="w-3.5 h-3.5 text-gray-400 group-hover:text-white transition-colors" />
-              </a>
-              <a href="#" className="w-7 h-7 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:bg-gradient-to-r hover:from-primary-sky hover:to-blue-500 hover:border-transparent transition-all duration-300 group">
-                <Twitter className="w-3.5 h-3.5 text-gray-400 group-hover:text-white transition-colors" />
-              </a>
-            </div>
-          </div>
-
-          {/* Section 2: Services - Compact */}
-          <div className="space-y-2">
-            <h3 className="font-display font-semibold text-sm text-white flex items-center gap-2">
-              <div className="w-1 h-3 bg-gradient-to-b from-primary-sky to-primary-bright-green rounded-full"></div>
-              Services
-            </h3>
-            <nav className="flex flex-col space-y-1.5">
-              <Link 
-                href="/services/digital-screens" 
-                className="group font-sans text-gray-400 hover:text-primary-sky transition-colors text-xs flex items-center gap-2"
-              >
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                Digital Screens
-              </Link>
-              <Link 
-                href="/services/billboards" 
-                className="group font-sans text-gray-400 hover:text-primary-bright-green transition-colors text-xs flex items-center gap-2"
-              >
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                Billboards
-              </Link>
-              <Link 
-                href="/network" 
-                className="group font-sans text-gray-400 hover:text-primary-sky transition-colors text-xs flex items-center gap-2"
-              >
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                View Network
-              </Link>
-            </nav>
-          </div>
-
-          {/* Section 3: Quick Links - Compact */}
-          <div className="space-y-2">
-            <h3 className="font-display font-semibold text-sm text-white flex items-center gap-2">
-              <div className="w-1 h-3 bg-gradient-to-b from-primary-bright-green to-primary-sky rounded-full"></div>
-              Company
-            </h3>
-            <nav className="flex flex-col space-y-1.5">
-              <Link 
-                href="/" 
-                className="group font-sans text-gray-400 hover:text-primary-sky transition-colors text-xs flex items-center gap-2"
-              >
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="group font-sans text-gray-400 hover:text-primary-sky transition-colors text-xs flex items-center gap-2"
-              >
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                About Us
-              </Link>
-              <Link 
-                href="/contact" 
-                className="group font-sans text-gray-400 hover:text-primary-sky transition-colors text-xs flex items-center gap-2"
-              >
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                Contact
-              </Link>
-            </nav>
-          </div>
-
-          {/* Section 4: Contact Info - Compact */}
-          <div className="space-y-2">
-            <h3 className="font-display font-semibold text-sm text-white flex items-center gap-2">
-              <div className="w-1 h-3 bg-gradient-to-b from-primary-sky to-primary-bright-green rounded-full"></div>
-              Get In Touch
-            </h3>
-            <div className="flex flex-col space-y-1.5">
-              <a 
-                href="mailto:info@stakedigital.co.za" 
-                className="group font-sans text-gray-400 hover:text-primary-sky transition-colors text-xs flex items-center gap-2"
-              >
-                <Mail className="w-3 h-3 group-hover:scale-110 transition-transform" />
-                info@stakedigital.co.za
-              </a>
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center gap-2 mt-1 px-4 py-2 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-display font-bold text-xs rounded-lg hover:from-primary-sky hover:to-blue-600 transition-all duration-300 shadow-lg shadow-primary-sky/30 hover:shadow-primary-sky/50 hover:scale-105 group relative overflow-hidden"
-              >
-                <span className="relative z-10">Book Campaign</span>
-                <Sparkles className="w-3 h-3 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-              </Link>
-            </div>
-          </div>
+    <>
+      <footer 
+        ref={footerRef}
+        className="relative bg-gradient-to-br from-[#0F1419] via-[#1a2332] to-[#0F1419] text-white overflow-hidden z-10 pb-24 lg:pb-0"
+      >
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-5 left-10 w-24 h-24 bg-gradient-to-r from-[#0BB4E4] to-[#6DCE2E] rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-[#0064C8] to-[#4BA948] rounded-full blur-3xl animate-float-slower"></div>
         </div>
-      </div>
 
-      {/* Copyright Bar - Compact */}
-      <div className="relative z-20 border-t border-white/10 backdrop-blur-sm bg-black/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p className="font-sans text-gray-500 text-[10px] sm:text-xs text-center sm:text-left">
-              © 2025 Stake Digital Media (Pty) Ltd. All Rights Reserved.
-            </p>
-            <div className="flex items-center gap-3 text-[10px] sm:text-xs">
-              <Link href="/privacy" className="text-gray-500 hover:text-primary-sky transition-colors">
-                Privacy Policy
-              </Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/terms" className="text-gray-500 hover:text-primary-sky transition-colors">
-                Terms of Service
-              </Link>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1419]/95 via-[#0F1419]/80 to-[#0F1419]/60"></div>
+
+        <motion.div
+          className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-between py-8 lg:py-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          {/* Desktop Layout */}
+          <div className="hidden lg:grid grid-cols-12 gap-6 items-start flex-1">
+            {/* Brand Section */}
+            <motion.div 
+              className="col-span-4"
+              variants={itemVariants}
+            >
+              {/* Logo */}
+              <div className="mb-4">
+                <Image
+                  src="/logo.svg"
+                  alt="Stake Digital Media"
+                  width={180}
+                  height={60}
+                  className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                  priority
+                />
+              </div>
+
+              {/* Highlighted Description */}
+              <div className="relative mb-4">
+                <div className="absolute -left-3 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0BB4E4] to-[#6DCE2E] rounded-full"></div>
+                <p className="text-sm text-gray-300 leading-relaxed pl-2">
+                  {/* <span className="font-semibold text-white">Stake Digital Media</span> */}
+                  <br />
+                  <span className="relative inline-block">
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#0BB4E4]/20 via-[#6DCE2E]/20 to-[#0BB4E4]/20 bg-[length:200%_100%] animate-gradient-shift rounded px-1 -mx-1"></span>
+                    <span className="relative bg-gradient-to-r from-[#0BB4E4] via-[#6DCE2E] to-[#0BB4E4] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift font-semibold">
+                      A division of Keys Communication
+                    </span>
+                  </span>
+                </p>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-2 text-sm">
+                <a 
+                  href="mailto:info@stakedigitalmedia.co.za" 
+                  className="flex items-center text-gray-400 hover:text-[#0BB4E4] transition-colors duration-300 cursor-pointer group"
+                >
+                  <Mail className="w-4 h-4 mr-2 text-[#0BB4E4] group-hover:scale-110 transition-transform" />
+                  info@stakedigitalmedia.co.za
+                </a>
+                <a 
+                  href="tel:+27111234567"
+                  className="flex items-center text-gray-400 cursor-pointer hover:text-[#6DCE2E] transition-colors duration-300 group"
+                >
+                  <Phone className="w-4 h-4 mr-2 text-[#6DCE2E] group-hover:scale-110 transition-transform" />
+                  <span>+27 11 123 4567</span>
+                </a>
+                <div className="flex items-start text-gray-400">
+                  <MapPin className="w-4 h-4 mr-2 mt-0.5 text-[#0BB4E4] flex-shrink-0" />
+                  <span className="text-xs">Johannesburg, Gauteng, South Africa</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div 
+              className="col-span-2"
+              variants={itemVariants}
+            >
+              <h4 className="text-sm font-semibold mb-3 text-white flex items-center">
+                <div className="w-1.5 h-1.5 bg-[#0BB4E4] rounded-full mr-2"></div>
+                Quick Links
+              </h4>
+              <ul className="space-y-2">
+                {quickLinks.map((link, index) => (
+                  <motion.li 
+                    key={index}
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-[#0BB4E4] transition-all duration-300 flex items-center group cursor-pointer"
+                    >
+                      <ArrowRight className="w-3 h-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Services */}
+            <motion.div 
+              className="col-span-3"
+              variants={itemVariants}
+            >
+              <h4 className="text-sm font-semibold mb-3 text-white flex items-center">
+                <div className="w-1.5 h-1.5 bg-[#6DCE2E] rounded-full mr-2"></div>
+                Our Services
+              </h4>
+              <ul className="space-y-2">
+                {services.map((service, index) => (
+                  <motion.li 
+                    key={index}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Link
+                      href={service.href}
+                      className="text-sm text-gray-400 hover:text-white transition-all duration-300 flex items-center group p-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 cursor-pointer"
+                    >
+                      <service.icon className="w-4 h-4 mr-2 text-[#0BB4E4] group-hover:text-[#6DCE2E] transition-colors duration-300" />
+                      <span className="group-hover:font-medium transition-all duration-300">
+                        {service.label}
+                      </span>
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Social Media & CTA */}
+            <motion.div 
+              className="col-span-3"
+              variants={itemVariants}
+            >
+              <h4 className="text-sm font-semibold mb-3 text-white flex items-center">
+                <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#0BB4E4] to-[#6DCE2E] rounded-full mr-2"></div>
+                Connect
+              </h4>
+              
+              {/* Social Icons */}
+              <div className="grid grid-cols-6 gap-2 mb-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/10 transition-all duration-300 group border border-white/5 cursor-pointer"
+                    whileHover={{ 
+                      scale: 1.15,
+                      backgroundColor: social.color + '15'
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.label}
+                  >
+                    <social.icon 
+                      className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300" 
+                      style={{ color: social.color }}
+                    />
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-[#0BB4E4] to-[#6DCE2E] text-white text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-[#0BB4E4]/30 transition-all duration-300 group cursor-pointer"
+                >
+                  Start Campaign
+                  <ExternalLink className="w-3.5 h-3.5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden flex flex-col h-full justify-between">
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              {/* Brand Section - Mobile */}
+              <motion.div variants={itemVariants} className="col-span-2">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <Image
+                      src="/logo.svg"
+                      alt="Stake Digital Media"
+                      width={140}
+                      height={50}
+                      className="h-10 w-auto mb-2 cursor-pointer hover:scale-105 transition-transform duration-300"
+                      priority
+                    />
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                      <span className="font-semibold text-white block">Stake Digital Media</span>
+                      <span className="relative inline-block">
+                        <span className="absolute inset-0 bg-gradient-to-r from-[#0BB4E4]/20 via-[#6DCE2E]/20 to-[#0BB4E4]/20 bg-[length:200%_100%] animate-gradient-shift rounded px-0.5 -mx-0.5"></span>
+                        <span className="relative bg-gradient-to-r from-[#0BB4E4] via-[#6DCE2E] to-[#0BB4E4] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift font-semibold">
+                          A division of Keys Communication
+                        </span>
+                      </span>
+                    </p>
+                  </div>
+                  
+                  {/* Mobile CTA */}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0BB4E4] to-[#6DCE2E] text-white text-xs font-semibold rounded-lg hover:shadow-lg hover:shadow-[#0BB4E4]/30 transition-all duration-300 cursor-pointer"
+                    >
+                      Start
+                      <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Mobile Quick Links */}
+              <motion.div variants={itemVariants}>
+                <h4 className="text-xs font-semibold mb-2.5 text-white flex items-center">
+                  <div className="w-1.5 h-1.5 bg-[#0BB4E4] rounded-full mr-2"></div>
+                  Quick Links
+                </h4>
+                <ul className="space-y-1.5">
+                  {quickLinks.slice(0, 3).map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        href={link.href}
+                        className="text-xs text-gray-400 hover:text-[#0BB4E4] transition-colors duration-300 cursor-pointer"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Mobile Services */}
+              <motion.div variants={itemVariants}>
+                <h4 className="text-xs font-semibold mb-2.5 text-white flex items-center">
+                  <div className="w-1.5 h-1.5 bg-[#6DCE2E] rounded-full mr-2"></div>
+                  Services
+                </h4>
+                <ul className="space-y-1.5">
+                  {services.map((service, index) => (
+                    <li key={index}>
+                      <Link
+                        href={service.href}
+                        className="text-xs text-gray-400 hover:text-white transition-colors duration-300 flex items-center cursor-pointer"
+                      >
+                        <service.icon className="w-3.5 h-3.5 mr-1.5 text-[#0BB4E4]" />
+                        {service.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Mobile Contact & Social */}
+              <motion.div variants={itemVariants} className="col-span-2">
+                {/* Contact Info */}
+                <div className="flex flex-col gap-2 text-xs mb-3">
+                  <a 
+                    href="mailto:info@stakedigitalmedia.co.za" 
+                    className="flex items-center text-gray-400 hover:text-[#0BB4E4] transition-colors cursor-pointer"
+                  >
+                    <Mail className="w-3.5 h-3.5 mr-2 text-[#0BB4E4]" />
+                    info@stakedigitalmedia.co.za
+                  </a>
+                  <a 
+                    href="tel:+27111234567"
+                    className="flex items-center text-gray-400 hover:text-[#6DCE2E] transition-colors cursor-pointer"
+                  >
+                    <Phone className="w-3.5 h-3.5 mr-2 text-[#6DCE2E]" />
+                    <span>+27 11 123 4567</span>
+                  </a>
+                </div>
+
+                {/* Mobile Social Icons */}
+                <div className="flex gap-2.5">
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/10 transition-all duration-300 border border-white/5 cursor-pointer"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-4 h-4" style={{ color: social.color }} />
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
-        </div>
-      </div>
-    </footer>
+
+          {/* Copyright Section */}
+          <motion.div 
+            variants={itemVariants}
+            className="border-t border-white/5 pt-3 mt-auto"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-[10px] lg:text-xs">
+              <p className="text-gray-500 text-center md:text-left">
+                © {new Date().getFullYear()} Stake Digital Media. All rights reserved.
+              </p>
+              <div className="flex space-x-3 lg:space-x-4">
+                <Link href="/privacy" className="text-gray-500 hover:text-[#0BB4E4] transition-colors duration-300 cursor-pointer">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="text-gray-500 hover:text-[#0BB4E4] transition-colors duration-300 cursor-pointer">
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </footer>
+
+      {/* Back to Top Button */}
+      <motion.button
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#0BB4E4] to-[#6DCE2E] text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-[#0BB4E4]/30 transition-all duration-300 cursor-pointer ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+        }`}
+        onClick={scrollToTop}
+        whileHover={{ 
+          scale: 1.15,
+          rotate: 360
+        }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.3 }}
+        aria-label="Back to top"
+      >
+        <ChevronUp className="w-5 h-5 mx-auto" />
+      </motion.button>
+    </>
   );
-}
+};
+
+export default Footer;

@@ -46,15 +46,15 @@ export default function Navbar() {
             <Image 
               src="/logo.svg" 
               alt="Stake Digital Media" 
-              width={20} 
-              height={20}
-              className="h-8 lg:h-8 w-auto relative z-10 transform group-hover:scale-105 transition-transform duration-500"
+              width={48} 
+              height={48}
+              className="h-12 lg:h-12 w-auto relative z-10 transform group-hover:scale-105 transition-transform duration-500"
               priority
             />
           </Link>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-2">
             <Link 
               href="/" 
               className="relative px-4 py-2 font-display text-sm font-semibold text-secondary-dark hover:text-primary-sky transition-colors group"
@@ -125,26 +125,23 @@ export default function Navbar() {
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
           </Link>
 
-          {/* Mobile Hamburger Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="lg:hidden p-2 rounded-lg hover:bg-gradient-to-r hover:from-primary-sky/10 hover:to-primary-bright-green/10 text-secondary-dark hover:text-primary-sky transition-all duration-300 relative group"
-            aria-label="Toggle menu"
-          >
-            <div className="relative z-10">
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
-              ) : (
-                <Menu className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              )}
-            </div>
-          </button>
+          {/* Mobile - Attractive UI Element replacing hamburger */}
+          <div className="lg:hidden">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-display font-bold text-xs rounded-lg hover:shadow-lg hover:shadow-primary-sky/30 transition-all duration-300 group relative overflow-hidden"
+            >
+              <span className="relative z-10">Get Started</span>
+              <Sparkles className="w-3.5 h-3.5 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Full-Screen Menu with Modern Design */}
+      {/* Mobile Full-Screen Menu with Modern Design - Not needed anymore */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-14 bg-gradient-to-br from-white via-gray-50 to-white z-40 lg:hidden overflow-y-auto backdrop-blur-xl">
+        <div className="hidden fixed inset-0 top-14 bg-gradient-to-br from-white via-gray-50 to-white z-40 lg:hidden overflow-y-auto backdrop-blur-xl">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-sky/10 rounded-full blur-3xl animate-float-slow"></div>

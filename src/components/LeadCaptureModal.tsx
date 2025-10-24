@@ -102,18 +102,34 @@ export default function LeadCaptureModal({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call - Replace with your actual API endpoint
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/send-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Store submission in localStorage to prevent future popups
-    localStorage.setItem('leadModalSubmitted', 'true');
-    setIsSuccess(true);
-    setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error('Failed to send lead');
+      }
 
-    // Close modal after showing success message
-    setTimeout(() => {
-      setIsOpen(false);
-    }, 3000);
+      // Store submission in localStorage to prevent future popups
+      localStorage.setItem('leadModalSubmitted', 'true');
+      setIsSuccess(true);
+      setIsSubmitting(false);
+
+      // Close modal after showing success message
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting lead:', error);
+      setIsSubmitting(false);
+      // You might want to show an error state here
+      alert('Failed to submit. Please try again.');
+    }
   };
 
   const handleInputChange = (

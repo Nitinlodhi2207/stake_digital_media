@@ -54,10 +54,10 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden lg:flex items-center space-x-2">
+          <div className="hidden lg:flex items-center space-x-6">
             <Link 
               href="/" 
-              className="relative px-4 py-2 font-display text-sm font-semibold text-secondary-dark hover:text-primary-sky transition-colors group"
+              className="relative px-4 py-2 font-display text-sm font-bold text-secondary-dark hover:text-primary-sky transition-colors group"
             >
               <span className="relative z-10">Home</span>
               <span className="absolute inset-0 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
@@ -66,7 +66,7 @@ export default function Navbar() {
             {/* Services Dropdown */}
             <div className="relative group">
               <button 
-                className="relative px-4 py-2 font-display text-sm font-semibold text-secondary-dark hover:text-primary-sky transition-colors flex items-center gap-1"
+                className="relative px-4 py-2 font-display text-sm font-bold text-secondary-dark hover:text-primary-sky transition-colors flex items-center gap-1"
               >
                 <span className="relative z-10">Services</span>
                 <ChevronDown className="w-4 h-4 relative z-10 group-hover:rotate-180 transition-transform duration-300" />
@@ -100,7 +100,7 @@ export default function Navbar() {
 
             <Link 
               href="/about" 
-              className="relative px-4 py-2 font-display text-sm font-semibold text-secondary-dark hover:text-primary-sky transition-colors group"
+              className="relative px-4 py-2 font-display text-sm font-bold text-secondary-dark hover:text-primary-sky transition-colors group"
             >
               <span className="relative z-10">About Us</span>
               <span className="absolute inset-0 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
@@ -108,7 +108,7 @@ export default function Navbar() {
 
             <Link 
               href="/contact" 
-              className="relative px-4 py-2 font-display text-sm font-semibold text-secondary-dark hover:text-primary-sky transition-colors group"
+              className="relative px-4 py-2 font-display text-sm font-bold text-secondary-dark hover:text-primary-sky transition-colors group"
             >
               <span className="relative z-10">Contact</span>
               <span className="absolute inset-0 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>

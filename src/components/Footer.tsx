@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
     <>
       <footer 
         ref={footerRef}
-        className="relative bg-gradient-to-br from-[#0F1419] via-[#1a2332] to-[#0F1419] text-white overflow-hidden z-10 pb-24 lg:pb-0"
+        className="relative bg-gradient-to-br from-[#0F1419] via-[#1a2332] to-[#0F1419] text-white overflow-hidden z-10 pb-20 lg:pb-0"
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-20">
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1419]/95 via-[#0F1419]/80 to-[#0F1419]/60"></div>
 
         <motion.div
-          className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-between py-8 lg:py-6"
+          className="relative z-10 container mx-auto px-4 py-6 lg:py-6"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
@@ -134,9 +134,9 @@ const Footer: React.FC = () => {
                 <Image
                   src="/logo.svg"
                   alt="Stake Digital Media"
-                  width={180}
-                  height={60}
-                  className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
+                  width={200}
+                  height={80}
+                  className="h-14 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
                   priority
                 />
               </div>
@@ -145,7 +145,7 @@ const Footer: React.FC = () => {
               <div className="relative mb-4">
                 <div className="absolute -left-3 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0BB4E4] to-[#6DCE2E] rounded-full"></div>
                 <p className="text-sm text-gray-300 leading-relaxed pl-2">
-                  {/* <span className="font-semibold text-white">Stake Digital Media</span> */}
+                  <span className="font-semibold text-white">Stake Digital Media</span>
                   <br />
                   <span className="relative inline-block">
                     <span className="absolute inset-0 bg-gradient-to-r from-[#0BB4E4]/20 via-[#6DCE2E]/20 to-[#0BB4E4]/20 bg-[length:200%_100%] animate-gradient-shift rounded px-1 -mx-1"></span>
@@ -286,11 +286,12 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Mobile Layout */}
-          <div className="lg:hidden flex flex-col h-full justify-between">
-            <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="lg:hidden">
+            <div className="grid grid-cols-2 gap-4 mb-3">
               {/* Brand Section - Mobile */}
               <motion.div variants={itemVariants} className="col-span-2">
                 <div className="flex items-start justify-between mb-4">
+                  {/* Logo */}
                   <div>
                     <Image
                       src="/logo.svg"
@@ -300,15 +301,6 @@ const Footer: React.FC = () => {
                       className="h-10 w-auto mb-2 cursor-pointer hover:scale-105 transition-transform duration-300"
                       priority
                     />
-                    <p className="text-xs text-gray-400 leading-relaxed">
-                      <span className="font-semibold text-white block">Stake Digital Media</span>
-                      <span className="relative inline-block">
-                        <span className="absolute inset-0 bg-gradient-to-r from-[#0BB4E4]/20 via-[#6DCE2E]/20 to-[#0BB4E4]/20 bg-[length:200%_100%] animate-gradient-shift rounded px-0.5 -mx-0.5"></span>
-                        <span className="relative bg-gradient-to-r from-[#0BB4E4] via-[#6DCE2E] to-[#0BB4E4] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift font-semibold">
-                          A division of Keys Communication
-                        </span>
-                      </span>
-                    </p>
                   </div>
                   
                   {/* Mobile CTA */}
@@ -324,6 +316,99 @@ const Footer: React.FC = () => {
                       <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
                     </Link>
                   </motion.div>
+                </div>
+
+                {/* Centered Company Name & Tagline with Advanced Styling */}
+                <div className="text-center py-3 px-2 relative">
+                  {/* Decorative Elements */}
+                  <div className="absolute left-1/2 top-0 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-[#0BB4E4] to-transparent"></div>
+                  
+                  {/* Company Name with Glow Effect */}
+                  <motion.div
+                    className="relative mb-2"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <h3 className="text-sm font-bold tracking-wide relative inline-block">
+                      {/* Glow Background */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-[#0BB4E4] via-[#6DCE2E] to-[#0BB4E4] blur-lg opacity-30 animate-pulse"></span>
+                      
+                      {/* Main Text with Gradient */}
+                      <span className="relative bg-gradient-to-r from-[#0BB4E4] via-white to-[#6DCE2E] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift font-extrabold">
+                        Stake Digital Media
+                      </span>
+                    </h3>
+                  </motion.div>
+
+                  {/* Animated Divider */}
+                  <div className="flex items-center justify-center mb-2">
+                    <motion.div 
+                      className="h-px w-8 bg-gradient-to-r from-transparent via-[#0BB4E4] to-transparent"
+                      animate={{ 
+                        scaleX: [1, 1.5, 1],
+                        opacity: [0.5, 1, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    ></motion.div>
+                    <div className="mx-2 w-1 h-1 rounded-full bg-[#0BB4E4] animate-pulse"></div>
+                    <motion.div 
+                      className="h-px w-8 bg-gradient-to-r from-transparent via-[#6DCE2E] to-transparent"
+                      animate={{ 
+                        scaleX: [1, 1.5, 1],
+                        opacity: [0.5, 1, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.5
+                      }}
+                    ></motion.div>
+                  </div>
+
+                  {/* Tagline with Premium Styling */}
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    {/* Premium Background Card */}
+                    <div className="relative inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-[#0BB4E4]/10 via-[#6DCE2E]/10 to-[#0BB4E4]/10 backdrop-blur-sm border border-[#0BB4E4]/20">
+                      {/* Animated Border Glow */}
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#0BB4E4] via-[#6DCE2E] to-[#0BB4E4] opacity-20 blur-sm animate-pulse"></div>
+                      
+                      {/* Tagline Text */}
+                      <p className="relative text-xs font-semibold tracking-wider">
+                        <span className="inline-block">
+                          <span className="bg-gradient-to-r from-[#0BB4E4] via-[#6DCE2E] to-[#0BB4E4] bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient-shift">
+                            A division of
+                          </span>
+                        </span>
+                        {" "}
+                        <span className="inline-block">
+                          <span className="relative">
+                            <span className="absolute inset-0 bg-gradient-to-r from-[#6DCE2E] to-[#0BB4E4] blur-md opacity-40"></span>
+                            <span className="relative text-white font-bold drop-shadow-[0_0_8px_rgba(11,180,228,0.5)]">
+                              Keys Communication
+                            </span>
+                          </span>
+                        </span>
+                      </p>
+
+                      {/* Corner Accents */}
+                      <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[#0BB4E4] rounded-tl-lg"></div>
+                      <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[#6DCE2E] rounded-br-lg"></div>
+                    </div>
+                  </motion.div>
+
+                  {/* Bottom Decorative Line */}
+                  <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent via-[#6DCE2E] to-transparent"></div>
                 </div>
               </motion.div>
 
@@ -410,7 +495,7 @@ const Footer: React.FC = () => {
           {/* Copyright Section */}
           <motion.div 
             variants={itemVariants}
-            className="border-t border-white/5 pt-3 mt-auto"
+            className="border-t border-white/5 pt-2.5 mt-3"
           >
             <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-[10px] lg:text-xs">
               <p className="text-gray-500 text-center md:text-left">

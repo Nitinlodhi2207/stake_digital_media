@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'ITURNEDTOASTAR® <info@ittas.co.za>',
-      to: ['nitinlodhi2002@gmail.com'],
+      to: ['info@stakedigital.co.za'],
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `

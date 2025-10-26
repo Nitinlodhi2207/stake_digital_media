@@ -164,47 +164,6 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/80"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-sky/5 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-bright-green/5 via-transparent to-transparent"></div>
-        
-        {/* Intro Panel - Compact */}
-        <div className="relative mb-12 md:mb-20 overflow-hidden">
-          {/* Floating Background Elements */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-sky/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-primary-bright-green/10 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-            <div className={`transition-all duration-1000 ${isSectionVisible('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              <h2 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-secondary-dark mb-4 sm:mb-6 leading-tight tracking-tight">
-                <span className="inline-block">Advertising.</span>{' '}
-                <span className="inline-block bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-[length:200%_auto] animate-gradient-text bg-clip-text text-transparent">
-                  Everywhere.
-                </span>
-              </h2>
-              
-              <p className="font-sans text-sm sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-light mb-6 sm:mb-8">
-                Transform your brand&apos;s presence with cutting-edge digital displays
-                and strategic billboard placements that captivate audiences 24/7.
-              </p>
-
-              {/* Feature Pills */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 justify-center items-center">
-                <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-full border border-primary-sky/20 hover:bg-primary-sky/15 hover:border-primary-sky/40 transition-all duration-300 group">
-                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary-sky group-hover:scale-110 transition-transform" />
-                  <span className="text-xs sm:text-sm font-medium text-secondary-dark">Real-time Updates</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-full border border-primary-bright-green/20 hover:bg-primary-bright-green/15 hover:border-primary-bright-green/40 transition-all duration-300 group">
-                  <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-primary-bright-green group-hover:scale-110 transition-transform" />
-                  <span className="text-xs sm:text-sm font-medium text-secondary-dark">Wide Reach</span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-primary-deep-blue/10 to-primary-deep-blue/5 backdrop-blur-sm rounded-full border border-primary-deep-blue/20 hover:bg-primary-deep-blue/15 hover:border-primary-deep-blue/40 transition-all duration-300 group">
-                  <Award className="w-3 h-3 sm:w-4 sm:h-4 text-primary-deep-blue group-hover:scale-110 transition-transform" />
-                  <span className="text-xs sm:text-sm font-medium text-secondary-dark">Premium Quality</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Digital Screens Panel - Compact Design */}
         <div className="relative mb-12 md:mb-20 overflow-hidden">
@@ -224,7 +183,7 @@ export default function HomePage() {
                 
                 {/* Large Headline */}
                 <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-secondary-dark leading-tight tracking-tight">
-                  <span className="inline-block">Dynamic. Digital. </span>
+                  <span className="inline-block">Dynamic. Digital.</span>{' '}
                   <span className="inline-block bg-gradient-to-r from-primary-sky to-blue-400 bg-clip-text text-transparent">Dazzling.</span>
                 </h3>
                 
@@ -390,7 +349,7 @@ export default function HomePage() {
                 
                 {/* Large Headline */}
                 <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-secondary-dark leading-tight tracking-tight">
-                  <span className="inline-block">Bold. Brilliant. </span>
+                  <span className="inline-block">Bold. Brilliant.</span>{' '}
                   <span className="inline-block bg-gradient-to-r from-primary-bright-green to-emerald-400 bg-clip-text text-transparent">Unmissable.</span>
                 </h3>
                 

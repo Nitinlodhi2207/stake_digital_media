@@ -158,6 +158,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Advertising Everywhere Section - Compact Design */}
+      <section className="relative bg-white text-secondary-dark overflow-hidden py-12 md:py-16">
+        {/* Animated Background Gradient Mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/80"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-sky/5 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-bright-green/5 via-transparent to-transparent"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center space-y-4 md:space-y-6">
+            {/* Main Heading */}
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-secondary-dark leading-tight">
+              Advertising.{' '}
+              <span className="bg-gradient-to-r from-primary-sky via-primary-bright-green to-primary-sky bg-clip-text text-transparent">
+                Everywhere.
+              </span>
+            </h2>
+
+            {/* Subheading */}
+            <p className="font-sans text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Transform your brand&apos;s presence with cutting-edge digital displays and strategic billboard placements that captivate audiences 24/7.
+            </p>
+
+            {/* Feature Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 pt-2 max-w-2xl mx-auto">
+              <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-6 md:py-3 bg-blue-50/50 border border-blue-100 rounded-full">
+                <Zap className="w-3.5 h-3.5 md:w-5 md:h-5 text-primary-sky" />
+                <span className="font-display font-semibold text-xs md:text-base text-secondary-dark">Real-time Updates</span>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-6 md:py-3 bg-emerald-50/50 border border-emerald-100 rounded-full">
+                <Globe className="w-3.5 h-3.5 md:w-5 md:h-5 text-primary-bright-green" />
+                <span className="font-display font-semibold text-xs md:text-base text-secondary-dark">Wide Reach</span>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 md:gap-2 px-3 py-1.5 md:px-6 md:py-3 bg-blue-50/50 border border-blue-100 rounded-full">
+                <Award className="w-3.5 h-3.5 md:w-5 md:h-5 text-primary-sky" />
+                <span className="font-display font-semibold text-xs md:text-base text-secondary-dark">Premium Quality</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section - Advanced Modern Showcase */}
       <section id="services" ref={servicesRef} className="relative bg-white text-secondary-dark overflow-hidden py-12 md:py-20">
         {/* Animated Background Gradient Mesh */}

@@ -293,18 +293,18 @@ const PrivacyPolicyPage = () => {
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <a
-                href="mailto:info@stakedigitalmedia.co.za"
+                href="mailto:info@stakedigital.co.za"
                 className="flex items-center gap-2 text-[#0BB4E4] hover:text-white transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>info@stakedigitalmedia.co.za</span>
+                <span>info@stakedigital.co.za</span>
               </a>
               <a
-                href="tel:+27111234567"
+                href="tel:+27766400024"
                 className="flex items-center gap-2 text-[#6DCE2E] hover:text-white transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                <span>+27 11 123 4567</span>
+                <span>+27 76 640 0024</span>
               </a>
             </div>
             <p className="text-gray-400 text-center mt-6 text-sm">

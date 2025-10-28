@@ -159,18 +159,18 @@ const Footer: React.FC = () => {
               {/* Contact Info */}
               <div className="space-y-2 text-sm">
                 <a 
-                  href="mailto:info@stakedigitalmedia.co.za" 
+                  href="mailto:info@stakedigital.co.za" 
                   className="flex items-center text-gray-400 hover:text-[#0BB4E4] transition-colors duration-300 cursor-pointer group"
                 >
                   <Mail className="w-4 h-4 mr-2 text-[#0BB4E4] group-hover:scale-110 transition-transform" />
-                  info@stakedigitalmedia.co.za
+                  info@stakedigital.co.za
                 </a>
                 <a 
-                  href="tel:+27111234567"
+                  href="tel:+27766400024"
                   className="flex items-center text-gray-400 cursor-pointer hover:text-[#6DCE2E] transition-colors duration-300 group"
                 >
                   <Phone className="w-4 h-4 mr-2 text-[#6DCE2E] group-hover:scale-110 transition-transform" />
-                  <span>+27 11 123 4567</span>
+                  <span>+27 76 640 0024</span>
                 </a>
                 <div className="flex items-start text-gray-400">
                   <MapPin className="w-4 h-4 mr-2 mt-0.5 text-[#0BB4E4] flex-shrink-0" />
@@ -458,18 +458,18 @@ const Footer: React.FC = () => {
                 {/* Contact Info */}
                 <div className="flex flex-col gap-2 text-xs mb-3">
                   <a 
-                    href="mailto:info@stakedigitalmedia.co.za" 
+                    href="mailto:info@stakedigital.co.za" 
                     className="flex items-center text-gray-400 hover:text-[#0BB4E4] transition-colors cursor-pointer"
                   >
                     <Mail className="w-3.5 h-3.5 mr-2 text-[#0BB4E4]" />
-                    info@stakedigitalmedia.co.za
+                    info@stakedigital.co.za
                   </a>
                   <a 
-                    href="tel:+27111234567"
+                    href="tel:+27766400024"
                     className="flex items-center text-gray-400 hover:text-[#6DCE2E] transition-colors cursor-pointer"
                   >
                     <Phone className="w-3.5 h-3.5 mr-2 text-[#6DCE2E]" />
-                    <span>+27 11 123 4567</span>
+                    <span>+27 76 640 0024</span>
                   </a>
                 </div>
 

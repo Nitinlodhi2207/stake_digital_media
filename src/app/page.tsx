@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, TrendingUp, MapPin, Users, Zap, BarChart3, Target, Eye, Sparkles, Globe, Award, Clock } from 'lucide-react';
+import { ArrowRight, TrendingUp, MapPin, Users, Zap, BarChart3, Target, Eye, Sparkles, Globe, Award, Clock, Grid3x3, ChevronRight } from 'lucide-react';
 import OurWork from '@/components/OurWork';
 
 export default function HomePage() {
@@ -575,6 +575,37 @@ export default function HomePage() {
       </section>
 
       <OurWork />
+
+      {/* Mobile Gallery CTA - Only visible on mobile */}
+      <section className="md:hidden py-4 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <Link
+            href="/gallery"
+            className="group relative block overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <div className="relative h-24 bg-gradient-to-r from-primary-sky to-primary-deep-blue">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-bright-green/20 via-transparent to-transparent"></div>
+              
+              <div className="relative h-full flex items-center justify-between px-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                    <Grid3x3 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-lg text-white">
+                      View Complete Gallery
+                    </h3>
+                    <p className="text-white/80 text-xs">
+                      See some of our great work in action
+                    </p>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
 
       {/* Stats/Network Section - Compact Design */}
       <section id="network-preview" className="py-8 md:py-16 bg-white relative overflow-hidden">

@@ -102,6 +102,13 @@ export default function Navbar() {
             </Link>
 
             <Link 
+              href="/gallery" 
+              className="relative px-4 py-2 font-display text-sm font-bold text-secondary-dark hover:text-primary-sky transition-colors group"
+            >
+              <span className="relative z-10">Gallery</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-primary-sky/10 to-primary-bright-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+            </Link>
+            <Link 
               href="/contact" 
               className="relative px-4 py-2 font-display text-sm font-bold text-secondary-dark hover:text-primary-sky transition-colors group"
             >

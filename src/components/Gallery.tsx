@@ -18,9 +18,10 @@ const CHUNK_SIZE = 5;
 const buildHeroRows = (images: GalleryImage[]): HeroRow[] => {
   const patterns: Array<{ layout: HeroRowLayout; range: [number, number] }> = [
     { layout: 'full', range: [0, 1] },
-    { layout: 'leftAccent', range: [1, 3] },
+    { layout: 'full', range: [1, 2] },
+    { layout: 'full', range: [2, 3] },
     { layout: 'full', range: [3, 4] },
-    { layout: 'rightAccent', range: [4, 6] },
+    { layout: 'balanced', range: [4, 6] },
     { layout: 'balanced', range: [6, 8] },
   ];
 
@@ -87,7 +88,7 @@ const Gallery = () => {
         className={`group relative overflow-hidden rounded-none md:rounded-[32px] bg-black/5 shadow-[0_32px_80px_-40px_rgba(15,23,42,0.75)] ${emphasisClass}`}
         initial={{ opacity: 0, y: 42, scale: 0.96 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ 
           duration: 1.2, 
           ease: [0.22, 0.61, 0.36, 1], 
@@ -102,24 +103,20 @@ const Gallery = () => {
             whileHover={{ opacity: 0.9 }}
             transition={{ duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
           />
-          <motion.div
-            className="absolute inset-0 z-0"
-            initial={{ scale: 1.08 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: globalDelay + 0.1 }}
+          <motion.div 
+            className="absolute inset-0 z-0 w-full h-full"
             whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
           >
             <Image
               src={image.src}
               alt={image.alt}
-              width={image.width}
-              height={image.height}
+              fill
               priority={priority}
               placeholder="empty"
               quality={90}
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 75vw"
-              className="h-full w-full object-cover"
+              className="object-cover"
               loading={priority ? 'eager' : 'lazy'}
             />
           </motion.div>
@@ -249,39 +246,39 @@ const Gallery = () => {
                   >
                     {feature && renderImageFigure(feature, 'w-full', baseDelay + 0.02)}
 
-                    {(accentOne || accentTwo) && (
+                    {accentOne && accentTwo && (
                       <div className="flex flex-col gap-8 md:flex-row">
-                        {accentOne &&
-                          renderImageFigure(
-                            accentOne,
-                            `${groupIndex % 2 === 0 ? 'md:flex-[0.68]' : 'md:flex-[0.32]'} w-full`,
-                            baseDelay + 0.08,
-                          )}
-                        {accentTwo &&
-                          renderImageFigure(
-                            accentTwo,
-                            `${groupIndex % 2 === 0 ? 'md:flex-[0.32]' : 'md:flex-[0.68]'} w-full`,
-                            baseDelay + 0.14,
-                          )}
+                        {renderImageFigure(
+                          accentOne,
+                          `${groupIndex % 2 === 0 ? 'md:flex-[0.68]' : 'md:flex-[0.32]'} w-full`,
+                          baseDelay + 0.08,
+                        )}
+                        {renderImageFigure(
+                          accentTwo,
+                          `${groupIndex % 2 === 0 ? 'md:flex-[0.32]' : 'md:flex-[0.68]'} w-full`,
+                          baseDelay + 0.14,
+                        )}
                       </div>
                     )}
 
-                    {(accentThree || accentFour) && (
+                    {accentOne && !accentTwo && renderImageFigure(accentOne, 'w-full', baseDelay + 0.08)}
+
+                    {accentThree && accentFour && (
                       <div className="flex flex-col gap-8 md:flex-row">
-                        {accentThree &&
-                          renderImageFigure(
-                            accentThree,
-                            `${groupIndex % 2 === 0 ? 'md:flex-[0.42]' : 'md:flex-[0.58]'} w-full`,
-                            baseDelay + 0.18,
-                          )}
-                        {accentFour &&
-                          renderImageFigure(
-                            accentFour,
-                            `${groupIndex % 2 === 0 ? 'md:flex-[0.58]' : 'md:flex-[0.42]'} w-full`,
-                            baseDelay + 0.24,
-                          )}
+                        {renderImageFigure(
+                          accentThree,
+                          `${groupIndex % 2 === 0 ? 'md:flex-[0.42]' : 'md:flex-[0.58]'} w-full`,
+                          baseDelay + 0.18,
+                        )}
+                        {renderImageFigure(
+                          accentFour,
+                          `${groupIndex % 2 === 0 ? 'md:flex-[0.58]' : 'md:flex-[0.42]'} w-full`,
+                          baseDelay + 0.24,
+                        )}
                       </div>
                     )}
+
+                    {accentThree && !accentFour && renderImageFigure(accentThree, 'w-full', baseDelay + 0.18)}
                   </motion.div>
                 );
               })}

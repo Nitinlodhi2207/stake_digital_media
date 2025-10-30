@@ -180,7 +180,7 @@ export default function DigitalScreensPage() {
           { value: '24/7', label: 'Support' },
           { value: '48 Hrs', label: 'Launch Time' },
           { value: '100%', label: 'Brand Safe' },
-          { value: 'Real-time', label: 'Updates' },
+          { value: 'Realtime', label: 'Updates' },
         ]}
       />
 
@@ -267,7 +267,7 @@ export default function DigitalScreensPage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-sky/10 to-primary-deep-blue/10 rounded-3xl blur-2xl"></div>
                 <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
-                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761208781/DIGITAL_SCREENS_btw38m.png"
+                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761802873/DIGITAL_SCREENS_hmuc6h.svg"
                     alt="Supabets Digital Screens"
                     fill
                     className="object-cover"
@@ -298,7 +298,7 @@ export default function DigitalScreensPage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-bright-green/10 to-primary-deep-green/10 rounded-3xl blur-2xl"></div>
                 <div className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <Image
-                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761208736/DIGITAL_SCREENS_zyfazv.png"
+                    src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761802873/DIGITAL_SCREENS_hmuc6h.svg"
                     alt="Ultra HD Digital Display"
                     fill
                     className="object-cover"
@@ -333,9 +333,9 @@ export default function DigitalScreensPage() {
                   Stunning Visual Impact
                 </h3>
                 <p className="font-sans text-base lg:text-lg text-gray-700 mb-6 leading-relaxed">
-                  Our Ultra HD displays deliver your content with breathtaking clarity. Every
-                  color pops, every detail shines, and every message captivates your audience with
-                  professional-grade visual quality.
+                  Our Ultra HD digital displays bring your content to life with stunning precision and depth.
+Every pixel radiates brilliance — colors are richer, contrasts are sharper, and motion is fluid and immersive.
+Whether it’s a bustling shopping mall, a high-energy sports venue, or a sleek corporate environment, your message cuts through the noise with unmatched clarity.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">

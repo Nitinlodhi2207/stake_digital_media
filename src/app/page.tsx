@@ -215,108 +215,70 @@ export default function HomePage() {
               {/* Content */}
               <div 
                 data-animate
-                className={`order-2 lg:order-1 space-y-4 transition-all duration-1000 flex flex-col justify-center ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                className={`order-2 lg:order-1 space-y-3 transition-all duration-1000 flex flex-col justify-center h-[280px] sm:h-[350px] md:h-[400px] ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
               >
                 {/* Premium Badge */}
-                <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-primary-sky/15 to-primary-sky/10 backdrop-blur-xl rounded-full border border-primary-sky/30 shadow-lg shadow-primary-sky/10 w-fit">
-                  <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-primary-sky rounded-full animate-pulse"></div>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-primary-sky">DIGITAL SCREENS</span>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r from-primary-sky/15 to-primary-sky/10 backdrop-blur-xl rounded-full border border-primary-sky/30 shadow-lg shadow-primary-sky/10 w-fit">
+                  <div className="w-1 h-1 bg-primary-sky rounded-full animate-pulse"></div>
+                  <span className="text-[9px] font-bold tracking-wider text-primary-sky">DIGITAL SCREENS</span>
                 </div>
                 
                 {/* Large Headline */}
-                <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-secondary-dark leading-tight tracking-tight">
+                <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-secondary-dark leading-tight tracking-tight">
                   <span className="inline-block">Dynamic. Digital.</span>{' '}
                   <span className="inline-block bg-gradient-to-r from-primary-sky to-blue-400 bg-clip-text text-transparent">Dazzling.</span>
                 </h3>
                 
                 {/* Description */}
-                <p className="font-sans text-sm md:text-base text-gray-700 leading-relaxed font-light">
+                <p className="font-sans text-xs md:text-sm text-gray-700 leading-relaxed font-light">
                   High-definition displays that bring your content to life with vibrant colors,
                   stunning clarity, and real-time updates that keep your message fresh and engaging.
                 </p>
                 
-                {/* Technical Specifications */}
-                <div className="bg-gradient-to-br from-blue-50 to-sky-50 border-2 border-blue-100 rounded-xl p-4 space-y-2">
-                  <h4 className="font-bold text-xs md:text-sm text-primary-deep-blue mb-2 flex items-center gap-2">
-                    <Zap className="w-4 h-4" />
-                    Technical Specifications
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm">
-                    <div className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary-sky rounded-full mt-1.5 flex-shrink-0"></div>
-                      <div>
-                        <span className="font-semibold text-secondary-dark">Screen Size:</span>
-                        <span className="text-gray-600 ml-1">1920mm × 1080mm</span>
-                      </div>
+                {/* Feature Cards Grid - 2x2 Compact */}
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <Eye className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary-sky rounded-full mt-1.5 flex-shrink-0"></div>
-                      <div>
-                        <span className="font-semibold text-secondary-dark">File Format:</span>
-                        <span className="text-gray-600 ml-1">MP4/JPEG/PNG</span>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary-sky rounded-full mt-1.5 flex-shrink-0"></div>
-                      <div>
-                        <span className="font-semibold text-secondary-dark">Max Size:</span>
-                        <span className="text-gray-600 ml-1">20MB</span>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary-sky rounded-full mt-1.5 flex-shrink-0"></div>
-                      <div>
-                        <span className="font-semibold text-secondary-dark">Duration:</span>
-                        <span className="text-gray-600 ml-1">10–35s creatives</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Feature Cards Grid - 2x2 */}
-                <div className="grid grid-cols-2 gap-3 md:gap-4">
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <Eye className="w-4 h-4 md:w-5 md:h-5 text-white" />
-                    </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">Ultra HD</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Crystal-clear visuals</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">Ultra HD</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Crystal-clear visuals</p>
                   </div>
                   
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <Clock className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">Real-time</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Live content updates</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">Real-time</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Live updates</p>
                   </div>
                   
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">Interactive</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Touch-enabled</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">Interactive</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Touch-enabled</p>
                   </div>
                   
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-sky/10 to-primary-sky/5 backdrop-blur-sm rounded-lg border border-primary-sky/20 hover:border-primary-sky/50 hover:bg-primary-sky/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-sky to-blue-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">30+ Min Dwell</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Extended engagement</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">30+ Min Dwell</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Extended time</p>
                   </div>
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-3 pt-4">
+                <div className="flex flex-wrap gap-2 pt-2">
                   <Link
                     href="/services/digital-screens"
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-bold text-sm md:text-base rounded-full shadow-lg shadow-primary-sky/30 hover:shadow-primary-sky/50 hover:scale-105 transition-all duration-300"
+                    className="group inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-gradient-to-r from-primary-sky to-blue-500 text-white font-bold text-xs md:text-sm rounded-full shadow-lg shadow-primary-sky/30 hover:shadow-primary-sky/50 hover:scale-105 transition-all duration-300"
                   >
                     <span>Explore Digital Screens</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -335,7 +297,7 @@ export default function HomePage() {
                   {/* Main Image Container */}
                   <div className="relative h-[280px] sm:h-[350px] md:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl border border-gray-200 group-hover:border-primary-sky/30 transition-all duration-500" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
-                      src="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1200/v1761208531/DIGITAL_SCREENS_hmuc6h.png"
+                      src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761802873/DIGITAL_SCREENS_hmuc6h.svg"
                       alt="Digital Screens"
                       fill
                       className="object-cover"
@@ -367,7 +329,7 @@ export default function HomePage() {
                   {/* Main Image Container */}
                   <div className="relative h-[280px] sm:h-[350px] md:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl border border-gray-200 group-hover:border-primary-bright-green/30 transition-all duration-500" style={{ backfaceVisibility: 'hidden' }}>
                     <Image
-                      src="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1200/v1761208565/BILLBOARDS_r9btux.png"
+                      src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761802746/BILLBOARDS_r9btux.svg"
                       alt="Billboards"
                       fill
                       className="object-cover"
@@ -381,70 +343,70 @@ export default function HomePage() {
               {/* Content */}
               <div 
                 data-animate
-                className={`space-y-4 transition-all duration-1000 delay-200 flex flex-col justify-center ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+                className={`space-y-3 transition-all duration-1000 delay-200 flex flex-col justify-center h-[280px] sm:h-[350px] md:h-[400px] ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
               >
                 {/* Premium Badge */}
-                <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-primary-bright-green/15 to-primary-bright-green/10 backdrop-blur-xl rounded-full border border-primary-bright-green/30 shadow-lg shadow-primary-bright-green/10 w-fit">
-                  <div className="w-1 h-1 md:w-1.5 md:h-1.5 bg-primary-bright-green rounded-full animate-pulse"></div>
-                  <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-primary-bright-green">BILLBOARDS</span>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r from-primary-bright-green/15 to-primary-bright-green/10 backdrop-blur-xl rounded-full border border-primary-bright-green/30 shadow-lg shadow-primary-bright-green/10 w-fit">
+                  <div className="w-1 h-1 bg-primary-bright-green rounded-full animate-pulse"></div>
+                  <span className="text-[9px] font-bold tracking-wider text-primary-bright-green">BILLBOARDS</span>
                 </div>
                 
                 {/* Large Headline */}
-                <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-secondary-dark leading-tight tracking-tight">
+                <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-secondary-dark leading-tight tracking-tight">
                   <span className="inline-block">Bold. Brilliant.</span>{' '}
                   <span className="inline-block bg-gradient-to-r from-primary-bright-green to-emerald-400 bg-clip-text text-transparent">Unmissable.</span>
                 </h3>
                 
                 {/* Description */}
-                <p className="font-sans text-sm md:text-base text-gray-700 leading-relaxed font-light">
+                <p className="font-sans text-xs md:text-sm text-gray-700 leading-relaxed font-light">
                   Strategic placements that command attention and dominate the landscape,
                   ensuring your brand message reaches thousands daily with maximum impact.
                 </p>
                 
-                {/* Feature Cards Grid - 2x2 */}
-                <div className="grid grid-cols-2 gap-3 md:gap-4">
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <MapPin className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                {/* Feature Cards Grid - 2x2 Compact */}
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">Prime Locations</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Maximum visibility</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">Prime Locations</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Maximum visibility</p>
                   </div>
                   
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">LED Illumination</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">24/7 impactful</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">LED Illumination</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">24/7 impact</p>
                   </div>
                   
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <BarChart3 className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <BarChart3 className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">1.5M+ Monthly</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Massive impressions</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">1.5M+ Monthly</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Impressions</p>
                   </div>
                   
-                  <div className="group p-3 md:p-4 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                      <Target className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="group p-2 md:p-3 bg-gradient-to-br from-primary-bright-green/10 to-primary-bright-green/5 backdrop-blur-sm rounded-lg border border-primary-bright-green/20 hover:border-primary-bright-green/50 hover:bg-primary-bright-green/15 transition-all duration-300">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-br from-primary-bright-green to-emerald-500 rounded-md flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                     </div>
-                    <h4 className="font-bold text-xs md:text-sm mb-0.5 text-secondary-dark">Strategic Sites</h4>
-                    <p className="text-[10px] md:text-xs text-gray-600">Soweto & metros</p>
+                    <h4 className="font-bold text-[10px] md:text-xs mb-0.5 text-secondary-dark">Strategic Sites</h4>
+                    <p className="text-[9px] md:text-[10px] text-gray-600">Soweto & metros</p>
                   </div>
                 </div>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-3 pt-4">
+                <div className="flex flex-wrap gap-2 pt-2">
                   <Link
                     href="/services/billboards"
-                    className="group inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-gradient-to-r from-primary-bright-green to-emerald-500 text-white font-bold text-sm md:text-base rounded-full shadow-lg shadow-primary-bright-green/30 hover:shadow-primary-bright-green/50 hover:scale-105 transition-all duration-300"
+                    className="group inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-gradient-to-r from-primary-bright-green to-emerald-500 text-white font-bold text-xs md:text-sm rounded-full shadow-lg shadow-primary-bright-green/30 hover:shadow-primary-bright-green/50 hover:scale-105 transition-all duration-300"
                   >
                     <span>Discover Billboards</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -647,7 +609,7 @@ export default function HomePage() {
             >
               <div className="relative h-[250px] md:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500">
                 <Image
-                  src="https://res.cloudinary.com/diwa9giv2/image/upload/f_auto,q_auto,w_1200/v1761208647/Our_Network_image_ol9enz.png"
+                  src="https://res.cloudinary.com/diwa9giv2/image/upload/v1761802903/Our_Network_image_ol9enz.svg"
                   alt="Our Network"
                   fill
                   className="object-cover"

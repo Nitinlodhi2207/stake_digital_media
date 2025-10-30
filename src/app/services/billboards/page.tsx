@@ -88,7 +88,7 @@ export default function BillboardsPage() {
         'Vibrant commercial and cultural corridor',
         'High pedestrian and vehicle traffic',
       ],
-      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761208866/BILLBOARDS_sshtgh.png',
+      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761802746/BILLBOARDS_r9btux.svg',
     },
     {
       name: 'Koma Road, Senaone',
@@ -105,7 +105,7 @@ export default function BillboardsPage() {
         'Major commuter route with constant flow',
         'Ideal for high-frequency brand recall',
       ],
-      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761208887/BILLBOARDS_ovhnfx.png',
+      image: 'https://res.cloudinary.com/diwa9giv2/image/upload/v1761802746/BILLBOARDS_r9btux.svg',
     },
   ];
 
@@ -218,10 +218,10 @@ export default function BillboardsPage() {
         gradientFrom="from-primary-bright-green"
         gradientTo="to-emerald-500"
         stats={[
-          { value: '2-3 Weeks', label: 'Setup Time' },
+          { value: 'Very Fast', label: 'Setup Time' },
           { value: '1 Month+', label: 'Min. Booking' },
-          { value: '100%', label: 'Weather-Proof' },
-          { value: 'Full', label: 'Support' },
+          { value: ' All Weather', label: 'Certified' },
+          { value: 'Full Service', label: 'Assistance' },
         ]}
       />
 

@@ -215,7 +215,7 @@ export default function HomePage() {
               {/* Content */}
               <div 
                 data-animate
-                className={`order-2 lg:order-1 space-y-3 transition-all duration-1000 flex flex-col justify-center h-[280px] sm:h-[350px] md:h-[400px] ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                className={`order-2 lg:order-1 space-y-3 transition-all duration-1000 flex flex-col justify-center ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
               >
                 {/* Premium Badge */}
@@ -343,7 +343,7 @@ export default function HomePage() {
               {/* Content */}
               <div 
                 data-animate
-                className={`space-y-3 transition-all duration-1000 delay-200 flex flex-col justify-center h-[280px] sm:h-[350px] md:h-[400px] ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+                className={`space-y-3 transition-all duration-1000 delay-200 flex flex-col justify-center ${isSectionVisible('services') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
                 style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
               >
                 {/* Premium Badge */}

@@ -1,3 +1,7 @@
+# Managed and optimized by Midgrow Studio
+# Website: https://www.midgrow.studio
+# Contact: info@midgrow.studio
+
 User-agent: *
 Allow: /
 

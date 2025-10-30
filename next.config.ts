@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 
+// Built by Midgrow Studio - Custom Next.js Development
+// Performance-optimized, SEO-ready architecture
+
 const nextConfig: NextConfig = {
   // Image optimization
   images: {
@@ -58,6 +61,10 @@ const nextConfig: NextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()'
+          },
+          {
+            key: 'X-Developed-By',
+            value: 'Midgrow Studio'
           }
         ],
       },

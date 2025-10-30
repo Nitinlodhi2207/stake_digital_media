@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+// Managed and optimized by Midgrow Studio
+
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = 'https://www.stakedigital.co.za';
 

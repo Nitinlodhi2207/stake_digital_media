@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
+import { OrganizationSchema, LocalBusinessSchema, ServiceSchema } from "@/components/StructuredData";
 
 const montserrat = Montserrat({
   variable: "--font-display",
@@ -19,19 +20,33 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Stake Digital Media | Premium Out-of-Home Advertising in South Africa",
+  metadataBase: new URL('https://www.stakedigital.co.za'),
+  title: {
+    default: "Stake Digital Media | Premium Out-of-Home Advertising in South Africa",
+    template: "%s | Stake Digital Media"
+  },
   description: "B2B out-of-home advertising solutions featuring digital screens and billboards across South Africa. Measurable, data-driven results for media buyers and brand managers.",
   keywords: ["out-of-home advertising", "digital screens", "billboards", "South Africa", "OOH advertising", "brand advertising", "Soweto", "media buying"],
   authors: [{ name: "Stake Digital Media" }],
   creator: "Stake Digital Media",
   publisher: "Stake Digital Media",
-  metadataBase: new URL('https://stakee-digital-media.vercel.app'),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   
   // Open Graph metadata for social sharing
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    url: "https://stakee-digital-media.vercel.app",
+    url: "https://www.stakedigital.co.za",
     title: "Stake Digital Media | Premium Out-of-Home Advertising in South Africa",
     description: "B2B out-of-home advertising solutions featuring digital screens and billboards across South Africa. Measurable, data-driven results for media buyers and brand managers.",
     siteName: "Stake Digital Media",
@@ -66,6 +81,21 @@ export const metadata: Metadata = {
   
   // Additional metadata
   manifest: "/site.webmanifest",
+  
+  // Verification tags (add your own when available)
+  verification: {
+    // google: 'your-google-site-verification-code',
+    // yandex: 'your-yandex-verification-code',
+    // bing: 'your-bing-verification-code',
+  },
+  
+  // Alternate languages
+  alternates: {
+    canonical: "https://www.stakedigital.co.za",
+  },
+  
+  // Category
+  category: 'Advertising',
 };
 
 export default function RootLayout({
@@ -74,7 +104,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-ZA">
+      <head>
+        <OrganizationSchema />
+        <LocalBusinessSchema />
+        <ServiceSchema />
+      </head>
       <body
         className={`${montserrat.variable} ${openSans.variable} font-sans antialiased`}
       >

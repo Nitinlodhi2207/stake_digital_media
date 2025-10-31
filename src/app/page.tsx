@@ -126,7 +126,7 @@ export default function HomePage() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
                 <Link
-                  href="/network"
+                  href="/gallery"
                   className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-white/10 backdrop-blur-xl border-2 border-white/40 text-white font-display font-bold text-sm sm:text-base rounded-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                 >
                   Explore Network
@@ -672,7 +672,7 @@ export default function HomePage() {
               </div>
 
               <Link
-                href="/network"
+                href="/gallery"
                 className="group inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-primary-sky to-primary-deep-blue text-white font-display font-bold text-base rounded-xl hover:shadow-xl hover:shadow-primary-sky/30 transition-all duration-300 hover:scale-105 mt-6"
               >
                 <span>Explore Full Network</span>

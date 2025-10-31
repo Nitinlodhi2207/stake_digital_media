@@ -517,7 +517,7 @@ Whether it’s a bustling shopping mall, a high-energy sports venue, or a sleek 
             className="text-center mt-12"
           >
             <Link
-              href="/network"
+              href="/gallery"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-sky to-primary-deep-blue text-white font-bold rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <span>Explore Full Network</span>
